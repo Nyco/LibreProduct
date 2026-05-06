@@ -73,7 +73,7 @@
     }
 
     .grad-text {
-      background: var(--grad-h);
+      background: linear-gradient(95deg, var(--green), var(--blue) 50%, var(--violet));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -427,7 +427,18 @@
       letter-spacing: -1.2px;
       margin-bottom: 18px;
       line-height: 1.15;
+      background: linear-gradient(135deg, var(--green), var(--blue), var(--violet));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
+
+    /* Per-section gradient directions — same palette, different angles */
+    #services  .section-title { background-image: linear-gradient(118deg, var(--green), var(--blue)); }
+    #approach  .section-title { background-image: linear-gradient(47deg,  var(--blue), var(--violet)); }
+    #ecosystem .section-title { background-image: linear-gradient(212deg, var(--violet), var(--green)); }
+    #about     .section-title { background-image: linear-gradient(162deg, var(--green), var(--blue), var(--violet)); }
+    #contact   .section-title { background-image: linear-gradient(78deg,  var(--blue), var(--violet), var(--green)); }
 
     .section-sub {
       font-size: 17px;
