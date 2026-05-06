@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -547,7 +547,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 18px;
-      margin-bottom: 52px;
     }
 
     .eco-card {
@@ -580,50 +579,6 @@
       line-height: 1.65;
     }
 
-    .cos-block { margin-bottom: 36px; }
-
-    .cos-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--c3);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 14px;
-    }
-
-    .cos-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 14px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--c2);
-      transition: all var(--ease);
-      cursor: default;
-    }
-
-    .chip:hover {
-      border-color: var(--green);
-      color: var(--c1);
-      background: var(--card-h);
-    }
-
-    .chip-dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--grad);
-      flex-shrink: 0;
-    }
 
     /* === ABOUT === */
     .about-inner {
@@ -771,7 +726,7 @@
 
     <div class="nav-actions">
       <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
-        <span id="theme-icon">&#9728;&#65039;</span>
+        <span id="theme-icon">🌙</span>
       </button>
       <div class="lang-toggle">
         <button class="lang-btn" data-lang="en">EN</button>
@@ -924,34 +879,6 @@
       </div>
     </div>
 
-    <div class="reveal">
-      <div class="cos-block">
-        <p class="cos-label" data-i18n="cos.fr">French open source companies</p>
-        <div class="cos-chips">
-          <span class="chip"><span class="chip-dot"></span>Worteks</span>
-          <span class="chip"><span class="chip-dot"></span>BlueMind</span>
-          <span class="chip"><span class="chip-dot"></span>Arawa</span>
-          <span class="chip"><span class="chip-dot"></span>Atol CD</span>
-          <span class="chip"><span class="chip-dot"></span>Algoo</span>
-          <span class="chip"><span class="chip-dot"></span>XWiki</span>
-          <span class="chip"><span class="chip-dot"></span>FactorFX</span>
-          <span class="chip"><span class="chip-dot"></span>Beezim</span>
-          <span class="chip"><span class="chip-dot"></span>Dalibo</span>
-          <span class="chip"><span class="chip-dot"></span>Linphone</span>
-          <span class="chip"><span class="chip-dot"></span>Pristy / Jeci</span>
-          <span class="chip"><span class="chip-dot"></span>Rudder</span>
-        </div>
-      </div>
-      <div class="cos-block">
-        <p class="cos-label" data-i18n="cos.eu">European open source companies</p>
-        <div class="cos-chips">
-          <span class="chip"><span class="chip-dot"></span>Nextcloud</span>
-          <span class="chip"><span class="chip-dot"></span>Collabora</span>
-          <span class="chip"><span class="chip-dot"></span>OpenProject</span>
-          <span class="chip"><span class="chip-dot"></span>Penpot</span>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1143,8 +1070,8 @@ const T = {
 };
 
 /* ===== STATE ===== */
-let lang  = localStorage.getItem('lp-lang')  || 'en';
-let theme = localStorage.getItem('lp-theme') || 'dark';
+let lang  = localStorage.getItem('lp-lang')  || 'fr';
+let theme = localStorage.getItem('lp-theme') || 'light';
 
 /* ===== INIT ===== */
 applyTheme();
