@@ -152,13 +152,12 @@
       font-size: 14px;
       font-weight: 500;
       border-radius: 6px;
-      transition: color var(--ease), background var(--ease);
+      position: relative;
+      isolation: isolate;
+      transition: color var(--ease);
     }
 
-    .nav-links a:hover {
-      color: var(--c1);
-      background: var(--card);
-    }
+    .nav-links a:hover { color: var(--c1); }
 
     .nav-actions {
       display: flex;
@@ -761,15 +760,63 @@
       font-size: 16px;
       font-weight: 500;
       border-bottom: 1px solid var(--border);
-      transition: color var(--ease), background var(--ease), padding-left var(--ease);
+      position: relative;
+      isolation: isolate;
+      transition: color var(--ease);
     }
 
     .mobile-menu a:last-child { border-bottom: none; }
 
-    .mobile-menu a:hover {
-      color: var(--c1);
-      background: var(--card-h);
-      padding-left: 32px;
+    .mobile-menu a:hover { color: var(--c1); }
+
+    /* === NEON OVAL GLOW ON NAV ITEMS === */
+    .nav-links a::before,
+    .mobile-menu a::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      border-radius: 50%;
+      z-index: -1;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Desktop — compact ovals, appear on hover */
+    .nav-links a::before {
+      width: 90%; height: 13px;
+      filter: blur(12px);
+      opacity: 0;
+    }
+    .nav-links a:hover::before { opacity: 0.75; }
+
+    /* Mobile — wider ovals, always subtly on, brighter on hover */
+    .mobile-menu a::before {
+      width: 68%; height: 20px;
+      filter: blur(20px);
+      opacity: 0.28;
+    }
+    .mobile-menu a:hover::before { opacity: 0.65; }
+
+    /* Per-item colors and tilt angles */
+    .nav-links li:nth-child(1) a::before,
+    .mobile-menu a:nth-child(1)::before {
+      background: var(--green);
+      transform: translate(-50%, -50%) rotate(-9deg);
+    }
+    .nav-links li:nth-child(2) a::before,
+    .mobile-menu a:nth-child(2)::before {
+      background: var(--blue);
+      transform: translate(-50%, -50%) rotate(7deg);
+    }
+    .nav-links li:nth-child(3) a::before,
+    .mobile-menu a:nth-child(3)::before {
+      background: var(--violet);
+      transform: translate(-50%, -50%) rotate(-5deg);
+    }
+    .nav-links li:nth-child(4) a::before,
+    .mobile-menu a:nth-child(4)::before {
+      background: linear-gradient(105deg, var(--blue), var(--violet));
+      transform: translate(-50%, -50%) rotate(11deg);
     }
 
     @media (max-width: 768px) {
