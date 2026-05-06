@@ -698,12 +698,91 @@
       }
     }
 
+    /* === HAMBURGER === */
+    .hamburger {
+      display: none;
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 0;
+      transition: all var(--ease);
+    }
+
+    .hamburger:hover {
+      border-color: var(--border-h);
+      background: var(--card-h);
+    }
+
+    .hb {
+      display: block;
+      width: 18px; height: 2px;
+      background: var(--c2);
+      border-radius: 2px;
+      transition: transform 0.32s ease, opacity 0.22s ease, background var(--ease);
+    }
+
+    .hamburger.open .hb:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open .hb:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open .hb:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* === MOBILE MENU === */
+    .mobile-menu {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      z-index: 999;
+      background: var(--glass);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.38s ease, opacity 0.25s ease,
+                  background var(--ease), border-color var(--ease);
+    }
+
+    .mobile-menu.open {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px 24px;
+      text-decoration: none;
+      color: var(--c2);
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--ease), background var(--ease), padding-left var(--ease);
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    .mobile-menu a:hover {
+      color: var(--c1);
+      background: var(--card-h);
+      padding-left: 32px;
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .hamburger  { display: flex; }
       .hero h1 { letter-spacing: -1.5px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .footer-links { display: none; }
       section { padding: 72px 0; }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-menu { display: none !important; }
     }
   </style>
 </head>
@@ -732,9 +811,21 @@
         <button class="lang-btn" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="fr">FR</button>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span class="hb"></span>
+        <span class="hb"></span>
+        <span class="hb"></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#services"  data-i18n="nav.services">Services</a>
+  <a href="#approach"  data-i18n="nav.approach">Approche</a>
+  <a href="#ecosystem" data-i18n="nav.clients">Clients</a>
+  <a href="#contact"   data-i18n="nav.contact">Contact</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -1122,6 +1213,31 @@ window.addEventListener('scroll', () => {
   document.getElementById('nav').style.boxShadow =
     window.scrollY > 16 ? '0 4px 24px rgba(0,0,0,0.18)' : '';
 }, { passive: true });
+
+/* ===== HAMBURGER MENU ===== */
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden',  'true');
+}
+
+hamburger.addEventListener('click', () => {
+  const opening = !hamburger.classList.contains('open');
+  opening ? (hamburger.classList.add('open'), mobileMenu.classList.add('open'),
+             hamburger.setAttribute('aria-expanded', 'true'),
+             mobileMenu.setAttribute('aria-hidden', 'false'))
+           : closeMenu();
+});
+
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+document.addEventListener('click', e => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+});
 </script>
 </body>
 </html>
