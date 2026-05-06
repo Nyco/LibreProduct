@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LibreProduct — Product Management for Open Source</title>
-  <meta name="description" content="Strategic Product Management for Free/Libre/Open Source companies. Publishers, integrators &amp; SaaS in France and Europe.">
+  <title>LibreProduct — OSS Monetisation · France &amp; Europe</title>
+  <meta name="description" content="Turn your open source project into a revenue engine. Fractional Product Manager specialising in OSS monetisation for startups in France and Europe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -327,19 +327,41 @@
     }
 
     .hero h1 {
-      font-size: clamp(40px, 6.5vw, 84px);
+      font-size: clamp(36px, 5.8vw, 76px);
       font-weight: 700;
       line-height: 1.08;
-      letter-spacing: -2.5px;
+      letter-spacing: -2px;
       margin-bottom: 26px;
     }
 
     .hero p {
       font-size: clamp(16px, 2vw, 20px);
       color: var(--c2);
-      max-width: 620px;
-      margin: 0 auto 52px;
+      max-width: 640px;
+      margin: 0 auto 36px;
       line-height: 1.72;
+    }
+
+    /* === URGENCY STRIP === */
+    .urgency-strip {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+
+    .urgency-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--c2);
+      backdrop-filter: blur(12px);
     }
 
     .hero-actions {
@@ -347,6 +369,7 @@
       gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .btn-primary {
@@ -372,29 +395,21 @@
       box-shadow: 0 8px 24px rgba(59,158,255,0.35);
     }
 
-    .btn-secondary {
+    .btn-ghost {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: var(--card);
-      color: var(--c1);
+      gap: 6px;
+      padding: 14px 20px;
+      color: var(--c2);
       font-family: var(--font);
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
       text-decoration: none;
-      border: 1px solid var(--border);
       border-radius: 10px;
-      cursor: pointer;
-      backdrop-filter: blur(12px);
-      transition: all var(--ease);
+      transition: color var(--ease);
     }
 
-    .btn-secondary:hover {
-      background: var(--card-h);
-      border-color: var(--border-h);
-      transform: translateY(-2px);
-    }
+    .btn-ghost:hover { color: var(--c1); }
 
     /* === SECTIONS === */
     section { padding: 100px 0; }
@@ -433,11 +448,11 @@
       background-clip: text;
     }
 
-    /* Per-section gradient directions — same palette, different angles */
-    #services  .section-title { background-image: linear-gradient(118deg, var(--green), var(--blue)); }
-    #approach  .section-title { background-image: linear-gradient(47deg,  var(--blue), var(--violet)); }
-    #ecosystem .section-title { background-image: linear-gradient(212deg, var(--violet), var(--green)); }
-    #about     .section-title { background-image: linear-gradient(162deg, var(--green), var(--blue), var(--violet)); }
+    #tensions  .section-title { background-image: linear-gradient(118deg, var(--green), var(--blue)); }
+    #leakage   .section-title { background-image: linear-gradient(47deg,  var(--blue), var(--violet)); }
+    #models    .section-title { background-image: linear-gradient(212deg, var(--violet), var(--green)); }
+    #offer     .section-title { background-image: linear-gradient(162deg, var(--green), var(--blue), var(--violet)); }
+    #opinions  .section-title { background-image: linear-gradient(78deg,  var(--blue), var(--violet), var(--green)); }
     #contact   .section-title { background-image: linear-gradient(78deg,  var(--blue), var(--violet), var(--green)); }
 
     .section-sub {
@@ -449,7 +464,7 @@
 
     .section-hdr { margin-bottom: 64px; }
 
-    /* === SERVICES === */
+    /* === SVC CARDS (used for model cards) === */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -509,120 +524,126 @@
       line-height: 1.65;
     }
 
-    /* === APPROACH === */
-    .approach-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .apc-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 40px;
-      transition: all var(--ease);
-    }
-
-    .apc-card:hover {
-      background: var(--card-h);
-      border-color: var(--border-h);
-    }
-
-    .apc-num {
-      font-size: 52px;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 22px;
-      background: var(--grad-h);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .apc-card h3 {
-      font-size: 20px;
+    .svc-impact {
+      display: block;
+      font-size: 13px;
       font-weight: 600;
-      margin-bottom: 14px;
+      color: var(--green);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
     }
 
-    .apc-card p {
-      font-size: 15px;
-      color: var(--c2);
-      line-height: 1.72;
-    }
-
-    /* === ECOSYSTEM === */
-    .eco-grid {
+    /* === TENSIONS === */
+    .tensions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
     }
 
-    .eco-card {
+    .tension-card {
       background: var(--card);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
       border-radius: var(--r);
       padding: 28px;
       transition: all var(--ease);
     }
 
-    .eco-card:hover {
+    .tension-card:hover {
       background: var(--card-h);
       border-color: var(--border-h);
+      border-left-color: var(--green);
     }
 
-    .eco-icon {
-      font-size: 34px;
-      margin-bottom: 18px;
+    .tension-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--c1);
     }
 
-    .eco-card h3 {
-      font-size: 17px;
-      font-weight: 600;
-      margin-bottom: 9px;
-    }
-
-    .eco-card p {
+    .tension-card p {
       font-size: 14px;
       color: var(--c2);
       line-height: 1.65;
     }
 
+    .tension-truth {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--c3);
+      margin-top: 14px;
+    }
 
-    /* === ABOUT === */
-    .about-inner {
+    /* === BEFORE / AFTER === */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .ba-col { padding: 36px; }
+
+    .ba-before { background: rgba(255, 60, 60, 0.04); border-right: 1px solid var(--border); }
+    .ba-after  { background: rgba(0, 212, 160, 0.06); }
+
+    .ba-header {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .ba-before .ba-header { color: rgba(255,80,80,0.8); }
+    .ba-after  .ba-header { color: var(--green); }
+
+    .ba-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ba-row:last-child { border-bottom: none; }
+
+    .ba-cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--c3);
+    }
+
+    .ba-text {
+      font-size: 14px;
+      color: var(--c2);
+      line-height: 1.55;
+    }
+
+    .ba-after .ba-text {
+      color: var(--c1);
+      font-weight: 500;
+    }
+
+    /* === OFFER === */
+    .offer-inner {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
       gap: 80px;
       align-items: start;
     }
 
-    .about-highlight {
-      font-size: 21px;
-      font-weight: 500;
-      line-height: 1.6;
-      color: var(--c1);
-    }
+    .offer-left {}
 
-    .about-highlight em {
-      font-style: normal;
-      background: var(--grad-h);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .about-body p {
-      font-size: 16px;
-      color: var(--c2);
-      line-height: 1.82;
-      margin-bottom: 22px;
-    }
-
-    .about-body p:last-child { margin-bottom: 0; }
-
-    .about-tag {
+    .offer-tag {
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -633,7 +654,171 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--green);
+      margin-bottom: 24px;
+    }
+
+    .offer-headline {
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--c1);
+      margin-bottom: 24px;
+    }
+
+    .opinion-callout {
+      margin: 0;
+      padding: 20px 24px;
+      border-left: 3px solid var(--green);
+      background: var(--card);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--c2);
+      line-height: 1.7;
+    }
+
+    .offer-right {}
+
+    .deliverables-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 20px;
+    }
+
+    .deliverable-list {
+      list-style: none;
       margin-bottom: 32px;
+    }
+
+    .deliverable-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--c1);
+      line-height: 1.5;
+    }
+
+    .deliverable-item:last-child { border-bottom: none; }
+
+    .deliverable-item::before {
+      content: '✓';
+      background: var(--grad-h);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .risk-strip {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+    }
+
+    .risk-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--c2);
+    }
+
+    .risk-item::before {
+      content: '·';
+      color: var(--green);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .risk-item:first-child::before { display: none; }
+
+    /* === OPINIONS === */
+    .opinions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .opinion-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px 28px 28px;
+      position: relative;
+      transition: all var(--ease);
+    }
+
+    .opinion-card:hover {
+      background: var(--card-h);
+      border-color: var(--border-h);
+    }
+
+    .opinion-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 12px; left: 20px;
+      font-size: 72px;
+      line-height: 0.8;
+      color: var(--green);
+      opacity: 0.22;
+      font-family: Georgia, serif;
+    }
+
+    .opinion-card blockquote {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--c1);
+      padding-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .opinion-card p {
+      font-size: 13px;
+      color: var(--c2);
+      line-height: 1.65;
+    }
+
+    /* === TARGET STRIP === */
+    .target-strip {
+      padding: 20px 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .target-strip strong {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--c2);
+      margin-right: 4px;
+    }
+
+    .target-pill {
+      display: inline-flex;
+      padding: 5px 14px;
+      background: var(--grad);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
     }
 
     /* === CONTACT === */
@@ -645,6 +830,13 @@
 
     .contact-section .section-sub {
       margin: 0 auto 48px;
+    }
+
+    .contact-proof {
+      display: block;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--c3);
     }
 
     /* === FOOTER === */
@@ -702,9 +894,19 @@
 
     /* === RESPONSIVE === */
     @media (max-width: 900px) {
-      .about-inner {
+      .offer-inner {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+      .ba-before {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
       }
     }
 
@@ -792,7 +994,6 @@
       transition: opacity 0.4s ease;
     }
 
-    /* Desktop — compact ovals, appear on hover */
     .nav-links a::before {
       width: 90%; height: 13px;
       filter: blur(12px);
@@ -800,7 +1001,6 @@
     }
     .nav-links a:hover::before { opacity: 0.75; }
 
-    /* Mobile — wider ovals, always subtly on, brighter on hover */
     .mobile-menu a::before {
       width: 68%; height: 20px;
       filter: blur(20px);
@@ -808,7 +1008,6 @@
     }
     .mobile-menu a:hover::before { opacity: 0.65; }
 
-    /* Per-item colors and tilt angles */
     .nav-links li:nth-child(1) a::before,
     .mobile-menu a:nth-child(1)::before {
       background: var(--green);
@@ -855,10 +1054,10 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#services"  data-i18n="nav.services">Services</a></li>
-      <li><a href="#approach"  data-i18n="nav.approach">Approach</a></li>
-      <li><a href="#ecosystem" data-i18n="nav.clients">Clients</a></li>
-      <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+      <li><a href="#tensions" data-i18n="nav.tensions">The Problem</a></li>
+      <li><a href="#offer"    data-i18n="nav.offer">The Offer</a></li>
+      <li><a href="#opinions" data-i18n="nav.opinions">Our POV</a></li>
+      <li><a href="#contact"  data-i18n="nav.contact">Contact</a></li>
     </ul>
 
     <div class="nav-actions">
@@ -879,10 +1078,10 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <a href="#services"  data-i18n="nav.services">Services</a>
-  <a href="#approach"  data-i18n="nav.approach">Approche</a>
-  <a href="#ecosystem" data-i18n="nav.clients">Clients</a>
-  <a href="#contact"   data-i18n="nav.contact">Contact</a>
+  <a href="#tensions" data-i18n="nav.tensions">The Problem</a>
+  <a href="#offer"    data-i18n="nav.offer">The Offer</a>
+  <a href="#opinions" data-i18n="nav.opinions">Our POV</a>
+  <a href="#contact"  data-i18n="nav.contact">Contact</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -897,159 +1096,221 @@
   <div class="hero-content">
     <div class="hero-badge">
       <div class="badge-dot"></div>
-      <span data-i18n="hero.tagline">Strategic Product Management</span>
+      <span data-i18n="hero.tagline">OSS Monetisation &middot; France &amp; Europe</span>
     </div>
 
     <h1>
-      <span class="grad-text" data-i18n="hero.headline">Built for the Open Source Ecosystem</span>
+      <span class="grad-text" data-i18n="hero.headline">Your OSS project is used by thousands. And makes you almost nothing.</span>
     </h1>
 
-    <p data-i18n="hero.sub">Publishers, integrators, and open source SaaS companies deserve product management that understands their unique dynamics &mdash; community, code, and commerce in balance.</p>
+    <p data-i18n="hero.sub">AI commoditises features. Hyperscalers fork your code. EU sovereignty budgets are flowing &mdash; but not to you. You need a monetisation model, not more contributors.</p>
+
+    <div class="urgency-strip">
+      <span class="urgency-pill" data-i18n="hero.urgency1">🤖 AI is eating your moat</span>
+      <span class="urgency-pill" data-i18n="hero.urgency2">☁️ Hyperscalers fork for free</span>
+      <span class="urgency-pill" data-i18n="hero.urgency3">🇪🇺 EU sovereignty budgets exist</span>
+    </div>
 
     <div class="hero-actions">
-      <a href="#contact"  class="btn-primary"  data-i18n="hero.cta">Book a Discovery Call</a>
-      <a href="#services" class="btn-secondary" data-i18n="hero.cta2">Discover services</a>
+      <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="hero.cta">Fix my OSS monetisation</a>
+      <a href="#tensions" class="btn-ghost" data-i18n="hero.cta2">See how it works ↓</a>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section id="services">
+<!-- ===== TENSIONS ===== -->
+<section id="tensions" class="alt-bg">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="nav.services">Services</div>
-      <h2 class="section-title" data-i18n="services.title">What I offer</h2>
-      <p class="section-sub" data-i18n="services.subtitle">Practical, hands-on product management engagements tailored to open source realities.</p>
+      <div class="section-label" data-i18n="tensions.label">The Real Problem</div>
+      <h2 class="section-title" data-i18n="tensions.title">GitHub stars do not pay salaries.</h2>
+      <p class="section-sub" data-i18n="tensions.sub">Five tensions every OSS company hits. Naming them is the first step.</p>
+    </div>
+
+    <div class="tensions-grid">
+      <div class="tension-card reveal">
+        <h3 data-i18n="t1.title">10,000 stars. &euro;0 ARR.</h3>
+        <p data-i18n="t1.desc">Adoption and revenue are different metrics. Most OSS companies optimise for one and wonder why the other does not follow.</p>
+        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+      </div>
+      <div class="tension-card reveal">
+        <h3 data-i18n="t2.title">Community vs customers</h3>
+        <p data-i18n="t2.desc">Every feature request from a power user is a distraction from what your ICP will pay for. Serving both without a model kills both.</p>
+        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+      </div>
+      <div class="tension-card reveal">
+        <h3 data-i18n="t3.title">The services trap</h3>
+        <p data-i18n="t3.desc">Professional services fill the revenue gap &mdash; until they consume your product team. 40% margin, 0% scalability.</p>
+        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+      </div>
+      <div class="tension-card reveal">
+        <h3 data-i18n="t4.title">The open-core dilemma</h3>
+        <p data-i18n="t4.desc">Draw the line too early and the community forks you. Too late and enterprise has no reason to pay. The line is a product decision, not a legal one.</p>
+        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+      </div>
+      <div class="tension-card reveal">
+        <h3 data-i18n="t5.title">Hyperscaler arbitrage</h3>
+        <p data-i18n="t5.desc">AWS and Azure take your Apache-licensed code, wrap it in managed hosting, and take your enterprise customers. You need defensibility before scale.</p>
+        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEAKAGE ===== -->
+<section id="leakage">
+  <div class="container">
+    <div class="section-hdr reveal">
+      <div class="section-label" data-i18n="leakage.label">The Leakage Audit</div>
+      <h2 class="section-title" data-i18n="leakage.title">Where your revenue goes before it reaches you.</h2>
+      <p class="section-sub" data-i18n="leakage.sub">Three places every OSS company loses revenue without realising it.</p>
+    </div>
+
+    <div class="before-after reveal">
+      <div class="ba-col ba-before">
+        <div class="ba-header" data-i18n="leak.before.label">Now</div>
+        <div class="ba-row">
+          <span class="ba-cat" data-i18n="leak1.label">Pricing</span>
+          <span class="ba-text" data-i18n="leak1.before">Free tier absorbs all usage &mdash; zero upgrade path</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-cat" data-i18n="leak2.label">Positioning</span>
+          <span class="ba-text" data-i18n="leak2.before">Messaging written for contributors, not buyers</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-cat" data-i18n="leak3.label">Roadmap</span>
+          <span class="ba-text" data-i18n="leak3.before">Roadmap driven by noisiest GitHub issues</span>
+        </div>
+      </div>
+      <div class="ba-col ba-after">
+        <div class="ba-header" data-i18n="leak.after.label">After LibreProduct</div>
+        <div class="ba-row">
+          <span class="ba-cat" data-i18n="leak1.label">Pricing</span>
+          <span class="ba-text" data-i18n="leak1.after">Clear value gates, 23% freemium&rarr;paid conversion</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-cat" data-i18n="leak2.label">Positioning</span>
+          <span class="ba-text" data-i18n="leak2.after">ICP-specific value prop, procurement-ready</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-cat" data-i18n="leak3.label">Roadmap</span>
+          <span class="ba-text" data-i18n="leak3.after">Roadmap driven by ICP revenue impact</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODELS ===== -->
+<section id="models" class="alt-bg">
+  <div class="container">
+    <div class="section-hdr reveal">
+      <div class="section-label" data-i18n="models.label">Models That Work</div>
+      <h2 class="section-title" data-i18n="models.title">Not every OSS company should be a SaaS.</h2>
+      <p class="section-sub" data-i18n="models.sub">The right model depends on your code, your community, and your customers &mdash; not on what is fashionable.</p>
     </div>
 
     <div class="services-grid">
       <div class="svc-card reveal">
-        <div class="svc-icon">&#128269;</div>
-        <h3 data-i18n="s1.title">Audit &amp; Assessment</h3>
-        <p data-i18n="s1.desc">Evaluate your product&rsquo;s current state. Identify gaps, strengths, and opportunities in your open source context.</p>
+        <div class="svc-icon">&#128273;</div>
+        <h3 data-i18n="m1.title">Open-core</h3>
+        <p data-i18n="m1.desc">What stays free, what becomes paid, how to draw the line without forking your community or locking out your enterprise.</p>
+        <span class="svc-impact" data-i18n="m1.impact">&rarr; &euro;80k&ndash;&euro;500k ARR on first enterprise tier</span>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-icon">&#127807;</div>
-        <h3 data-i18n="s2.title">Product Culture</h3>
-        <p data-i18n="s2.desc">Build a product-centric culture aligned with open source values, contributor dynamics, and community governance.</p>
+        <div class="svc-icon">&#9729;&#65039;</div>
+        <h3 data-i18n="m2.title">Managed cloud</h3>
+        <p data-i18n="m2.desc">When hosting adds real value vs. when it is just ops theatre. What makes your managed offering defensible against hyperscalers.</p>
+        <span class="svc-impact" data-i18n="m2.impact">&rarr; 3&ndash;5&times; higher LTV vs. self-hosted users</span>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-icon">&#9881;&#65039;</div>
-        <h3 data-i18n="s3.title">Product Process</h3>
-        <p data-i18n="s3.desc">Define and implement product processes adapted to open source development cycles and contributor expectations.</p>
+        <div class="svc-icon">&#128083;</div>
+        <h3 data-i18n="m3.title">Support &amp; services</h3>
+        <p data-i18n="m3.desc">How to capture professional services revenue without building a services company. Scope, margins, and the exit from the trap.</p>
+        <span class="svc-impact" data-i18n="m3.impact">&rarr; &euro;50k&ndash;&euro;300k per enterprise deal, 60%+ margin if scoped</span>
       </div>
       <div class="svc-card reveal">
-        <div class="svc-icon">&#127919;</div>
-        <h3 data-i18n="s4.title">Positioning &amp; Messaging</h3>
-        <p data-i18n="s4.desc">Craft sharp positioning for both community users and commercial customers &mdash; without compromising either.</p>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">&#128161;</div>
-        <h3 data-i18n="s5.title">Business Modeling</h3>
-        <p data-i18n="s5.desc">Find the right balance between open source sustainability, commercial revenue, and community trust.</p>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">&#128202;</div>
-        <h3 data-i18n="s6.title">Prioritization</h3>
-        <p data-i18n="s6.desc">Make informed decisions on what to build next, balancing community needs, strategic goals, and contributor capacity.</p>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">&#128506;&#65039;</div>
-        <h3 data-i18n="s7.title">Roadmapping</h3>
-        <p data-i18n="s7.desc">Build transparent, community-friendly roadmaps that align contributors, customers, and partners.</p>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">&#128226;</div>
-        <h3 data-i18n="s8.title">Promotion</h3>
-        <p data-i18n="s8.desc">Grow visibility in the open source ecosystem through communities, events, and open collaboration.</p>
+        <div class="svc-icon">&#127968;</div>
+        <h3 data-i18n="m4.title">Enterprise licensing</h3>
+        <p data-i18n="m4.desc">EU public sector, sovereignty compliance, procurement cycles. The market is real &mdash; but it requires a different go-to-market.</p>
+        <span class="svc-impact" data-i18n="m4.impact">&rarr; EU sovereignty tenders: &euro;200k&ndash;&euro;2M per contract</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== APPROACH ===== -->
-<section id="approach" class="alt-bg">
+<!-- ===== OFFER ===== -->
+<section id="offer">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="nav.approach">Approach</div>
-      <h2 class="section-title" data-i18n="approach.title">Open source is different</h2>
-      <p class="section-sub" data-i18n="approach.subtitle">Open source product management is not like startup product management. Different values, different communities, different economics.</p>
+      <div class="section-label" data-i18n="offer.label">The Engagement</div>
+      <h2 class="section-title" data-i18n="offer.title">30 days to a monetisation model you can execute.</h2>
     </div>
 
-    <div class="approach-grid">
-      <div class="apc-card reveal">
-        <div class="apc-num">01</div>
-        <h3 data-i18n="a1.title">Community-first</h3>
-        <p data-i18n="a1.desc">Every product decision starts with the community: contributors, users, and downstream projects. The ecosystem is your product.</p>
+    <div class="offer-inner">
+      <div class="offer-left reveal">
+        <div class="offer-tag">&#9201; <span data-i18n="offer.duration">6-week sprint</span></div>
+        <p class="offer-headline" data-i18n="offer.sub">You ship code. I ship a monetisation model.</p>
+        <div class="opinion-callout" data-i18n="offer.callout">Most OSS companies are service companies in denial. Services feel safe &mdash; they are just slow death by margin compression.</div>
       </div>
-      <div class="apc-card reveal">
-        <div class="apc-num">02</div>
-        <h3 data-i18n="a2.title">Transparent by default</h3>
-        <p data-i18n="a2.desc">Open roadmaps, public backlogs, honest communication. Openness is a feature, not a constraint.</p>
-      </div>
-      <div class="apc-card reveal">
-        <div class="apc-num">03</div>
-        <h3 data-i18n="a3.title">Sustainable economics</h3>
-        <p data-i18n="a3.desc">Build business models that fund development without exploiting community trust. Support, services, open core &mdash; done right.</p>
+
+      <div class="offer-right reveal">
+        <div class="deliverables-label" data-i18n="offer.deliverables.label">What you get</div>
+        <ul class="deliverable-list">
+          <li class="deliverable-item" data-i18n="offer.d1">OSS monetisation audit &mdash; where revenue leaks today</li>
+          <li class="deliverable-item" data-i18n="offer.d2">Positioning rewrite &mdash; ICP, value prop, competitive angle</li>
+          <li class="deliverable-item" data-i18n="offer.d3">Pricing model design &mdash; open-core tiers, enterprise, SaaS</li>
+          <li class="deliverable-item" data-i18n="offer.d4">OSS&rarr;paid funnel map &mdash; freemium gates, upgrade triggers</li>
+          <li class="deliverable-item" data-i18n="offer.d5">90-day product roadmap &mdash; revenue-weighted</li>
+          <li class="deliverable-item" data-i18n="offer.d6">1 working session/week for 6 weeks</li>
+        </ul>
+        <div class="risk-strip">
+          <span class="risk-item" data-i18n="offer.risk1">Clear scope</span>
+          <span class="risk-item" data-i18n="offer.risk2">Fixed timeline</span>
+          <span class="risk-item" data-i18n="offer.risk3">No retainer trap</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ECOSYSTEM ===== -->
-<section id="ecosystem">
+<!-- ===== OPINIONS ===== -->
+<section id="opinions" class="alt-bg">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="nav.clients">Clients</div>
-      <h2 class="section-title" data-i18n="clients.title">Open Source Ecosystem</h2>
-      <p class="section-sub" data-i18n="clients.subtitle">I work with companies that consider open source a strategic asset, not just a cost reduction.</p>
+      <div class="section-label" data-i18n="opinions.label">Strong Opinions</div>
+      <h2 class="section-title" data-i18n="opinions.title">Things most PMs will not tell you.</h2>
     </div>
 
-    <div class="eco-grid">
-      <div class="eco-card reveal">
-        <div class="eco-icon">&#128230;</div>
-        <h3 data-i18n="clients.publishers">Software Publishers</h3>
-        <p data-i18n="clients.publishers.desc">Companies that create and maintain open source projects as their core business.</p>
+    <div class="opinions-grid">
+      <div class="opinion-card reveal">
+        <blockquote data-i18n="o1.quote">Most OSS companies are service companies in denial.</blockquote>
+        <p data-i18n="o1.desc">If more than 40% of your revenue comes from custom dev or consulting, you do not have a product business yet. You have a billing model that feels safer than it is.</p>
       </div>
-      <div class="eco-card reveal">
-        <div class="eco-icon">&#128295;</div>
-        <h3 data-i18n="clients.integrators">Integrators</h3>
-        <p data-i18n="clients.integrators.desc">Companies that deploy, integrate, and support open source software for their customers.</p>
+      <div class="opinion-card reveal">
+        <blockquote data-i18n="o2.quote">Your pricing page is where your positioning goes to die.</blockquote>
+        <p data-i18n="o2.desc">If you cannot explain in one sentence why your enterprise tier costs 10&times; more than community, your sales team cannot either.</p>
       </div>
-      <div class="eco-card reveal">
-        <div class="eco-icon">&#9729;&#65039;</div>
-        <h3 data-i18n="clients.saas">Open Source SaaS</h3>
-        <p data-i18n="clients.saas.desc">Companies that offer open source products as managed cloud services.</p>
+      <div class="opinion-card reveal">
+        <blockquote data-i18n="o3.quote">Open-core only works if the closed part solves a problem the open part creates.</blockquote>
+        <p data-i18n="o3.desc">Not &ldquo;more features.&rdquo; The closed tier needs to be the natural answer to the friction of running the open tier at scale.</p>
       </div>
-      <div class="eco-card reveal">
-        <div class="eco-icon">&#127758;</div>
-        <h3 data-i18n="clients.europe">France &amp; Europe</h3>
-        <p data-i18n="clients.europe.desc">Primarily focused on the French and European open source ecosystem.</p>
+      <div class="opinion-card reveal">
+        <blockquote data-i18n="o4.quote">GitHub stars measure popularity. ARR measures product-market fit. Confusing them is fatal.</blockquote>
+        <p data-i18n="o4.desc">Stars are vanity. DAU from your target ICP is traction. Revenue from that ICP is fit. Everything else is noise.</p>
+      </div>
+      <div class="opinion-card reveal">
+        <blockquote data-i18n="o5.quote">EU sovereignty is a real budget line &mdash; but only if you speak procurement, not engineering.</blockquote>
+        <p data-i18n="o5.desc">The EU NIS2, DORA, and sovereignty mandates create real demand. OSS companies that learn to sell to this motion will own the decade.</p>
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about" class="alt-bg">
-  <div class="container">
-    <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="about.label">Why LibreProduct</div>
-      <h2 class="section-title" data-i18n="about.title">Product management that speaks your language</h2>
-    </div>
-
-    <div class="about-inner">
-      <div class="reveal">
-        <div class="about-tag">&#9997;&#65039; <span data-i18n="about.tag">Fractional Product Manager</span></div>
-        <p class="about-highlight" data-i18n="about.highlight">Open source companies face unique challenges that generic product management doesn&rsquo;t address.</p>
-      </div>
-
-      <div class="about-body">
-        <p class="reveal" data-i18n="about.p1">You are building for communities you don&rsquo;t fully control, competing with the very software you give away for free, and explaining complex product decisions to both technical contributors and business customers.</p>
-        <p class="reveal" data-i18n="about.p2">LibreProduct brings dedicated Product Management expertise to companies navigating this space &mdash; from early-stage open source projects finding their market fit, to established editors scaling their commercial offering.</p>
-        <p class="reveal" data-i18n="about.p3">I embed in your team, understand your context, and help you build the right product the right way &mdash; respecting the values that make free and open source software meaningful.</p>
-      </div>
+    <div class="target-strip reveal">
+      <strong data-i18n="target.label">Built for:</strong>
+      <span class="target-pill" data-i18n="target.p1">OSS startups</span>
+      <span class="target-pill" data-i18n="target.p2">5&ndash;50 people</span>
+      <span class="target-pill" data-i18n="target.p3">France &amp; Europe</span>
+      <span class="target-pill" data-i18n="target.p4">Pre or post Series A</span>
     </div>
   </div>
 </section>
@@ -1058,12 +1319,12 @@
 <section id="contact" class="contact-section">
   <div class="container reveal">
     <div class="section-label" data-i18n="nav.contact">Contact</div>
-    <h2 class="section-title" data-i18n="contact.title">Ready to Ship the Right Product?</h2>
-    <p class="section-sub" data-i18n="contact.subtitle">Turn your open source product into a true competitive advantage. Book a free discovery call and let&rsquo;s map out a clear path forward.</p>
+    <h2 class="section-title" data-i18n="contact.title">Let&rsquo;s turn your usage into revenue.</h2>
+    <p class="section-sub" data-i18n="contact.subtitle">30-minute call. No deck required. Tell me where you&rsquo;re stuck.</p>
     <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:0;">
-      <span data-i18n="contact.cta">Book Your Free Call</span>
-      <span>&rarr;</span>
+      <span data-i18n="contact.cta">Fix my OSS monetisation</span>
     </a>
+    <span class="contact-proof" data-i18n="contact.proof">OSS founders in France &amp; Europe &middot; Responds within 24h</span>
   </div>
 </section>
 
@@ -1076,14 +1337,14 @@
           <div class="logo-mark">LP</div>
           <span class="logo-name">Libre<em>Product</em></span>
         </a>
-        <p class="footer-tag" data-i18n="footer.tagline">Strategic Product Management for the Open Source Ecosystem</p>
+        <p class="footer-tag" data-i18n="footer.tagline">OSS Monetisation for French &amp; European Companies</p>
       </div>
 
       <ul class="footer-links">
-        <li><a href="#services"  data-i18n="nav.services">Services</a></li>
-        <li><a href="#approach"  data-i18n="nav.approach">Approach</a></li>
-        <li><a href="#ecosystem" data-i18n="nav.clients">Clients</a></li>
-        <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+        <li><a href="#tensions" data-i18n="nav.tensions">The Problem</a></li>
+        <li><a href="#offer"    data-i18n="nav.offer">The Offer</a></li>
+        <li><a href="#opinions" data-i18n="nav.opinions">Our POV</a></li>
+        <li><a href="#contact"  data-i18n="nav.contact">Contact</a></li>
       </ul>
 
       <p class="footer-copy">&copy; 2025 LibreProduct &mdash; <span data-i18n="footer.rights">All rights reserved</span></p>
@@ -1092,129 +1353,213 @@
 </footer>
 
 <script>
-/* ===== DATA ===== */
+/* ===== i18n DATA ===== */
 const T = {
   en: {
-    'nav.services':          'Services',
-    'nav.approach':          'Approach',
-    'nav.clients':           'Clients',
-    'nav.contact':           'Contact',
-    'hero.tagline':          'Strategic Product Management',
-    'hero.headline':         'Built for the Open Source Ecosystem',
-    'hero.sub':              'Publishers, integrators, and open source SaaS companies deserve product management that understands their unique dynamics — community, code, and commerce in balance.',
-    'hero.cta':              'Book a Discovery Call',
-    'hero.cta2':             'Discover services',
-    'services.title':        'What I offer',
-    'services.subtitle':     'Practical, hands-on product management engagements tailored to open source realities.',
-    's1.title': 'Audit & Assessment',
-    's1.desc':  'Evaluate your product’s current state. Identify gaps, strengths, and opportunities in your open source context.',
-    's2.title': 'Product Culture',
-    's2.desc':  'Build a product-centric culture aligned with open source values, contributor dynamics, and community governance.',
-    's3.title': 'Product Process',
-    's3.desc':  'Define and implement product processes adapted to open source development cycles and contributor expectations.',
-    's4.title': 'Positioning & Messaging',
-    's4.desc':  'Craft sharp positioning for both community users and commercial customers — without compromising either.',
-    's5.title': 'Business Modeling',
-    's5.desc':  'Find the right balance between open source sustainability, commercial revenue, and community trust.',
-    's6.title': 'Prioritization',
-    's6.desc':  'Make informed decisions on what to build next, balancing community needs, strategic goals, and contributor capacity.',
-    's7.title': 'Roadmapping',
-    's7.desc':  'Build transparent, community-friendly roadmaps that align contributors, customers, and partners.',
-    's8.title': 'Promotion',
-    's8.desc':  'Grow visibility in the open source ecosystem through communities, events, and open collaboration.',
-    'approach.title':    'Open source is different',
-    'approach.subtitle': 'Open source product management is not like startup product management. Different values, different communities, different economics.',
-    'a1.title': 'Community-first',
-    'a1.desc':  'Every product decision starts with the community: contributors, users, and downstream projects. The ecosystem is your product.',
-    'a2.title': 'Transparent by default',
-    'a2.desc':  'Open roadmaps, public backlogs, honest communication. Openness is a feature, not a constraint.',
-    'a3.title': 'Sustainable economics',
-    'a3.desc':  'Build business models that fund development without exploiting community trust. Support, services, open core — done right.',
-    'clients.title':           'Open Source Ecosystem',
-    'clients.subtitle':        'I work with companies that consider open source a strategic asset, not just a cost reduction.',
-    'clients.publishers':      'Software Publishers',
-    'clients.publishers.desc': 'Companies that create and maintain open source projects as their core business.',
-    'clients.integrators':     'Integrators',
-    'clients.integrators.desc':'Companies that deploy, integrate, and support open source software for their customers.',
-    'clients.saas':            'Open Source SaaS',
-    'clients.saas.desc':       'Companies that offer open source products as managed cloud services.',
-    'clients.europe':          'France & Europe',
-    'clients.europe.desc':     'Primarily focused on the French and European open source ecosystem.',
-    'cos.fr': 'French open source companies',
-    'cos.eu': 'European open source companies',
-    'about.label':     'Why LibreProduct',
-    'about.title':     'Product management that speaks your language',
-    'about.tag':       'Fractional Product Manager',
-    'about.highlight': 'Open source companies face unique challenges that generic product management doesn’t address.',
-    'about.p1': 'You are building for communities you don’t fully control, competing with the very software you give away for free, and explaining complex product decisions to both technical contributors and business customers.',
-    'about.p2': 'LibreProduct brings dedicated Product Management expertise to companies navigating this space — from early-stage open source projects finding their market fit, to established editors scaling their commercial offering.',
-    'about.p3': 'I embed in your team, understand your context, and help you build the right product the right way — respecting the values that make free and open source software meaningful.',
-    'contact.title':    'Ready to Ship the Right Product?',
-    'contact.subtitle': 'Turn your open source product into a true competitive advantage. Book a free discovery call and let\'s map out a clear path forward.',
-    'contact.cta':      'Book Your Free Call',
-    'footer.tagline': 'Strategic Product Management for the Open Source Ecosystem',
-    'footer.rights':  'All rights reserved',
+    'nav.tensions':   'The Problem',
+    'nav.offer':      'The Offer',
+    'nav.opinions':   'Our POV',
+    'nav.contact':    'Contact',
+
+    'hero.tagline':   'OSS Monetisation · France & Europe',
+    'hero.headline':  'Your OSS project is used by thousands. And makes you almost nothing.',
+    'hero.sub':       'AI commoditises features. Hyperscalers fork your code. EU sovereignty budgets are flowing — but not to you. You need a monetisation model, not more contributors.',
+    'hero.cta':       'Fix my OSS monetisation',
+    'hero.cta2':      'See how it works ↓',
+    'hero.urgency1':  '🤖 AI is eating your moat',
+    'hero.urgency2':  '☁️ Hyperscalers fork for free',
+    'hero.urgency3':  '🇪🇺 EU sovereignty budgets exist',
+
+    'tensions.label': 'The Real Problem',
+    'tensions.title': 'GitHub stars do not pay salaries.',
+    'tensions.sub':   'Five tensions every OSS company hits. Naming them is the first step.',
+    't1.title': '10,000 stars. €0 ARR.',
+    't1.desc':  'Adoption and revenue are different metrics. Most OSS companies optimise for one and wonder why the other does not follow.',
+    't2.title': 'Community vs customers',
+    't2.desc':  'Every feature request from a power user is a distraction from what your ICP will pay for. Serving both without a model kills both.',
+    't3.title': 'The services trap',
+    't3.desc':  'Professional services fill the revenue gap — until they consume your product team. 40% margin, 0% scalability.',
+    't4.title': 'The open-core dilemma',
+    't4.desc':  'Draw the line too early and the community forks you. Too late and enterprise has no reason to pay. The line is a product decision, not a legal one.',
+    't5.title': 'Hyperscaler arbitrage',
+    't5.desc':  'AWS and Azure take your Apache-licensed code, wrap it in managed hosting, and take your enterprise customers. You need defensibility before scale.',
+    't.familiar': 'Sound familiar?',
+
+    'leakage.label':      'The Leakage Audit',
+    'leakage.title':      'Where your revenue goes before it reaches you.',
+    'leakage.sub':        'Three places every OSS company loses revenue without realising it.',
+    'leak.before.label':  'Now',
+    'leak.after.label':   'After LibreProduct',
+    'leak1.label':  'Pricing',
+    'leak1.before': 'Free tier absorbs all usage — zero upgrade path',
+    'leak1.after':  'Clear value gates, 23% freemium→paid conversion',
+    'leak2.label':  'Positioning',
+    'leak2.before': 'Messaging written for contributors, not buyers',
+    'leak2.after':  'ICP-specific value prop, procurement-ready',
+    'leak3.label':  'Roadmap',
+    'leak3.before': 'Roadmap driven by noisiest GitHub issues',
+    'leak3.after':  'Roadmap driven by ICP revenue impact',
+
+    'models.label': 'Models That Work',
+    'models.title': 'Not every OSS company should be a SaaS.',
+    'models.sub':   'The right model depends on your code, your community, and your customers — not on what is fashionable.',
+    'm1.title': 'Open-core',
+    'm1.desc':  'What stays free, what becomes paid, how to draw the line without forking your community or locking out your enterprise.',
+    'm1.impact': '→ €80k–€500k ARR on first enterprise tier',
+    'm2.title': 'Managed cloud',
+    'm2.desc':  'When hosting adds real value vs. when it is just ops theatre. What makes your managed offering defensible against hyperscalers.',
+    'm2.impact': '→ 3–5× higher LTV vs. self-hosted users',
+    'm3.title': 'Support & services',
+    'm3.desc':  'How to capture professional services revenue without building a services company. Scope, margins, and the exit from the trap.',
+    'm3.impact': '→ €50k–€300k per enterprise deal, 60%+ margin if scoped',
+    'm4.title': 'Enterprise licensing',
+    'm4.desc':  'EU public sector, sovereignty compliance, procurement cycles. The market is real — but it requires a different go-to-market.',
+    'm4.impact': '→ EU sovereignty tenders: €200k–€2M per contract',
+
+    'offer.label':             'The Engagement',
+    'offer.title':             '30 days to a monetisation model you can execute.',
+    'offer.sub':               'You ship code. I ship a monetisation model.',
+    'offer.duration':          '6-week sprint',
+    'offer.callout':           'Most OSS companies are service companies in denial. Services feel safe — they are just slow death by margin compression.',
+    'offer.deliverables.label': 'What you get',
+    'offer.d1': 'OSS monetisation audit — where revenue leaks today',
+    'offer.d2': 'Positioning rewrite — ICP, value prop, competitive angle',
+    'offer.d3': 'Pricing model design — open-core tiers, enterprise, SaaS',
+    'offer.d4': 'OSS→paid funnel map — freemium gates, upgrade triggers',
+    'offer.d5': '90-day product roadmap — revenue-weighted',
+    'offer.d6': '1 working session/week for 6 weeks',
+    'offer.risk1': 'Clear scope',
+    'offer.risk2': 'Fixed timeline',
+    'offer.risk3': 'No retainer trap',
+
+    'opinions.label': 'Strong Opinions',
+    'opinions.title': 'Things most PMs will not tell you.',
+    'o1.quote': 'Most OSS companies are service companies in denial.',
+    'o1.desc':  'If more than 40% of your revenue comes from custom dev or consulting, you do not have a product business yet. You have a billing model that feels safer than it is.',
+    'o2.quote': 'Your pricing page is where your positioning goes to die.',
+    'o2.desc':  'If you cannot explain in one sentence why your enterprise tier costs 10× more than community, your sales team cannot either.',
+    'o3.quote': 'Open-core only works if the closed part solves a problem the open part creates.',
+    'o3.desc':  'Not “more features.” The closed tier needs to be the natural answer to the friction of running the open tier at scale.',
+    'o4.quote': 'GitHub stars measure popularity. ARR measures product-market fit. Confusing them is fatal.',
+    'o4.desc':  'Stars are vanity. DAU from your target ICP is traction. Revenue from that ICP is fit. Everything else is noise.',
+    'o5.quote': 'EU sovereignty is a real budget line — but only if you speak procurement, not engineering.',
+    'o5.desc':  'The EU NIS2, DORA, and sovereignty mandates create real demand. OSS companies that learn to sell to this motion will own the decade.',
+    'target.label': 'Built for:',
+    'target.p1': 'OSS startups',
+    'target.p2': '5–50 people',
+    'target.p3': 'France & Europe',
+    'target.p4': 'Pre or post Series A',
+
+    'contact.title':    'Let’s turn your usage into revenue.',
+    'contact.subtitle': '30-minute call. No deck required. Tell me where you’re stuck.',
+    'contact.cta':      'Fix my OSS monetisation',
+    'contact.proof':    'OSS founders in France & Europe · Responds within 24h',
+
+    'footer.tagline': 'OSS Monetisation for French & European Companies',
+    'footer.rights':  'All rights reserved'
   },
   fr: {
-    'nav.services':          'Services',
-    'nav.approach':          'Approche',
-    'nav.clients':           'Clients',
-    'nav.contact':           'Contact',
-    'hero.tagline':          'Product Management Stratégique',
-    'hero.headline':         'Conçu pour l’Écosystème Open Source',
-    'hero.sub':              'Les éditeurs, intégrateurs et entreprises SaaS open source méritent un product management qui comprend leurs dynamiques propres — communauté, code et commerce en équilibre.',
-    'hero.cta':              'Réserver un appel découverte',
-    'hero.cta2':             'Découvrir les services',
-    'services.title':        'Ce que je propose',
-    'services.subtitle':     'Des missions de product management concrètes, adaptées aux réalités de l’open source.',
-    's1.title': 'Audit & Diagnostic',
-    's1.desc':  'Évaluez l’état actuel de votre produit. Identifiez les lacunes, les forces et les opportunités dans votre contexte open source.',
-    's2.title': 'Culture Produit',
-    's2.desc':  'Construisez une culture produit alignée sur les valeurs du logiciel libre, les dynamiques contributives et la gouvernance communautaire.',
-    's3.title': 'Processus Produit',
-    's3.desc':  'Définissez et mettez en œuvre des processus produit adaptés aux cycles de développement open source et aux attentes des contributeurs.',
-    's4.title': 'Positionnement & Messaging',
-    's4.desc':  'Construisez un positionnement clair pour vos utilisateurs communautaires et vos clients commerciaux — sans compromis.',
-    's5.title': 'Modélisation Économique',
-    's5.desc':  'Trouvez le bon équilibre entre pérennité open source, revenus commerciaux et confiance de la communauté.',
-    's6.title': 'Priorisation',
-    's6.desc':  'Prenez des décisions éclairées sur ce qu’il faut construire ensuite, en équilibrant besoins communautaires, objectifs stratégiques et capacité contributive.',
-    's7.title': 'Roadmapping',
-    's7.desc':  'Construisez des roadmaps transparentes et ouvertes à la communauté, alignant contributeurs, clients et partenaires.',
-    's8.title': 'Promotion',
-    's8.desc':  'Développez la visibilité dans l’écosystème open source via les communautés, les événements et la collaboration ouverte.',
-    'approach.title':    'L’open source, c’est différent',
-    'approach.subtitle': 'Le product management open source n’est pas celui des startups. Valeurs différentes, communautés différentes, économies différentes.',
-    'a1.title': 'Communauté d’abord',
-    'a1.desc':  'Chaque décision produit commence par la communauté : contributeurs, utilisateurs, projets aval. L’écosystème est votre produit.',
-    'a2.title': 'Transparent par défaut',
-    'a2.desc':  'Roadmaps ouvertes, backlogs publics, communication honnête. L’ouverture est une fonctionnalité, pas une contrainte.',
-    'a3.title': 'Économie durable',
-    'a3.desc':  'Construisez des modèles économiques qui financent le développement sans exploiter la confiance de la communauté. Support, services, open core — bien fait.',
-    'clients.title':           'Écosystème Open Source',
-    'clients.subtitle':        'Je travaille avec des entreprises qui considèrent l’open source comme un actif stratégique, pas seulement une réduction de coûts.',
-    'clients.publishers':      'Éditeurs de Logiciels',
-    'clients.publishers.desc': 'Entreprises qui créent et maintiennent des projets open source comme activité principale.',
-    'clients.integrators':     'Intégrateurs',
-    'clients.integrators.desc':'Entreprises qui déploient, intègrent et supportent des logiciels open source pour leurs clients.',
-    'clients.saas':            'SaaS Open Source',
-    'clients.saas.desc':       'Entreprises qui proposent des logiciels open source en services cloud gérés.',
-    'clients.europe':          'France & Europe',
-    'clients.europe.desc':     'Principalement centré sur l’écosystème open source français et européen.',
-    'cos.fr': 'Entreprises open source françaises',
-    'cos.eu': 'Entreprises open source européennes',
-    'about.label':     'Pourquoi LibreProduct',
-    'about.title':     'Product management qui parle votre langue',
-    'about.tag':       'Product Manager Fractionnel',
-    'about.highlight': 'Les entreprises open source font face à des défis uniques que le product management générique ne sait pas adresser.',
-    'about.p1': 'Vous construisez pour des communautés que vous ne contrôlez pas entièrement, vous êtes en concurrence avec le logiciel que vous distribuez gratuitement, et vous devez expliquer des décisions produit complexes à la fois à des contributeurs techniques et à des clients commerciaux.',
-    'about.p2': 'LibreProduct apporte une expertise Product Management dédiée aux entreprises qui évoluent dans cet espace — des projets open source en phase initiale cherchant leur product-market fit, aux éditeurs établis faisant croître leur offre commerciale.',
-    'about.p3': 'Je m’intègre dans votre équipe, comprends votre contexte, et vous aide à construire le bon produit de la bonne façon — dans le respect des valeurs qui font la richesse du logiciel libre.',
-    'contact.title':    'Prêt à construire le bon produit ?',
-    'contact.subtitle': 'Faites de votre produit open source un véritable avantage concurrentiel. Réservez un appel découverte gratuit et définissons ensemble une feuille de route claire.',
-    'contact.cta':      'Réserver votre appel gratuit',
-    'footer.tagline': 'Product Management Stratégique pour l’Écosystème Open Source',
-    'footer.rights':  'Tous droits réservés',
+    'nav.tensions':   'Le Problème',
+    'nav.offer':      'L’Offre',
+    'nav.opinions':   'Notre Vision',
+    'nav.contact':    'Contact',
+
+    'hero.tagline':   'Monétisation OSS · France & Europe',
+    'hero.headline':  'Votre projet OSS est utilisé par des milliers. Et ne vous rapporte presque rien.',
+    'hero.sub':       'L’IA commoditise vos fonctionnalités. Les hyperscalers forkent votre code. Les budgets souveraineté européens existent — mais ne vous atteignent pas. Vous avez besoin d’un modèle de monétisation, pas de contributeurs supplémentaires.',
+    'hero.cta':       'Monétiser mon OSS',
+    'hero.cta2':      'Voir comment ça marche ↓',
+    'hero.urgency1':  '🤖 L’IA érode votre avantage',
+    'hero.urgency2':  '☁️ Les hyperscalers forkent sans payer',
+    'hero.urgency3':  '🇪🇺 Les budgets souveraineté existent',
+
+    'tensions.label': 'Le Vrai Problème',
+    'tensions.title': 'Les étoiles GitHub ne paient pas les salaires.',
+    'tensions.sub':   'Cinq tensions que toute entreprise OSS rencontre. Les nommer est la première étape.',
+    't1.title': '10 000 étoiles. 0 € d’ARR.',
+    't1.desc':  'Adoption et revenus sont deux métriques distinctes. La plupart des entreprises OSS optimisent l’une et s’étonnent que l’autre ne suive pas.',
+    't2.title': 'Communauté vs clients',
+    't2.desc':  'Chaque demande d’un power user est une distraction par rapport à ce que votre ICP paiera. Servir les deux sans modèle, c’est perdre les deux.',
+    't3.title': 'Le piège des services',
+    't3.desc':  'Les services professionnels comblent le manque de revenus — jusqu’à ce qu’ils consomment votre équipe produit. 40 % de marge, 0 % de scalabilité.',
+    't4.title': 'Le dilemme open-core',
+    't4.desc':  'Tracez la ligne trop tôt et la communauté vous fork. Trop tard et l’enterprise n’a aucune raison de payer. Cette ligne est une décision produit, pas juridique.',
+    't5.title': 'L’arbitrage des hyperscalers',
+    't5.desc':  'AWS et Azure prennent votre code Apache, l’encapsulent en hébergement géré, et prennent vos clients enterprise. Vous avez besoin de défensabilité avant la croissance.',
+    't.familiar': 'Ça vous parle ?',
+
+    'leakage.label':      'L’Audit de Fuite',
+    'leakage.title':      'Où vos revenus fuient avant de vous atteindre.',
+    'leakage.sub':        'Trois endroits où chaque entreprise OSS perd des revenus sans s’en rendre compte.',
+    'leak.before.label':  'Maintenant',
+    'leak.after.label':   'Après LibreProduct',
+    'leak1.label':  'Tarification',
+    'leak1.before': 'La tranche gratuite absorbe tout l’usage — aucun parcours d’upgrade',
+    'leak1.after':  'Portes de valeur claires, 23 % de conversion freemium→payant',
+    'leak2.label':  'Positionnement',
+    'leak2.before': 'Messaging écrit pour les contributeurs, pas les acheteurs',
+    'leak2.after':  'Proposition de valeur ICP-spécifique, prête pour les achats',
+    'leak3.label':  'Roadmap',
+    'leak3.before': 'Roadmap pilotée par les issues GitHub les plus bruyantes',
+    'leak3.after':  'Roadmap pilotée par l’impact revenus ICP',
+
+    'models.label': 'Modèles qui Fonctionnent',
+    'models.title': 'Toute entreprise OSS ne devrait pas être un SaaS.',
+    'models.sub':   'Le bon modèle dépend de votre code, votre communauté et vos clients — pas de ce qui est à la mode.',
+    'm1.title': 'Open-core',
+    'm1.desc':  'Ce qui reste gratuit, ce qui devient payant, comment tracer la ligne sans forker votre communauté ni bloquer votre enterprise.',
+    'm1.impact': '→ 80k–500k € d’ARR sur le premier palier enterprise',
+    'm2.title': 'Cloud managé',
+    'm2.desc':  'Quand l’hébergement ajoute une vraie valeur vs. quand c’est du théâtre ops. Ce qui rend votre offre managée défendable face aux hyperscalers.',
+    'm2.impact': '→ LTV 3 à 5× supérieure aux utilisateurs self-hosted',
+    'm3.title': 'Support & services',
+    'm3.desc':  'Comment capter les revenus de services professionnels sans construire une société de services. Périmètre, marges et sortie du piège.',
+    'm3.impact': '→ 50k–300k € par deal enterprise, 60 %+ de marge si cadré',
+    'm4.title': 'Licence enterprise',
+    'm4.desc':  'Secteur public européen, conformité souveraineté, cycles d’achat. Le marché est réel — mais il nécessite un go-to-market différent.',
+    'm4.impact': '→ Appels d’offres souveraineté UE : 200k– 2M € par contrat',
+
+    'offer.label':             'L’Engagement',
+    'offer.title':             '30 jours pour un modèle de monétisation que vous pouvez exécuter.',
+    'offer.sub':               'Vous shippez du code. Je shippe un modèle de monétisation.',
+    'offer.duration':          'Sprint de 6 semaines',
+    'offer.callout':           'La plupart des entreprises OSS sont des sociétés de services en déni. Les services semblent sûrs — c’est juste une mort lente par compression de marges.',
+    'offer.deliverables.label': 'Ce que vous obtenez',
+    'offer.d1': 'Audit de monétisation OSS — où les revenus fuient aujourd’hui',
+    'offer.d2': 'Refonte du positionnement — ICP, proposition de valeur, angle concurrentiel',
+    'offer.d3': 'Design du modèle tarifaire — paliers open-core, enterprise, SaaS',
+    'offer.d4': 'Carte de l’entonnoir OSS→payant — portes freemium, déclencheurs d’upgrade',
+    'offer.d5': 'Roadmap produit 90 jours — pondérée par revenus',
+    'offer.d6': '1 session de travail/semaine pendant 6 semaines',
+    'offer.risk1': 'Périmètre clair',
+    'offer.risk2': 'Calendrier fixe',
+    'offer.risk3': 'Sans piège d’abonnement',
+
+    'opinions.label': 'Opinions Franches',
+    'opinions.title': 'Ce que la plupart des PMs ne vous disent pas.',
+    'o1.quote': 'La plupart des entreprises OSS sont des sociétés de services en déni.',
+    'o1.desc':  'Si plus de 40 % de vos revenus viennent du dev custom ou du conseil, vous n’avez pas encore un business produit. Vous avez un modèle de facturation qui semble plus sûr qu’il ne l’est.',
+    'o2.quote': 'Votre page de prix est l’endroit où votre positionnement va mourir.',
+    'o2.desc':  'Si vous ne pouvez pas expliquer en une phrase pourquoi votre palier enterprise coûte 10× plus que le palier communautaire, votre équipe commerciale ne le peut pas non plus.',
+    'o3.quote': 'L’open-core ne fonctionne que si la partie fermée résout un problème que la partie ouverte crée.',
+    'o3.desc':  'Pas « plus de fonctionnalités ». Le palier fermé doit être la réponse naturelle à la friction du palier ouvert à grande échelle.',
+    'o4.quote': 'Les étoiles GitHub mesurent la popularité. L’ARR mesure le product-market fit. Les confondre est fatal.',
+    'o4.desc':  'Les étoiles sont vanité. Les DAU de votre ICP cible, c’est de la traction. Les revenus de cet ICP, c’est le fit. Tout le reste est du bruit.',
+    'o5.quote': 'La souveraineté européenne est une vraie ligne budgétaire — mais seulement si vous parlez marchés publics, pas ingénierie.',
+    'o5.desc':  'Les mandats NIS2, DORA et souveraineté de l’UE créent une vraie demande. Les entreprises OSS qui apprennent à vendre à ce mouvement domineront la décennie.',
+    'target.label': 'Pour :',
+    'target.p1': 'Startups OSS',
+    'target.p2': '5–50 personnes',
+    'target.p3': 'France & Europe',
+    'target.p4': 'Pré ou post Série A',
+
+    'contact.title':    'Transformons votre usage en revenus.',
+    'contact.subtitle': '30 minutes d’appel. Pas de présentation requise. Dites-moi où vous bloquez.',
+    'contact.cta':      'Monétiser mon OSS',
+    'contact.proof':    'Fondateurs OSS en France & Europe · Réponse sous 24h',
+
+    'footer.tagline': 'Monétisation OSS pour entreprises françaises et européennes',
+    'footer.rights':  'Tous droits réservés'
   }
 };
 
