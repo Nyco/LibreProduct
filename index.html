@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LibreProduct — Product Management for Open Source</title>
+  <meta name="description" content="Strategic Product Management for Free/Libre/Open Source companies. Publishers, integrators &amp; SaaS in France and Europe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* === TOKENS === */
+    :root {
+      --green:   #00d4a0;
+      --blue:    #3b9eff;
+      --violet:  #9b5de5;
+      --grad:    linear-gradient(135deg, var(--green), var(--blue), var(--violet));
+      --grad-h:  linear-gradient(90deg,  var(--green), var(--blue), var(--violet));
+      --font:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --nav-h:   64px;
+      --r:       16px;
+      --r-sm:    8px;
+      --ease:    0.3s ease;
+      --max-w:   1200px;
+    }
+
+    [data-theme="dark"] {
+      --bg:          #07080d;
+      --bg2:         #0d1018;
+      --card:        rgba(255,255,255,0.04);
+      --card-h:      rgba(255,255,255,0.08);
+      --glass:       rgba(7,8,13,0.78);
+      --c1:          #eef2ff;
+      --c2:          rgba(238,242,255,0.62);
+      --c3:          rgba(238,242,255,0.35);
+      --border:      rgba(255,255,255,0.08);
+      --border-h:    rgba(255,255,255,0.18);
+      --shadow:      0 8px 32px rgba(0,0,0,0.45);
+    }
+
+    [data-theme="light"] {
+      --bg:          #f4f7ff;
+      --bg2:         #e8edff;
+      --card:        rgba(255,255,255,0.78);
+      --card-h:      rgba(255,255,255,0.97);
+      --glass:       rgba(244,247,255,0.88);
+      --c1:          #0d1018;
+      --c2:          rgba(13,16,24,0.65);
+      --c3:          rgba(13,16,24,0.42);
+      --border:      rgba(0,0,0,0.08);
+      --border-h:    rgba(0,0,0,0.18);
+      --shadow:      0 8px 32px rgba(0,0,0,0.10);
+    }
+
+    /* === GLOBAL === */
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--c1);
+      line-height: 1.6;
+      transition: background var(--ease), color var(--ease);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .grad-text {
+      background: var(--grad-h);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* === NAVBAR === */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      background: var(--glass);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      transition: background var(--ease), border-color var(--ease), box-shadow var(--ease);
+    }
+
+    .nav .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+      margin-right: 16px;
+    }
+
+    .logo-mark {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -1px;
+    }
+
+    .logo-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--c1);
+      letter-spacing: -0.3px;
+    }
+
+    .logo-name em {
+      font-style: normal;
+      background: var(--grad-h);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      flex: 1;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 6px 14px;
+      text-decoration: none;
+      color: var(--c2);
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: color var(--ease), background var(--ease);
+    }
+
+    .nav-links a:hover {
+      color: var(--c1);
+      background: var(--card);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-icon {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: var(--c2);
+      transition: all var(--ease);
+    }
+
+    .btn-icon:hover {
+      border-color: var(--border-h);
+      color: var(--c1);
+      background: var(--card-h);
+    }
+
+    .lang-toggle {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      overflow: hidden;
+      transition: border-color var(--ease);
+    }
+
+    .lang-btn {
+      padding: 6px 11px;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: var(--font);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--c3);
+      transition: all var(--ease);
+      letter-spacing: 0.8px;
+    }
+
+    .lang-btn.active {
+      background: var(--grad);
+      color: white;
+    }
+
+    /* === HERO === */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.22;
+      pointer-events: none;
+    }
+
+    [data-theme="light"] .blob { opacity: 0.16; }
+
+    .blob-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, var(--green) 0%, transparent 68%);
+      top: -180px; left: -120px;
+      animation: drift1 24s ease-in-out infinite;
+    }
+    .blob-2 {
+      width: 580px; height: 580px;
+      background: radial-gradient(circle, var(--blue) 0%, transparent 68%);
+      top: 80px; right: -180px;
+      animation: drift2 30s ease-in-out infinite;
+    }
+    .blob-3 {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, var(--violet) 0%, transparent 68%);
+      bottom: -80px; left: 38%;
+      animation: drift3 27s ease-in-out infinite;
+    }
+    .blob-4 {
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, var(--blue) 0%, transparent 68%);
+      bottom: 120px; left: 8%;
+      animation: drift4 35s ease-in-out infinite;
+    }
+
+    @keyframes drift1 {
+      0%, 100% { transform: translate(0,0); }
+      25%       { transform: translate(55px, 35px); }
+      50%       { transform: translate(20px, 80px); }
+      75%       { transform: translate(-35px, 28px); }
+    }
+    @keyframes drift2 {
+      0%, 100% { transform: translate(0,0); }
+      25%       { transform: translate(-48px, 55px); }
+      50%       { transform: translate(-75px, -18px); }
+      75%       { transform: translate(28px, -48px); }
+    }
+    @keyframes drift3 {
+      0%, 100% { transform: translate(0,0); }
+      33%       { transform: translate(-55px, -38px); }
+      66%       { transform: translate(38px, -72px); }
+    }
+    @keyframes drift4 {
+      0%, 100% { transform: translate(0,0); }
+      20%       { transform: translate(72px, -28px); }
+      40%       { transform: translate(38px, 55px); }
+      60%       { transform: translate(-45px, 72px); }
+      80%       { transform: translate(-72px, -18px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 880px;
+      padding: 80px 24px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--c2);
+      margin-bottom: 32px;
+      backdrop-filter: blur(12px);
+    }
+
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--grad);
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.6; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6.5vw, 84px);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+      margin-bottom: 26px;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--c2);
+      max-width: 620px;
+      margin: 0 auto 52px;
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--grad);
+      color: white;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity var(--ease), transform var(--ease), box-shadow var(--ease);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59,158,255,0.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--card);
+      color: var(--c1);
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: all var(--ease);
+    }
+
+    .btn-secondary:hover {
+      background: var(--card-h);
+      border-color: var(--border-h);
+      transform: translateY(-2px);
+    }
+
+    /* === SECTIONS === */
+    section { padding: 100px 0; }
+
+    .alt-bg { background: var(--bg2); }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--grad);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      margin-bottom: 18px;
+      line-height: 1.15;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--c2);
+      max-width: 640px;
+      line-height: 1.72;
+    }
+
+    .section-hdr { margin-bottom: 64px; }
+
+    /* === SERVICES === */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .svc-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--ease);
+    }
+
+    .svc-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--grad);
+      opacity: 0;
+      transition: opacity var(--ease);
+    }
+
+    .svc-card:hover {
+      background: var(--card-h);
+      border-color: var(--border-h);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .svc-card:hover::after { opacity: 1; }
+
+    .svc-icon {
+      width: 50px; height: 50px;
+      border-radius: 13px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .svc-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--c1);
+    }
+
+    .svc-card p {
+      font-size: 14px;
+      color: var(--c2);
+      line-height: 1.65;
+    }
+
+    /* === APPROACH === */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .apc-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 40px;
+      transition: all var(--ease);
+    }
+
+    .apc-card:hover {
+      background: var(--card-h);
+      border-color: var(--border-h);
+    }
+
+    .apc-num {
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 22px;
+      background: var(--grad-h);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .apc-card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .apc-card p {
+      font-size: 15px;
+      color: var(--c2);
+      line-height: 1.72;
+    }
+
+    /* === ECOSYSTEM === */
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-bottom: 52px;
+    }
+
+    .eco-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      transition: all var(--ease);
+    }
+
+    .eco-card:hover {
+      background: var(--card-h);
+      border-color: var(--border-h);
+    }
+
+    .eco-icon {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .eco-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 9px;
+    }
+
+    .eco-card p {
+      font-size: 14px;
+      color: var(--c2);
+      line-height: 1.65;
+    }
+
+    .cos-block { margin-bottom: 36px; }
+
+    .cos-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--c3);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .cos-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--c2);
+      transition: all var(--ease);
+      cursor: default;
+    }
+
+    .chip:hover {
+      border-color: var(--green);
+      color: var(--c1);
+      background: var(--card-h);
+    }
+
+    .chip-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--grad);
+      flex-shrink: 0;
+    }
+
+    /* === ABOUT === */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-highlight {
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--c1);
+    }
+
+    .about-highlight em {
+      font-style: normal;
+      background: var(--grad-h);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-body p {
+      font-size: 16px;
+      color: var(--c2);
+      line-height: 1.82;
+      margin-bottom: 22px;
+    }
+
+    .about-body p:last-child { margin-bottom: 0; }
+
+    .about-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 32px;
+    }
+
+    /* === CONTACT === */
+    .contact-section { text-align: center; }
+
+    .contact-section .section-label {
+      display: inline-flex;
+    }
+
+    .contact-section .section-sub {
+      margin: 0 auto 48px;
+    }
+
+    /* === FOOTER === */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      transition: border-color var(--ease);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand .footer-tag {
+      font-size: 13px;
+      color: var(--c3);
+      margin-top: 7px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--c3);
+      text-decoration: none;
+      transition: color var(--ease);
+    }
+
+    .footer-links a:hover { color: var(--c1); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--c3);
+    }
+
+    /* === REVEAL ANIMATION === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.vis {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { letter-spacing: -1.5px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-links { display: none; }
+      section { padding: 72px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-mark">LP</div>
+      <span class="logo-name">Libre<em>Product</em></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#services"  data-i18n="nav.services">Services</a></li>
+      <li><a href="#approach"  data-i18n="nav.approach">Approach</a></li>
+      <li><a href="#ecosystem" data-i18n="nav.clients">Clients</a></li>
+      <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+        <span id="theme-icon">&#9728;&#65039;</span>
+      </button>
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="badge-dot"></div>
+      <span data-i18n="hero.tagline">Strategic Product Management</span>
+    </div>
+
+    <h1>
+      <span class="grad-text" data-i18n="hero.headline">Built for the Open Source Ecosystem</span>
+    </h1>
+
+    <p data-i18n="hero.sub">Publishers, integrators, and open source SaaS companies deserve product management that understands their unique dynamics &mdash; community, code, and commerce in balance.</p>
+
+    <div class="hero-actions">
+      <a href="#contact"  class="btn-primary"  data-i18n="hero.cta">Let&rsquo;s talk</a>
+      <a href="#services" class="btn-secondary" data-i18n="hero.cta2">Discover services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <div class="section-hdr reveal">
+      <div class="section-label" data-i18n="nav.services">Services</div>
+      <h2 class="section-title" data-i18n="services.title">What I offer</h2>
+      <p class="section-sub" data-i18n="services.subtitle">Practical, hands-on product management engagements tailored to open source realities.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#128269;</div>
+        <h3 data-i18n="s1.title">Audit &amp; Assessment</h3>
+        <p data-i18n="s1.desc">Evaluate your product&rsquo;s current state. Identify gaps, strengths, and opportunities in your open source context.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#127807;</div>
+        <h3 data-i18n="s2.title">Product Culture</h3>
+        <p data-i18n="s2.desc">Build a product-centric culture aligned with open source values, contributor dynamics, and community governance.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#9881;&#65039;</div>
+        <h3 data-i18n="s3.title">Product Process</h3>
+        <p data-i18n="s3.desc">Define and implement product processes adapted to open source development cycles and contributor expectations.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#127919;</div>
+        <h3 data-i18n="s4.title">Positioning &amp; Messaging</h3>
+        <p data-i18n="s4.desc">Craft sharp positioning for both community users and commercial customers &mdash; without compromising either.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#128161;</div>
+        <h3 data-i18n="s5.title">Business Modeling</h3>
+        <p data-i18n="s5.desc">Find the right balance between open source sustainability, commercial revenue, and community trust.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#128202;</div>
+        <h3 data-i18n="s6.title">Prioritization</h3>
+        <p data-i18n="s6.desc">Make informed decisions on what to build next, balancing community needs, strategic goals, and contributor capacity.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#128506;&#65039;</div>
+        <h3 data-i18n="s7.title">Roadmapping</h3>
+        <p data-i18n="s7.desc">Build transparent, community-friendly roadmaps that align contributors, customers, and partners.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">&#128226;</div>
+        <h3 data-i18n="s8.title">Promotion</h3>
+        <p data-i18n="s8.desc">Grow visibility in the open source ecosystem through communities, events, and open collaboration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPROACH ===== -->
+<section id="approach" class="alt-bg">
+  <div class="container">
+    <div class="section-hdr reveal">
+      <div class="section-label" data-i18n="nav.approach">Approach</div>
+      <h2 class="section-title" data-i18n="approach.title">Open source is different</h2>
+      <p class="section-sub" data-i18n="approach.subtitle">Open source product management is not like startup product management. Different values, different communities, different economics.</p>
+    </div>
+
+    <div class="approach-grid">
+      <div class="apc-card reveal">
+        <div class="apc-num">01</div>
+        <h3 data-i18n="a1.title">Community-first</h3>
+        <p data-i18n="a1.desc">Every product decision starts with the community: contributors, users, and downstream projects. The ecosystem is your product.</p>
+      </div>
+      <div class="apc-card reveal">
+        <div class="apc-num">02</div>
+        <h3 data-i18n="a2.title">Transparent by default</h3>
+        <p data-i18n="a2.desc">Open roadmaps, public backlogs, honest communication. Openness is a feature, not a constraint.</p>
+      </div>
+      <div class="apc-card reveal">
+        <div class="apc-num">03</div>
+        <h3 data-i18n="a3.title">Sustainable economics</h3>
+        <p data-i18n="a3.desc">Build business models that fund development without exploiting community trust. Support, services, open core &mdash; done right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ECOSYSTEM ===== -->
+<section id="ecosystem">
+  <div class="container">
+    <div class="section-hdr reveal">
+      <div class="section-label" data-i18n="nav.clients">Clients</div>
+      <h2 class="section-title" data-i18n="clients.title">Open Source Ecosystem</h2>
+      <p class="section-sub" data-i18n="clients.subtitle">I work with companies that consider open source a strategic asset, not just a cost reduction.</p>
+    </div>
+
+    <div class="eco-grid">
+      <div class="eco-card reveal">
+        <div class="eco-icon">&#128230;</div>
+        <h3 data-i18n="clients.publishers">Software Publishers</h3>
+        <p data-i18n="clients.publishers.desc">Companies that create and maintain open source projects as their core business.</p>
+      </div>
+      <div class="eco-card reveal">
+        <div class="eco-icon">&#128295;</div>
+        <h3 data-i18n="clients.integrators">Integrators</h3>
+        <p data-i18n="clients.integrators.desc">Companies that deploy, integrate, and support open source software for their customers.</p>
+      </div>
+      <div class="eco-card reveal">
+        <div class="eco-icon">&#9729;&#65039;</div>
+        <h3 data-i18n="clients.saas">Open Source SaaS</h3>
+        <p data-i18n="clients.saas.desc">Companies that offer open source products as managed cloud services.</p>
+      </div>
+      <div class="eco-card reveal">
+        <div class="eco-icon">&#127758;</div>
+        <h3 data-i18n="clients.europe">France &amp; Europe</h3>
+        <p data-i18n="clients.europe.desc">Primarily focused on the French and European open source ecosystem.</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="cos-block">
+        <p class="cos-label" data-i18n="cos.fr">French open source companies</p>
+        <div class="cos-chips">
+          <span class="chip"><span class="chip-dot"></span>Worteks</span>
+          <span class="chip"><span class="chip-dot"></span>BlueMind</span>
+          <span class="chip"><span class="chip-dot"></span>Arawa</span>
+          <span class="chip"><span class="chip-dot"></span>Atol CD</span>
+          <span class="chip"><span class="chip-dot"></span>Algoo</span>
+          <span class="chip"><span class="chip-dot"></span>XWiki</span>
+          <span class="chip"><span class="chip-dot"></span>FactorFX</span>
+          <span class="chip"><span class="chip-dot"></span>Beezim</span>
+          <span class="chip"><span class="chip-dot"></span>Dalibo</span>
+          <span class="chip"><span class="chip-dot"></span>Linphone</span>
+          <span class="chip"><span class="chip-dot"></span>Pristy / Jeci</span>
+          <span class="chip"><span class="chip-dot"></span>Rudder</span>
+        </div>
+      </div>
+      <div class="cos-block">
+        <p class="cos-label" data-i18n="cos.eu">European open source companies</p>
+        <div class="cos-chips">
+          <span class="chip"><span class="chip-dot"></span>Nextcloud</span>
+          <span class="chip"><span class="chip-dot"></span>Collabora</span>
+          <span class="chip"><span class="chip-dot"></span>OpenProject</span>
+          <span class="chip"><span class="chip-dot"></span>Penpot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="alt-bg">
+  <div class="container">
+    <div class="section-hdr reveal">
+      <div class="section-label" data-i18n="about.label">Why LibreProduct</div>
+      <h2 class="section-title" data-i18n="about.title">Product management that speaks your language</h2>
+    </div>
+
+    <div class="about-inner">
+      <div class="reveal">
+        <div class="about-tag">&#9997;&#65039; <span data-i18n="about.tag">Fractional Product Manager</span></div>
+        <p class="about-highlight" data-i18n="about.highlight">Open source companies face unique challenges that generic product management doesn&rsquo;t address.</p>
+      </div>
+
+      <div class="about-body">
+        <p class="reveal" data-i18n="about.p1">You are building for communities you don&rsquo;t fully control, competing with the very software you give away for free, and explaining complex product decisions to both technical contributors and business customers.</p>
+        <p class="reveal" data-i18n="about.p2">LibreProduct brings dedicated Product Management expertise to companies navigating this space &mdash; from early-stage open source projects finding their market fit, to established editors scaling their commercial offering.</p>
+        <p class="reveal" data-i18n="about.p3">I embed in your team, understand your context, and help you build the right product the right way &mdash; respecting the values that make free and open source software meaningful.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-section">
+  <div class="container reveal">
+    <div class="section-label" data-i18n="nav.contact">Contact</div>
+    <h2 class="section-title" data-i18n="contact.title">Let&rsquo;s Work Together</h2>
+    <p class="section-sub" data-i18n="contact.subtitle">Are you an open source company in France or Europe looking for strategic product management support? Let&rsquo;s talk.</p>
+    <a href="mailto:hello@libreproduct.org" class="btn-primary" style="margin-top:0;">
+      <span data-i18n="contact.cta">Get in touch</span>
+      <span>&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-mark">LP</div>
+          <span class="logo-name">Libre<em>Product</em></span>
+        </a>
+        <p class="footer-tag" data-i18n="footer.tagline">Strategic Product Management for the Open Source Ecosystem</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#services"  data-i18n="nav.services">Services</a></li>
+        <li><a href="#approach"  data-i18n="nav.approach">Approach</a></li>
+        <li><a href="#ecosystem" data-i18n="nav.clients">Clients</a></li>
+        <li><a href="#contact"   data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <p class="footer-copy">&copy; 2025 LibreProduct &mdash; <span data-i18n="footer.rights">All rights reserved</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ===== DATA ===== */
+const T = {
+  en: {
+    'nav.services':          'Services',
+    'nav.approach':          'Approach',
+    'nav.clients':           'Clients',
+    'nav.contact':           'Contact',
+    'hero.tagline':          'Strategic Product Management',
+    'hero.headline':         'Built for the Open Source Ecosystem',
+    'hero.sub':              'Publishers, integrators, and open source SaaS companies deserve product management that understands their unique dynamics — community, code, and commerce in balance.',
+    'hero.cta':              'Let’s talk',
+    'hero.cta2':             'Discover services',
+    'services.title':        'What I offer',
+    'services.subtitle':     'Practical, hands-on product management engagements tailored to open source realities.',
+    's1.title': 'Audit & Assessment',
+    's1.desc':  'Evaluate your product’s current state. Identify gaps, strengths, and opportunities in your open source context.',
+    's2.title': 'Product Culture',
+    's2.desc':  'Build a product-centric culture aligned with open source values, contributor dynamics, and community governance.',
+    's3.title': 'Product Process',
+    's3.desc':  'Define and implement product processes adapted to open source development cycles and contributor expectations.',
+    's4.title': 'Positioning & Messaging',
+    's4.desc':  'Craft sharp positioning for both community users and commercial customers — without compromising either.',
+    's5.title': 'Business Modeling',
+    's5.desc':  'Find the right balance between open source sustainability, commercial revenue, and community trust.',
+    's6.title': 'Prioritization',
+    's6.desc':  'Make informed decisions on what to build next, balancing community needs, strategic goals, and contributor capacity.',
+    's7.title': 'Roadmapping',
+    's7.desc':  'Build transparent, community-friendly roadmaps that align contributors, customers, and partners.',
+    's8.title': 'Promotion',
+    's8.desc':  'Grow visibility in the open source ecosystem through communities, events, and open collaboration.',
+    'approach.title':    'Open source is different',
+    'approach.subtitle': 'Open source product management is not like startup product management. Different values, different communities, different economics.',
+    'a1.title': 'Community-first',
+    'a1.desc':  'Every product decision starts with the community: contributors, users, and downstream projects. The ecosystem is your product.',
+    'a2.title': 'Transparent by default',
+    'a2.desc':  'Open roadmaps, public backlogs, honest communication. Openness is a feature, not a constraint.',
+    'a3.title': 'Sustainable economics',
+    'a3.desc':  'Build business models that fund development without exploiting community trust. Support, services, open core — done right.',
+    'clients.title':           'Open Source Ecosystem',
+    'clients.subtitle':        'I work with companies that consider open source a strategic asset, not just a cost reduction.',
+    'clients.publishers':      'Software Publishers',
+    'clients.publishers.desc': 'Companies that create and maintain open source projects as their core business.',
+    'clients.integrators':     'Integrators',
+    'clients.integrators.desc':'Companies that deploy, integrate, and support open source software for their customers.',
+    'clients.saas':            'Open Source SaaS',
+    'clients.saas.desc':       'Companies that offer open source products as managed cloud services.',
+    'clients.europe':          'France & Europe',
+    'clients.europe.desc':     'Primarily focused on the French and European open source ecosystem.',
+    'cos.fr': 'French open source companies',
+    'cos.eu': 'European open source companies',
+    'about.label':     'Why LibreProduct',
+    'about.title':     'Product management that speaks your language',
+    'about.tag':       'Fractional Product Manager',
+    'about.highlight': 'Open source companies face unique challenges that generic product management doesn’t address.',
+    'about.p1': 'You are building for communities you don’t fully control, competing with the very software you give away for free, and explaining complex product decisions to both technical contributors and business customers.',
+    'about.p2': 'LibreProduct brings dedicated Product Management expertise to companies navigating this space — from early-stage open source projects finding their market fit, to established editors scaling their commercial offering.',
+    'about.p3': 'I embed in your team, understand your context, and help you build the right product the right way — respecting the values that make free and open source software meaningful.',
+    'contact.title':    'Let’s Work Together',
+    'contact.subtitle': 'Are you an open source company in France or Europe looking for strategic product management support? Let’s talk.',
+    'contact.cta':      'Get in touch',
+    'footer.tagline': 'Strategic Product Management for the Open Source Ecosystem',
+    'footer.rights':  'All rights reserved',
+  },
+  fr: {
+    'nav.services':          'Services',
+    'nav.approach':          'Approche',
+    'nav.clients':           'Clients',
+    'nav.contact':           'Contact',
+    'hero.tagline':          'Product Management Stratégique',
+    'hero.headline':         'Conçu pour l’Écosystème Open Source',
+    'hero.sub':              'Les éditeurs, intégrateurs et entreprises SaaS open source méritent un product management qui comprend leurs dynamiques propres — communauté, code et commerce en équilibre.',
+    'hero.cta':              'Parlons-en',
+    'hero.cta2':             'Découvrir les services',
+    'services.title':        'Ce que je propose',
+    'services.subtitle':     'Des missions de product management concrètes, adaptées aux réalités de l’open source.',
+    's1.title': 'Audit & Diagnostic',
+    's1.desc':  'Évaluez l’état actuel de votre produit. Identifiez les lacunes, les forces et les opportunités dans votre contexte open source.',
+    's2.title': 'Culture Produit',
+    's2.desc':  'Construisez une culture produit alignée sur les valeurs du logiciel libre, les dynamiques contributives et la gouvernance communautaire.',
+    's3.title': 'Processus Produit',
+    's3.desc':  'Définissez et mettez en œuvre des processus produit adaptés aux cycles de développement open source et aux attentes des contributeurs.',
+    's4.title': 'Positionnement & Messaging',
+    's4.desc':  'Construisez un positionnement clair pour vos utilisateurs communautaires et vos clients commerciaux — sans compromis.',
+    's5.title': 'Modélisation Économique',
+    's5.desc':  'Trouvez le bon équilibre entre pérennité open source, revenus commerciaux et confiance de la communauté.',
+    's6.title': 'Priorisation',
+    's6.desc':  'Prenez des décisions éclairées sur ce qu’il faut construire ensuite, en équilibrant besoins communautaires, objectifs stratégiques et capacité contributive.',
+    's7.title': 'Roadmapping',
+    's7.desc':  'Construisez des roadmaps transparentes et ouvertes à la communauté, alignant contributeurs, clients et partenaires.',
+    's8.title': 'Promotion',
+    's8.desc':  'Développez la visibilité dans l’écosystème open source via les communautés, les événements et la collaboration ouverte.',
+    'approach.title':    'L’open source, c’est différent',
+    'approach.subtitle': 'Le product management open source n’est pas celui des startups. Valeurs différentes, communautés différentes, économies différentes.',
+    'a1.title': 'Communauté d’abord',
+    'a1.desc':  'Chaque décision produit commence par la communauté : contributeurs, utilisateurs, projets aval. L’écosystème est votre produit.',
+    'a2.title': 'Transparent par défaut',
+    'a2.desc':  'Roadmaps ouvertes, backlogs publics, communication honnête. L’ouverture est une fonctionnalité, pas une contrainte.',
+    'a3.title': 'Économie durable',
+    'a3.desc':  'Construisez des modèles économiques qui financent le développement sans exploiter la confiance de la communauté. Support, services, open core — bien fait.',
+    'clients.title':           'Écosystème Open Source',
+    'clients.subtitle':        'Je travaille avec des entreprises qui considèrent l’open source comme un actif stratégique, pas seulement une réduction de coûts.',
+    'clients.publishers':      'Éditeurs de Logiciels',
+    'clients.publishers.desc': 'Entreprises qui créent et maintiennent des projets open source comme activité principale.',
+    'clients.integrators':     'Intégrateurs',
+    'clients.integrators.desc':'Entreprises qui déploient, intègrent et supportent des logiciels open source pour leurs clients.',
+    'clients.saas':            'SaaS Open Source',
+    'clients.saas.desc':       'Entreprises qui proposent des logiciels open source en services cloud gérés.',
+    'clients.europe':          'France & Europe',
+    'clients.europe.desc':     'Principalement centré sur l’écosystème open source français et européen.',
+    'cos.fr': 'Entreprises open source françaises',
+    'cos.eu': 'Entreprises open source européennes',
+    'about.label':     'Pourquoi LibreProduct',
+    'about.title':     'Product management qui parle votre langue',
+    'about.tag':       'Product Manager Fractionnel',
+    'about.highlight': 'Les entreprises open source font face à des défis uniques que le product management générique ne sait pas adresser.',
+    'about.p1': 'Vous construisez pour des communautés que vous ne contrôlez pas entièrement, vous êtes en concurrence avec le logiciel que vous distribuez gratuitement, et vous devez expliquer des décisions produit complexes à la fois à des contributeurs techniques et à des clients commerciaux.',
+    'about.p2': 'LibreProduct apporte une expertise Product Management dédiée aux entreprises qui évoluent dans cet espace — des projets open source en phase initiale cherchant leur product-market fit, aux éditeurs établis faisant croître leur offre commerciale.',
+    'about.p3': 'Je m’intègre dans votre équipe, comprends votre contexte, et vous aide à construire le bon produit de la bonne façon — dans le respect des valeurs qui font la richesse du logiciel libre.',
+    'contact.title':    'Travaillons Ensemble',
+    'contact.subtitle': 'Vous êtes une entreprise open source en France ou en Europe à la recherche d’un soutien stratégique en product management ? Parlons-en.',
+    'contact.cta':      'Prendre contact',
+    'footer.tagline': 'Product Management Stratégique pour l’Écosystème Open Source',
+    'footer.rights':  'Tous droits réservés',
+  }
+};
+
+/* ===== STATE ===== */
+let lang  = localStorage.getItem('lp-lang')  || 'en';
+let theme = localStorage.getItem('lp-theme') || 'dark';
+
+/* ===== INIT ===== */
+applyTheme();
+applyLang();
+
+/* ===== THEME ===== */
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('lp-theme', theme);
+  applyTheme();
+});
+
+function applyTheme() {
+  document.documentElement.dataset.theme = theme;
+  document.getElementById('theme-icon').textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+
+/* ===== LANG ===== */
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    lang = btn.dataset.lang;
+    localStorage.setItem('lp-lang', lang);
+    applyLang();
+  });
+});
+
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang)
+  );
+  const t = T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t[el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+}
+
+/* ===== SCROLL REVEAL ===== */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ===== NAV SHADOW ON SCROLL ===== */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY > 16 ? '0 4px 24px rgba(0,0,0,0.18)' : '';
+}, { passive: true });
+</script>
+</body>
+</html>
