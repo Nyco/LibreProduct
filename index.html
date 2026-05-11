@@ -606,31 +606,45 @@
       border: 1px solid var(--border);
     }
 
-    .ba-col { padding: 36px; }
-
-    .ba-before { background: rgba(255, 60, 60, 0.04); border-right: 1px solid var(--border); }
-    .ba-after  { background: rgba(0, 212, 160, 0.06); }
-
     .ba-header {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .ba-before .ba-header { color: rgba(255,80,80,0.8); }
-    .ba-after  .ba-header { color: var(--green); }
-
-    .ba-row {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 14px 0;
+      padding: 22px 28px;
       border-bottom: 1px solid var(--border);
     }
 
-    .ba-row:last-child { border-bottom: none; }
+    .ba-header--before {
+      background: rgba(255, 60, 60, 0.04);
+      border-right: 1px solid var(--border);
+      color: rgba(255,80,80,0.8);
+    }
+
+    .ba-header--after {
+      background: rgba(0, 212, 160, 0.06);
+      color: var(--green);
+    }
+
+    .ba-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ba-cell--before {
+      background: rgba(255, 60, 60, 0.04);
+      border-right: 1px solid var(--border);
+    }
+
+    .ba-cell--after {
+      background: rgba(0, 212, 160, 0.06);
+    }
+
+    /* remove bottom border on last row */
+    .ba-cell:nth-last-child(-n+2) { border-bottom: none; }
 
     .ba-cat {
       font-size: 11px;
@@ -646,7 +660,7 @@
       line-height: 1.55;
     }
 
-    .ba-after .ba-text {
+    .ba-cell--after .ba-text {
       color: var(--c1);
       font-weight: 500;
     }
@@ -922,10 +936,13 @@
       .before-after {
         grid-template-columns: 1fr;
       }
-      .ba-before {
+      .ba-header--before,
+      .ba-cell--before {
         border-right: none;
         border-bottom: 1px solid var(--border);
       }
+      .ba-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .ba-cell:last-child { border-bottom: none; }
     }
 
     /* === HAMBURGER === */
@@ -1200,59 +1217,70 @@
     </div>
 
     <div class="before-after reveal">
-      <div class="ba-col ba-before">
-        <div class="ba-header">Situation fréquente</div>
-        <div class="ba-row">
-          <span class="ba-cat">💶 Tarification</span>
-          <span class="ba-text">La tranche gratuite absorbe tout l&rsquo;usage &mdash; aucun parcours d&rsquo;upgrade structuré</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">🎯 Positionnement</span>
-          <span class="ba-text">Messaging écrit pour les contributeurs, pas les acheteurs</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">🗺️ Roadmap</span>
-          <span class="ba-text">Roadmap pilotée par les issues GitHub les plus bruyantes</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">♻️ Gaspillage</span>
-          <span class="ba-text">Fonctionnalités peu utilisées maintenues à coût élevé, télémétrie inexploitée, dette technique masquant les usages réels</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">📈 Croissance</span>
-          <span class="ba-text">Ciblage ICP imprécis, distribution limitée aux canaux existants, ventes perdues non analysées</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">🔍 Visibilité</span>
-          <span class="ba-text">Dépôt sans signaux de confiance, présence SEO/GEO peu optimisée, présence événementielle non ciblée</span>
-        </div>
+      <div class="ba-header ba-header--before">Situation fréquente</div>
+      <div class="ba-header ba-header--after">Avec LibreProduct</div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">💶 Tarification</span>
+        <span class="ba-text">La tranche gratuite absorbe tout l&rsquo;usage &mdash; aucun parcours d&rsquo;upgrade structuré</span>
       </div>
-      <div class="ba-col ba-after">
-        <div class="ba-header">Avec LibreProduct</div>
-        <div class="ba-row">
-          <span class="ba-cat">💶 Tarification</span>
-          <span class="ba-text">Portes de valeur claires, conversion freemium&rarr;payant structurée</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">🎯 Positionnement</span>
-          <span class="ba-text">Proposition de valeur ICP-spécifique, prête pour les décideurs</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">🗺️ Roadmap</span>
-          <span class="ba-text">Roadmap pilotée par l&rsquo;impact revenus ICP</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">♻️ Gaspillage</span>
-          <span class="ba-text">Périmètre allégé sur les usages réels, télémétrie valorisée, coûts de maintenance réduits</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">📈 Croissance</span>
-          <span class="ba-text">Segments à fort potentiel activés, réseau partenaires structuré, enseignements des ventes perdues exploités</span>
-        </div>
-        <div class="ba-row">
-          <span class="ba-cat">🔍 Visibilité</span>
-          <span class="ba-text">Dépôt structuré pour la conversion, SEO/GEO optimisé, présence événementielle centrée sur l&rsquo;ICP</span>
-        </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">💶 Tarification</span>
+        <span class="ba-text">Portes de valeur claires, conversion freemium&rarr;payant structurée</span>
+      </div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">🎯 Positionnement</span>
+        <span class="ba-text">Messaging écrit pour les contributeurs, pas les acheteurs</span>
+      </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">🎯 Positionnement</span>
+        <span class="ba-text">Proposition de valeur ICP-spécifique, prête pour les décideurs</span>
+      </div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">🗺️ Roadmap</span>
+        <span class="ba-text">Roadmap pilotée par les issues GitHub les plus bruyantes</span>
+      </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">🗺️ Roadmap</span>
+        <span class="ba-text">Roadmap pilotée par l&rsquo;impact revenus ICP</span>
+      </div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">♻️ Gaspillage</span>
+        <span class="ba-text">Fonctionnalités peu utilisées maintenues à coût élevé, télémétrie inexploitée, dette technique masquant les usages réels</span>
+      </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">♻️ Gaspillage</span>
+        <span class="ba-text">Périmètre allégé sur les usages réels, télémétrie valorisée, coûts de maintenance réduits</span>
+      </div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">📈 Croissance</span>
+        <span class="ba-text">Ciblage ICP imprécis, distribution limitée aux canaux existants, ventes perdues non analysées</span>
+      </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">📈 Croissance</span>
+        <span class="ba-text">Segments à fort potentiel activés, réseau partenaires structuré, enseignements des ventes perdues exploités</span>
+      </div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">🔍 Visibilité</span>
+        <span class="ba-text">Dépôt sans signaux de confiance, présence SEO/GEO peu optimisée, présence événementielle non ciblée</span>
+      </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">🔍 Visibilité</span>
+        <span class="ba-text">Dépôt structuré pour la conversion, SEO/GEO optimisé, présence événementielle centrée sur l&rsquo;ICP</span>
+      </div>
+
+      <div class="ba-cell ba-cell--before">
+        <span class="ba-cat">🌐 Écosystème</span>
+        <span class="ba-text">Présence concentrée dans la communauté OSS — intra et inter-projets — peu de rayonnement vers des audiences non-opensource</span>
+      </div>
+      <div class="ba-cell ba-cell--after">
+        <span class="ba-cat">🌐 Écosystème</span>
+        <span class="ba-text">Rayonnement élargi vers des audiences extra-OSS : entreprises, intégrateurs, secteur public, influenceurs métier</span>
       </div>
     </div>
   </div>
