@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LibreProduct — OSS Monetisation · France &amp; Europe</title>
-  <meta name="description" content="Turn your open source project into a revenue engine. Fractional Product Manager specialising in OSS monetisation for startups in France and Europe.">
+  <title>LibreProduct — Monétisation OSS · France &amp; Europe</title>
+  <meta name="description" content="Transformez votre projet open source en moteur de revenus. Product Manager Fractional spécialisé en monétisation OSS pour startups en France et en Europe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -186,32 +186,6 @@
       background: var(--card-h);
     }
 
-    .lang-toggle {
-      display: flex;
-      border: 1px solid var(--border);
-      border-radius: var(--r-sm);
-      overflow: hidden;
-      transition: border-color var(--ease);
-    }
-
-    .lang-btn {
-      padding: 6px 11px;
-      font-size: 11px;
-      font-weight: 700;
-      font-family: var(--font);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      color: var(--c3);
-      transition: all var(--ease);
-      letter-spacing: 0.8px;
-    }
-
-    .lang-btn.active {
-      background: var(--grad);
-      color: white;
-    }
-
     /* === HERO === */
     .hero {
       min-height: 100vh;
@@ -340,7 +314,6 @@
       max-width: 640px;
       margin: 0 auto 36px;
       line-height: 1.72;
-      white-space: pre-line;
     }
 
     /* === URGENCY STRIP === */
@@ -1056,20 +1029,16 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#tensions" data-i18n="nav.tensions">The Problem</a></li>
-      <li><a href="#offer"    data-i18n="nav.offer">The Offer</a></li>
-      <li><a href="#opinions" data-i18n="nav.opinions">Our POV</a></li>
-      <li><a href="#contact"  data-i18n="nav.contact">Contact</a></li>
+      <li><a href="#tensions">Problème</a></li>
+      <li><a href="#offer">Offre</a></li>
+      <li><a href="#opinions">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
     <div class="nav-actions">
-      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+      <button class="btn-icon" id="theme-toggle" title="Changer le thème" aria-label="Changer le thème">
         <span id="theme-icon">🌙</span>
       </button>
-      <div class="lang-toggle">
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-      </div>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span class="hb"></span>
         <span class="hb"></span>
@@ -1080,10 +1049,10 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <a href="#tensions" data-i18n="nav.tensions">The Problem</a>
-  <a href="#offer"    data-i18n="nav.offer">The Offer</a>
-  <a href="#opinions" data-i18n="nav.opinions">Our POV</a>
-  <a href="#contact"  data-i18n="nav.contact">Contact</a>
+  <a href="#tensions">Problème</a>
+  <a href="#offer">Offre</a>
+  <a href="#opinions">Vision</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -1098,24 +1067,24 @@
   <div class="hero-content">
     <div class="hero-badge">
       <div class="badge-dot"></div>
-      <span data-i18n="hero.tagline">OSS Monetisation &middot; France &amp; Europe</span>
+      <span>Monétisation OSS &middot; France &amp; Europe</span>
     </div>
 
     <h1>
-      <span class="grad-text" data-i18n="hero.headline">Your OSS project is used by thousands. And makes you almost nothing.</span>
+      <span class="grad-text">Votre projet OSS est utilisé par des milliers. Et ne vous rapporte presque rien.</span>
     </h1>
 
-    <p data-i18n="hero.sub">AI commoditises features. Hyperscalers fork your code. EU sovereignty budgets are flowing &mdash; but not to you. You need a monetisation model, not more contributors.</p>
+    <p>L&rsquo;IA commoditise vos fonctionnalités. Les hyperscalers forkent votre code. Les budgets souveraineté européens existent &mdash; mais ne vous atteignent pas.<br>Optimisez votre modèle de monétisation.</p>
 
     <div class="urgency-strip">
-      <span class="urgency-pill" data-i18n="hero.urgency1">🤖 AI is eating your moat</span>
-      <span class="urgency-pill" data-i18n="hero.urgency2">☁️ Hyperscalers fork for free</span>
-      <span class="urgency-pill" data-i18n="hero.urgency3">🇪🇺 EU sovereignty budgets exist</span>
+      <span class="urgency-pill">🤖 L&rsquo;IA érode votre avantage</span>
+      <span class="urgency-pill">☁️ Les hyperscalers forkent sans payer</span>
+      <span class="urgency-pill">🇪🇺 Les budgets souveraineté existent</span>
     </div>
 
     <div class="hero-actions">
-      <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="hero.cta">Fix my OSS monetisation</a>
-      <a href="#tensions" class="btn-ghost" data-i18n="hero.cta2">See how it works ↓</a>
+      <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary">Monétiser mon OSS</a>
+      <a href="#tensions" class="btn-ghost">Voir comment ça marche ↓</a>
     </div>
   </div>
 </section>
@@ -1124,36 +1093,36 @@
 <section id="tensions" class="alt-bg">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="tensions.label">The Real Problem</div>
-      <h2 class="section-title" data-i18n="tensions.title">GitHub stars do not pay salaries.</h2>
-      <p class="section-sub" data-i18n="tensions.sub">Five tensions every OSS company hits. Naming them is the first step.</p>
+      <div class="section-label">Le Vrai Problème</div>
+      <h2 class="section-title">Les étoiles GitHub ne paient pas les salaires.</h2>
+      <p class="section-sub">Cinq tensions que toute entreprise OSS rencontre. Les nommer est la première étape.</p>
     </div>
 
     <div class="tensions-grid">
       <div class="tension-card reveal">
-        <h3 data-i18n="t1.title">10,000 stars. &euro;0 ARR.</h3>
-        <p data-i18n="t1.desc">Adoption and revenue are different metrics. Most OSS companies optimise for one and wonder why the other does not follow.</p>
-        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+        <h3>10 000 étoiles. 0 &euro; d&rsquo;ARR.</h3>
+        <p>Adoption et revenus sont deux métriques distinctes. La plupart des entreprises OSS optimisent l&rsquo;une et s&rsquo;étonnent que l&rsquo;autre ne suive pas.</p>
+        <span class="tension-truth">Ça vous parle ?</span>
       </div>
       <div class="tension-card reveal">
-        <h3 data-i18n="t2.title">Community vs customers</h3>
-        <p data-i18n="t2.desc">Every feature request from a power user is a distraction from what your ICP will pay for. Serving both without a model kills both.</p>
-        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+        <h3>Communauté vs clients</h3>
+        <p>Chaque demande d&rsquo;un power user est une distraction par rapport à ce que votre ICP paiera. Servir les deux sans modèle, c&rsquo;est perdre les deux.</p>
+        <span class="tension-truth">Ça vous parle ?</span>
       </div>
       <div class="tension-card reveal">
-        <h3 data-i18n="t3.title">The services trap</h3>
-        <p data-i18n="t3.desc">Professional services fill the revenue gap &mdash; until they consume your product team. 40% margin, 0% scalability.</p>
-        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+        <h3>Le piège des services</h3>
+        <p>Les services professionnels comblent le manque de revenus &mdash; jusqu&rsquo;à ce qu&rsquo;ils consomment votre équipe produit. 40&nbsp;% de marge, 0&nbsp;% de scalabilité.</p>
+        <span class="tension-truth">Ça vous parle ?</span>
       </div>
       <div class="tension-card reveal">
-        <h3 data-i18n="t4.title">The open-core dilemma</h3>
-        <p data-i18n="t4.desc">Draw the line too early and the community forks you. Too late and enterprise has no reason to pay. The line is a product decision, not a legal one.</p>
-        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+        <h3>Le dilemme open-core</h3>
+        <p>Tracez la ligne trop tôt et la communauté vous fork. Trop tard et l&rsquo;enterprise n&rsquo;a aucune raison de payer. Cette ligne est une décision produit, pas juridique.</p>
+        <span class="tension-truth">Ça vous parle ?</span>
       </div>
       <div class="tension-card reveal">
-        <h3 data-i18n="t5.title">Hyperscaler arbitrage</h3>
-        <p data-i18n="t5.desc">AWS and Azure take your Apache-licensed code, wrap it in managed hosting, and take your enterprise customers. You need defensibility before scale.</p>
-        <span class="tension-truth" data-i18n="t.familiar">Sound familiar?</span>
+        <h3>L&rsquo;arbitrage des hyperscalers</h3>
+        <p>AWS et Azure prennent votre code Apache, l&rsquo;encapsulent en hébergement géré, et prennent vos clients enterprise. Vous avez besoin de défensabilité avant la croissance.</p>
+        <span class="tension-truth">Ça vous parle ?</span>
       </div>
     </div>
   </div>
@@ -1163,40 +1132,40 @@
 <section id="leakage">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="leakage.label">The Leakage Audit</div>
-      <h2 class="section-title" data-i18n="leakage.title">Where your revenue goes before it reaches you.</h2>
-      <p class="section-sub" data-i18n="leakage.sub">Three places every OSS company loses revenue without realising it.</p>
+      <div class="section-label">L&rsquo;Audit de Fuite</div>
+      <h2 class="section-title">Où vos revenus fuient avant de vous atteindre.</h2>
+      <p class="section-sub">Trois endroits où chaque entreprise OSS perd des revenus sans s&rsquo;en rendre compte.</p>
     </div>
 
     <div class="before-after reveal">
       <div class="ba-col ba-before">
-        <div class="ba-header" data-i18n="leak.before.label">Now</div>
+        <div class="ba-header">Maintenant</div>
         <div class="ba-row">
-          <span class="ba-cat" data-i18n="leak1.label">Pricing</span>
-          <span class="ba-text" data-i18n="leak1.before">Free tier absorbs all usage &mdash; zero upgrade path</span>
+          <span class="ba-cat">Tarification</span>
+          <span class="ba-text">La tranche gratuite absorbe tout l&rsquo;usage &mdash; aucun parcours d&rsquo;upgrade</span>
         </div>
         <div class="ba-row">
-          <span class="ba-cat" data-i18n="leak2.label">Positioning</span>
-          <span class="ba-text" data-i18n="leak2.before">Messaging written for contributors, not buyers</span>
+          <span class="ba-cat">Positionnement</span>
+          <span class="ba-text">Messaging écrit pour les contributeurs, pas les acheteurs</span>
         </div>
         <div class="ba-row">
-          <span class="ba-cat" data-i18n="leak3.label">Roadmap</span>
-          <span class="ba-text" data-i18n="leak3.before">Roadmap driven by noisiest GitHub issues</span>
+          <span class="ba-cat">Roadmap</span>
+          <span class="ba-text">Roadmap pilotée par les issues GitHub les plus bruyantes</span>
         </div>
       </div>
       <div class="ba-col ba-after">
-        <div class="ba-header" data-i18n="leak.after.label">After LibreProduct</div>
+        <div class="ba-header">Après LibreProduct</div>
         <div class="ba-row">
-          <span class="ba-cat" data-i18n="leak1.label">Pricing</span>
-          <span class="ba-text" data-i18n="leak1.after">Clear value gates, 23% freemium&rarr;paid conversion</span>
+          <span class="ba-cat">Tarification</span>
+          <span class="ba-text">Portes de valeur claires, 23&nbsp;% de conversion freemium&rarr;payant</span>
         </div>
         <div class="ba-row">
-          <span class="ba-cat" data-i18n="leak2.label">Positioning</span>
-          <span class="ba-text" data-i18n="leak2.after">ICP-specific value prop, procurement-ready</span>
+          <span class="ba-cat">Positionnement</span>
+          <span class="ba-text">Proposition de valeur ICP-spécifique, prête pour les achats</span>
         </div>
         <div class="ba-row">
-          <span class="ba-cat" data-i18n="leak3.label">Roadmap</span>
-          <span class="ba-text" data-i18n="leak3.after">Roadmap driven by ICP revenue impact</span>
+          <span class="ba-cat">Roadmap</span>
+          <span class="ba-text">Roadmap pilotée par l&rsquo;impact revenus ICP</span>
         </div>
       </div>
     </div>
@@ -1207,35 +1176,35 @@
 <section id="models" class="alt-bg">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="models.label">Models That Work</div>
-      <h2 class="section-title" data-i18n="models.title">Not every OSS company should be a SaaS.</h2>
-      <p class="section-sub" data-i18n="models.sub">The right model depends on your code, your community, and your customers &mdash; not on what is fashionable.</p>
+      <div class="section-label">Modèles qui Fonctionnent</div>
+      <h2 class="section-title">Toute entreprise OSS ne devrait pas être un SaaS.</h2>
+      <p class="section-sub">Le bon modèle dépend de votre code, votre communauté et vos clients &mdash; pas de ce qui est à la mode.</p>
     </div>
 
     <div class="services-grid">
       <div class="svc-card reveal">
         <div class="svc-icon">&#128273;</div>
-        <h3 data-i18n="m1.title">Open-core</h3>
-        <p data-i18n="m1.desc">What stays free, what becomes paid, how to draw the line without forking your community or locking out your enterprise.</p>
-        <span class="svc-impact" data-i18n="m1.impact">&rarr; &euro;80k&ndash;&euro;500k ARR on first enterprise tier</span>
+        <h3>Open-core</h3>
+        <p>Ce qui reste gratuit, ce qui devient payant, comment tracer la ligne sans forker votre communauté ni bloquer votre enterprise.</p>
+        <span class="svc-impact">&rarr; 80k&ndash;500k&nbsp;&euro; d&rsquo;ARR sur le premier palier enterprise</span>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">&#9729;&#65039;</div>
-        <h3 data-i18n="m2.title">Managed cloud</h3>
-        <p data-i18n="m2.desc">When hosting adds real value vs. when it is just ops theatre. What makes your managed offering defensible against hyperscalers.</p>
-        <span class="svc-impact" data-i18n="m2.impact">&rarr; 3&ndash;5&times; higher LTV vs. self-hosted users</span>
+        <h3>Cloud managé</h3>
+        <p>Quand l&rsquo;hébergement ajoute une vraie valeur vs. quand c&rsquo;est du théâtre ops. Ce qui rend votre offre managée défendable face aux hyperscalers.</p>
+        <span class="svc-impact">&rarr; LTV 3 à 5&times; supérieure aux utilisateurs self-hosted</span>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">&#128083;</div>
-        <h3 data-i18n="m3.title">Support &amp; services</h3>
-        <p data-i18n="m3.desc">How to capture professional services revenue without building a services company. Scope, margins, and the exit from the trap.</p>
-        <span class="svc-impact" data-i18n="m3.impact">&rarr; &euro;50k&ndash;&euro;300k per enterprise deal, 60%+ margin if scoped</span>
+        <h3>Support &amp; services</h3>
+        <p>Comment capter les revenus de services professionnels sans construire une société de services. Périmètre, marges et sortie du piège.</p>
+        <span class="svc-impact">&rarr; 50k&ndash;300k&nbsp;&euro; par deal enterprise, 60&nbsp;%+ de marge si cadré</span>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">&#127968;</div>
-        <h3 data-i18n="m4.title">Enterprise licensing</h3>
-        <p data-i18n="m4.desc">EU public sector, sovereignty compliance, procurement cycles. The market is real &mdash; but it requires a different go-to-market.</p>
-        <span class="svc-impact" data-i18n="m4.impact">&rarr; EU sovereignty tenders: &euro;200k&ndash;&euro;2M per contract</span>
+        <h3>Licence enterprise</h3>
+        <p>Secteur public européen, conformité souveraineté, cycles d&rsquo;achat. Le marché est réel &mdash; mais il nécessite un go-to-market différent.</p>
+        <span class="svc-impact">&rarr; Appels d&rsquo;offres souveraineté UE&nbsp;: 200k&ndash;2M&nbsp;&euro; par contrat</span>
       </div>
     </div>
   </div>
@@ -1245,31 +1214,31 @@
 <section id="offer">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="offer.label">The Engagement</div>
-      <h2 class="section-title" data-i18n="offer.title">30 days to a monetisation model you can execute.</h2>
+      <div class="section-label">L&rsquo;Engagement</div>
+      <h2 class="section-title">30 jours pour un modèle de monétisation que vous pouvez exécuter.</h2>
     </div>
 
     <div class="offer-inner">
       <div class="offer-left reveal">
-        <div class="offer-tag">&#9201; <span data-i18n="offer.duration">6-week sprint</span></div>
-        <p class="offer-headline" data-i18n="offer.sub">You ship code. I ship a monetisation model.</p>
-        <div class="opinion-callout" data-i18n="offer.callout">Most OSS companies are service companies in denial. Services feel safe &mdash; they are just slow death by margin compression.</div>
+        <div class="offer-tag">&#9201; <span>Sprint de 6 semaines</span></div>
+        <p class="offer-headline">Vous shippez du code. Je shippe un modèle de monétisation.</p>
+        <div class="opinion-callout">La plupart des entreprises OSS sont des sociétés de services en déni. Les services semblent sûrs &mdash; c&rsquo;est juste une mort lente par compression de marges.</div>
       </div>
 
       <div class="offer-right reveal">
-        <div class="deliverables-label" data-i18n="offer.deliverables.label">What you get</div>
+        <div class="deliverables-label">Ce que vous obtenez</div>
         <ul class="deliverable-list">
-          <li class="deliverable-item" data-i18n="offer.d1">OSS monetisation audit &mdash; where revenue leaks today</li>
-          <li class="deliverable-item" data-i18n="offer.d2">Positioning rewrite &mdash; ICP, value prop, competitive angle</li>
-          <li class="deliverable-item" data-i18n="offer.d3">Pricing model design &mdash; open-core tiers, enterprise, SaaS</li>
-          <li class="deliverable-item" data-i18n="offer.d4">OSS&rarr;paid funnel map &mdash; freemium gates, upgrade triggers</li>
-          <li class="deliverable-item" data-i18n="offer.d5">90-day product roadmap &mdash; revenue-weighted</li>
-          <li class="deliverable-item" data-i18n="offer.d6">1 working session/week for 6 weeks</li>
+          <li class="deliverable-item">Audit de monétisation OSS &mdash; où les revenus fuient aujourd&rsquo;hui</li>
+          <li class="deliverable-item">Refonte du positionnement &mdash; ICP, proposition de valeur, angle concurrentiel</li>
+          <li class="deliverable-item">Design du modèle tarifaire &mdash; paliers open-core, enterprise, SaaS</li>
+          <li class="deliverable-item">Carte de l&rsquo;entonnoir OSS&rarr;payant &mdash; portes freemium, déclencheurs d&rsquo;upgrade</li>
+          <li class="deliverable-item">Roadmap produit 90 jours &mdash; pondérée par revenus</li>
+          <li class="deliverable-item">1 session de travail/semaine pendant 6 semaines</li>
         </ul>
         <div class="risk-strip">
-          <span class="risk-item" data-i18n="offer.risk1">Clear scope</span>
-          <span class="risk-item" data-i18n="offer.risk2">Fixed timeline</span>
-          <span class="risk-item" data-i18n="offer.risk3">No retainer trap</span>
+          <span class="risk-item">Périmètre clair</span>
+          <span class="risk-item">Calendrier fixe</span>
+          <span class="risk-item">Sans piège d&rsquo;abonnement</span>
         </div>
       </div>
     </div>
@@ -1280,39 +1249,39 @@
 <section id="opinions" class="alt-bg">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label" data-i18n="opinions.label">Strong Opinions</div>
-      <h2 class="section-title" data-i18n="opinions.title">Things most PMs will not tell you.</h2>
+      <div class="section-label">Opinions Franches</div>
+      <h2 class="section-title">Ce que la plupart des PMs ne vous disent pas.</h2>
     </div>
 
     <div class="opinions-grid">
       <div class="opinion-card reveal">
-        <blockquote data-i18n="o1.quote">Most OSS companies are service companies in denial.</blockquote>
-        <p data-i18n="o1.desc">If more than 40% of your revenue comes from custom dev or consulting, you do not have a product business yet. You have a billing model that feels safer than it is.</p>
+        <blockquote>La plupart des entreprises OSS sont des sociétés de services en déni.</blockquote>
+        <p>Si plus de 40&nbsp;% de vos revenus viennent du dev custom ou du conseil, vous n&rsquo;avez pas encore un business produit. Vous avez un modèle de facturation qui semble plus sûr qu&rsquo;il ne l&rsquo;est.</p>
       </div>
       <div class="opinion-card reveal">
-        <blockquote data-i18n="o2.quote">Your pricing page is where your positioning goes to die.</blockquote>
-        <p data-i18n="o2.desc">If you cannot explain in one sentence why your enterprise tier costs 10&times; more than community, your sales team cannot either.</p>
+        <blockquote>Votre page de prix est l&rsquo;endroit où votre positionnement va mourir.</blockquote>
+        <p>Si vous ne pouvez pas expliquer en une phrase pourquoi votre palier enterprise coûte 10&times; plus que le palier communautaire, votre équipe commerciale ne le peut pas non plus.</p>
       </div>
       <div class="opinion-card reveal">
-        <blockquote data-i18n="o3.quote">Open-core only works if the closed part solves a problem the open part creates.</blockquote>
-        <p data-i18n="o3.desc">Not &ldquo;more features.&rdquo; The closed tier needs to be the natural answer to the friction of running the open tier at scale.</p>
+        <blockquote>L&rsquo;open-core ne fonctionne que si la partie fermée résout un problème que la partie ouverte crée.</blockquote>
+        <p>Pas &laquo;&nbsp;plus de fonctionnalités&nbsp;&raquo;. Le palier fermé doit être la réponse naturelle à la friction du palier ouvert à grande échelle.</p>
       </div>
       <div class="opinion-card reveal">
-        <blockquote data-i18n="o4.quote">GitHub stars measure popularity. ARR measures product-market fit. Confusing them is fatal.</blockquote>
-        <p data-i18n="o4.desc">Stars are vanity. DAU from your target ICP is traction. Revenue from that ICP is fit. Everything else is noise.</p>
+        <blockquote>Les étoiles GitHub mesurent la popularité. L&rsquo;ARR mesure le product-market fit. Les confondre est fatal.</blockquote>
+        <p>Les étoiles sont vanité. Les DAU de votre ICP cible, c&rsquo;est de la traction. Les revenus de cet ICP, c&rsquo;est le fit. Tout le reste est du bruit.</p>
       </div>
       <div class="opinion-card reveal">
-        <blockquote data-i18n="o5.quote">EU sovereignty is a real budget line &mdash; but only if you speak procurement, not engineering.</blockquote>
-        <p data-i18n="o5.desc">The EU NIS2, DORA, and sovereignty mandates create real demand. OSS companies that learn to sell to this motion will own the decade.</p>
+        <blockquote>La souveraineté européenne est une vraie ligne budgétaire &mdash; mais seulement si vous parlez marchés publics, pas ingénierie.</blockquote>
+        <p>Les mandats NIS2, DORA et souveraineté de l&rsquo;UE créent une vraie demande. Les entreprises OSS qui apprennent à vendre à ce mouvement domineront la décennie.</p>
       </div>
     </div>
 
     <div class="target-strip reveal">
-      <strong data-i18n="target.label">Built for:</strong>
-      <span class="target-pill" data-i18n="target.p1">OSS startups</span>
-      <span class="target-pill" data-i18n="target.p2">5&ndash;50 people</span>
-      <span class="target-pill" data-i18n="target.p3">France &amp; Europe</span>
-      <span class="target-pill" data-i18n="target.p4">Pre or post Series A</span>
+      <strong>Pour&nbsp;:</strong>
+      <span class="target-pill">Startups OSS</span>
+      <span class="target-pill">5&ndash;50 personnes</span>
+      <span class="target-pill">France &amp; Europe</span>
+      <span class="target-pill">Pré ou post Série A</span>
     </div>
   </div>
 </section>
@@ -1320,13 +1289,13 @@
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="contact-section">
   <div class="container reveal">
-    <div class="section-label" data-i18n="nav.contact">Contact</div>
-    <h2 class="section-title" data-i18n="contact.title">Let&rsquo;s turn your usage into revenue.</h2>
-    <p class="section-sub" data-i18n="contact.subtitle">30-minute call. No deck required. Tell me where you&rsquo;re stuck.</p>
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Transformons votre usage en revenus.</h2>
+    <p class="section-sub">30 minutes d&rsquo;appel. Pas de présentation requise. Dites-moi où vous bloquez.</p>
     <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:0;">
-      <span data-i18n="contact.cta">Fix my OSS monetisation</span>
+      Monétiser mon OSS
     </a>
-    <span class="contact-proof" data-i18n="contact.proof">OSS founders in France &amp; Europe &middot; Responds within 24h</span>
+    <span class="contact-proof">Fondateurs OSS en France &amp; Europe &middot; Réponse sous 24h</span>
   </div>
 </section>
 
@@ -1339,243 +1308,31 @@
           <div class="logo-mark">LP</div>
           <span class="logo-name">Libre<em>Product</em></span>
         </a>
-        <p class="footer-tag" data-i18n="footer.tagline">OSS Monetisation for French &amp; European Companies</p>
+        <p class="footer-tag">Monétisation OSS pour entreprises françaises et européennes</p>
       </div>
 
       <ul class="footer-links">
-        <li><a href="#tensions" data-i18n="nav.tensions">The Problem</a></li>
-        <li><a href="#offer"    data-i18n="nav.offer">The Offer</a></li>
-        <li><a href="#opinions" data-i18n="nav.opinions">Our POV</a></li>
-        <li><a href="#contact"  data-i18n="nav.contact">Contact</a></li>
+        <li><a href="#tensions">Problème</a></li>
+        <li><a href="#offer">Offre</a></li>
+        <li><a href="#opinions">Vision</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a rel="me" href="https://fosstodon.org/@nyconyco">Mastodon</a></li>
       </ul>
 
-      <p class="footer-copy">&copy; 2025 LibreProduct &mdash; <span data-i18n="footer.rights">All rights reserved</span></p>
+      <p class="footer-copy">&copy; 2025 LibreProduct &mdash; Tous droits réservés</p>
     </div>
   </div>
 </footer>
 
 <script>
-/* ===== i18n DATA ===== */
-const T = {
-  en: {
-    'nav.tensions':   'The Problem',
-    'nav.offer':      'The Offer',
-    'nav.opinions':   'Our POV',
-    'nav.contact':    'Contact',
-
-    'hero.tagline':   'OSS Monetisation · France & Europe',
-    'hero.headline':  'Your OSS project is used by thousands. And makes you almost nothing.',
-    'hero.sub':       'AI commoditises features. Hyperscalers fork your code. EU sovereignty budgets are flowing — but not to you. You need a monetisation model, not more contributors.',
-    'hero.cta':       'Fix my OSS monetisation',
-    'hero.cta2':      'See how it works ↓',
-    'hero.urgency1':  '🤖 AI is eating your moat',
-    'hero.urgency2':  '☁️ Hyperscalers fork for free',
-    'hero.urgency3':  '🇪🇺 EU sovereignty budgets exist',
-
-    'tensions.label': 'The Real Problem',
-    'tensions.title': 'GitHub stars do not pay salaries.',
-    'tensions.sub':   'Five tensions every OSS company hits. Naming them is the first step.',
-    't1.title': '10,000 stars. €0 ARR.',
-    't1.desc':  'Adoption and revenue are different metrics. Most OSS companies optimise for one and wonder why the other does not follow.',
-    't2.title': 'Community vs customers',
-    't2.desc':  'Every feature request from a power user is a distraction from what your ICP will pay for. Serving both without a model kills both.',
-    't3.title': 'The services trap',
-    't3.desc':  'Professional services fill the revenue gap — until they consume your product team. 40% margin, 0% scalability.',
-    't4.title': 'The open-core dilemma',
-    't4.desc':  'Draw the line too early and the community forks you. Too late and enterprise has no reason to pay. The line is a product decision, not a legal one.',
-    't5.title': 'Hyperscaler arbitrage',
-    't5.desc':  'AWS and Azure take your Apache-licensed code, wrap it in managed hosting, and take your enterprise customers. You need defensibility before scale.',
-    't.familiar': 'Sound familiar?',
-
-    'leakage.label':      'The Leakage Audit',
-    'leakage.title':      'Where your revenue goes before it reaches you.',
-    'leakage.sub':        'Three places every OSS company loses revenue without realising it.',
-    'leak.before.label':  'Now',
-    'leak.after.label':   'After LibreProduct',
-    'leak1.label':  'Pricing',
-    'leak1.before': 'Free tier absorbs all usage — zero upgrade path',
-    'leak1.after':  'Clear value gates, 23% freemium→paid conversion',
-    'leak2.label':  'Positioning',
-    'leak2.before': 'Messaging written for contributors, not buyers',
-    'leak2.after':  'ICP-specific value prop, procurement-ready',
-    'leak3.label':  'Roadmap',
-    'leak3.before': 'Roadmap driven by noisiest GitHub issues',
-    'leak3.after':  'Roadmap driven by ICP revenue impact',
-
-    'models.label': 'Models That Work',
-    'models.title': 'Not every OSS company should be a SaaS.',
-    'models.sub':   'The right model depends on your code, your community, and your customers — not on what is fashionable.',
-    'm1.title': 'Open-core',
-    'm1.desc':  'What stays free, what becomes paid, how to draw the line without forking your community or locking out your enterprise.',
-    'm1.impact': '→ €80k–€500k ARR on first enterprise tier',
-    'm2.title': 'Managed cloud',
-    'm2.desc':  'When hosting adds real value vs. when it is just ops theatre. What makes your managed offering defensible against hyperscalers.',
-    'm2.impact': '→ 3–5× higher LTV vs. self-hosted users',
-    'm3.title': 'Support & services',
-    'm3.desc':  'How to capture professional services revenue without building a services company. Scope, margins, and the exit from the trap.',
-    'm3.impact': '→ €50k–€300k per enterprise deal, 60%+ margin if scoped',
-    'm4.title': 'Enterprise licensing',
-    'm4.desc':  'EU public sector, sovereignty compliance, procurement cycles. The market is real — but it requires a different go-to-market.',
-    'm4.impact': '→ EU sovereignty tenders: €200k–€2M per contract',
-
-    'offer.label':             'The Engagement',
-    'offer.title':             '30 days to a monetisation model you can execute.',
-    'offer.sub':               'You ship code. I ship a monetisation model.',
-    'offer.duration':          '6-week sprint',
-    'offer.callout':           'Most OSS companies are service companies in denial. Services feel safe — they are just slow death by margin compression.',
-    'offer.deliverables.label': 'What you get',
-    'offer.d1': 'OSS monetisation audit — where revenue leaks today',
-    'offer.d2': 'Positioning rewrite — ICP, value prop, competitive angle',
-    'offer.d3': 'Pricing model design — open-core tiers, enterprise, SaaS',
-    'offer.d4': 'OSS→paid funnel map — freemium gates, upgrade triggers',
-    'offer.d5': '90-day product roadmap — revenue-weighted',
-    'offer.d6': '1 working session/week for 6 weeks',
-    'offer.risk1': 'Clear scope',
-    'offer.risk2': 'Fixed timeline',
-    'offer.risk3': 'No retainer trap',
-
-    'opinions.label': 'Strong Opinions',
-    'opinions.title': 'Things most PMs will not tell you.',
-    'o1.quote': 'Most OSS companies are service companies in denial.',
-    'o1.desc':  'If more than 40% of your revenue comes from custom dev or consulting, you do not have a product business yet. You have a billing model that feels safer than it is.',
-    'o2.quote': 'Your pricing page is where your positioning goes to die.',
-    'o2.desc':  'If you cannot explain in one sentence why your enterprise tier costs 10× more than community, your sales team cannot either.',
-    'o3.quote': 'Open-core only works if the closed part solves a problem the open part creates.',
-    'o3.desc':  'Not “more features.” The closed tier needs to be the natural answer to the friction of running the open tier at scale.',
-    'o4.quote': 'GitHub stars measure popularity. ARR measures product-market fit. Confusing them is fatal.',
-    'o4.desc':  'Stars are vanity. DAU from your target ICP is traction. Revenue from that ICP is fit. Everything else is noise.',
-    'o5.quote': 'EU sovereignty is a real budget line — but only if you speak procurement, not engineering.',
-    'o5.desc':  'The EU NIS2, DORA, and sovereignty mandates create real demand. OSS companies that learn to sell to this motion will own the decade.',
-    'target.label': 'Built for:',
-    'target.p1': 'OSS startups',
-    'target.p2': '5–50 people',
-    'target.p3': 'France & Europe',
-    'target.p4': 'Pre or post Series A',
-
-    'contact.title':    'Let’s turn your usage into revenue.',
-    'contact.subtitle': '30-minute call. No deck required. Tell me where you’re stuck.',
-    'contact.cta':      'Fix my OSS monetisation',
-    'contact.proof':    'OSS founders in France & Europe · Responds within 24h',
-
-    'footer.tagline': 'OSS Monetisation for French & European Companies',
-    'footer.rights':  'All rights reserved'
-  },
-  fr: {
-    ‘nav.tensions’:   ‘Problème’,
-    ‘nav.offer’:      ‘Offre’,
-    ‘nav.opinions’:   ‘Vision’,
-    ‘nav.contact’:    ‘Contact’,
-
-    'hero.tagline':   'Monétisation OSS · France & Europe',
-    'hero.headline':  'Votre projet OSS est utilisé par des milliers. Et ne vous rapporte presque rien.',
-    ‘hero.sub’:       ‘L’IA commoditise vos fonctionnalités. Les hyperscalers forkent votre code. Les budgets souveraineté européens existent — mais ne vous atteignent pas.\nOptimisez votre modèle de monétisation.’,
-    'hero.cta':       'Monétiser mon OSS',
-    'hero.cta2':      'Voir comment ça marche ↓',
-    'hero.urgency1':  '🤖 L’IA érode votre avantage',
-    'hero.urgency2':  '☁️ Les hyperscalers forkent sans payer',
-    'hero.urgency3':  '🇪🇺 Les budgets souveraineté existent',
-
-    'tensions.label': 'Le Vrai Problème',
-    'tensions.title': 'Les étoiles GitHub ne paient pas les salaires.',
-    'tensions.sub':   'Cinq tensions que toute entreprise OSS rencontre. Les nommer est la première étape.',
-    't1.title': '10 000 étoiles. 0 € d’ARR.',
-    't1.desc':  'Adoption et revenus sont deux métriques distinctes. La plupart des entreprises OSS optimisent l’une et s’étonnent que l’autre ne suive pas.',
-    't2.title': 'Communauté vs clients',
-    't2.desc':  'Chaque demande d’un power user est une distraction par rapport à ce que votre ICP paiera. Servir les deux sans modèle, c’est perdre les deux.',
-    't3.title': 'Le piège des services',
-    't3.desc':  'Les services professionnels comblent le manque de revenus — jusqu’à ce qu’ils consomment votre équipe produit. 40 % de marge, 0 % de scalabilité.',
-    't4.title': 'Le dilemme open-core',
-    't4.desc':  'Tracez la ligne trop tôt et la communauté vous fork. Trop tard et l’enterprise n’a aucune raison de payer. Cette ligne est une décision produit, pas juridique.',
-    't5.title': 'L’arbitrage des hyperscalers',
-    't5.desc':  'AWS et Azure prennent votre code Apache, l’encapsulent en hébergement géré, et prennent vos clients enterprise. Vous avez besoin de défensabilité avant la croissance.',
-    't.familiar': 'Ça vous parle ?',
-
-    'leakage.label':      'L’Audit de Fuite',
-    'leakage.title':      'Où vos revenus fuient avant de vous atteindre.',
-    'leakage.sub':        'Trois endroits où chaque entreprise OSS perd des revenus sans s’en rendre compte.',
-    'leak.before.label':  'Maintenant',
-    'leak.after.label':   'Après LibreProduct',
-    'leak1.label':  'Tarification',
-    'leak1.before': 'La tranche gratuite absorbe tout l’usage — aucun parcours d’upgrade',
-    'leak1.after':  'Portes de valeur claires, 23 % de conversion freemium→payant',
-    'leak2.label':  'Positionnement',
-    'leak2.before': 'Messaging écrit pour les contributeurs, pas les acheteurs',
-    'leak2.after':  'Proposition de valeur ICP-spécifique, prête pour les achats',
-    'leak3.label':  'Roadmap',
-    'leak3.before': 'Roadmap pilotée par les issues GitHub les plus bruyantes',
-    'leak3.after':  'Roadmap pilotée par l’impact revenus ICP',
-
-    'models.label': 'Modèles qui Fonctionnent',
-    'models.title': 'Toute entreprise OSS ne devrait pas être un SaaS.',
-    'models.sub':   'Le bon modèle dépend de votre code, votre communauté et vos clients — pas de ce qui est à la mode.',
-    'm1.title': 'Open-core',
-    'm1.desc':  'Ce qui reste gratuit, ce qui devient payant, comment tracer la ligne sans forker votre communauté ni bloquer votre enterprise.',
-    'm1.impact': '→ 80k–500k € d’ARR sur le premier palier enterprise',
-    'm2.title': 'Cloud managé',
-    'm2.desc':  'Quand l’hébergement ajoute une vraie valeur vs. quand c’est du théâtre ops. Ce qui rend votre offre managée défendable face aux hyperscalers.',
-    'm2.impact': '→ LTV 3 à 5× supérieure aux utilisateurs self-hosted',
-    'm3.title': 'Support & services',
-    'm3.desc':  'Comment capter les revenus de services professionnels sans construire une société de services. Périmètre, marges et sortie du piège.',
-    'm3.impact': '→ 50k–300k € par deal enterprise, 60 %+ de marge si cadré',
-    'm4.title': 'Licence enterprise',
-    'm4.desc':  'Secteur public européen, conformité souveraineté, cycles d’achat. Le marché est réel — mais il nécessite un go-to-market différent.',
-    'm4.impact': '→ Appels d’offres souveraineté UE : 200k– 2M € par contrat',
-
-    'offer.label':             'L’Engagement',
-    'offer.title':             '30 jours pour un modèle de monétisation que vous pouvez exécuter.',
-    'offer.sub':               'Vous shippez du code. Je shippe un modèle de monétisation.',
-    'offer.duration':          'Sprint de 6 semaines',
-    'offer.callout':           'La plupart des entreprises OSS sont des sociétés de services en déni. Les services semblent sûrs — c’est juste une mort lente par compression de marges.',
-    'offer.deliverables.label': 'Ce que vous obtenez',
-    'offer.d1': 'Audit de monétisation OSS — où les revenus fuient aujourd’hui',
-    'offer.d2': 'Refonte du positionnement — ICP, proposition de valeur, angle concurrentiel',
-    'offer.d3': 'Design du modèle tarifaire — paliers open-core, enterprise, SaaS',
-    'offer.d4': 'Carte de l’entonnoir OSS→payant — portes freemium, déclencheurs d’upgrade',
-    'offer.d5': 'Roadmap produit 90 jours — pondérée par revenus',
-    'offer.d6': '1 session de travail/semaine pendant 6 semaines',
-    'offer.risk1': 'Périmètre clair',
-    'offer.risk2': 'Calendrier fixe',
-    'offer.risk3': 'Sans piège d’abonnement',
-
-    'opinions.label': 'Opinions Franches',
-    'opinions.title': 'Ce que la plupart des PMs ne vous disent pas.',
-    'o1.quote': 'La plupart des entreprises OSS sont des sociétés de services en déni.',
-    'o1.desc':  'Si plus de 40 % de vos revenus viennent du dev custom ou du conseil, vous n’avez pas encore un business produit. Vous avez un modèle de facturation qui semble plus sûr qu’il ne l’est.',
-    'o2.quote': 'Votre page de prix est l’endroit où votre positionnement va mourir.',
-    'o2.desc':  'Si vous ne pouvez pas expliquer en une phrase pourquoi votre palier enterprise coûte 10× plus que le palier communautaire, votre équipe commerciale ne le peut pas non plus.',
-    'o3.quote': 'L’open-core ne fonctionne que si la partie fermée résout un problème que la partie ouverte crée.',
-    'o3.desc':  'Pas « plus de fonctionnalités ». Le palier fermé doit être la réponse naturelle à la friction du palier ouvert à grande échelle.',
-    'o4.quote': 'Les étoiles GitHub mesurent la popularité. L’ARR mesure le product-market fit. Les confondre est fatal.',
-    'o4.desc':  'Les étoiles sont vanité. Les DAU de votre ICP cible, c’est de la traction. Les revenus de cet ICP, c’est le fit. Tout le reste est du bruit.',
-    'o5.quote': 'La souveraineté européenne est une vraie ligne budgétaire — mais seulement si vous parlez marchés publics, pas ingénierie.',
-    'o5.desc':  'Les mandats NIS2, DORA et souveraineté de l’UE créent une vraie demande. Les entreprises OSS qui apprennent à vendre à ce mouvement domineront la décennie.',
-    'target.label': 'Pour :',
-    'target.p1': 'Startups OSS',
-    'target.p2': '5–50 personnes',
-    'target.p3': 'France & Europe',
-    'target.p4': 'Pré ou post Série A',
-
-    'contact.title':    'Transformons votre usage en revenus.',
-    'contact.subtitle': '30 minutes d’appel. Pas de présentation requise. Dites-moi où vous bloquez.',
-    'contact.cta':      'Monétiser mon OSS',
-    'contact.proof':    'Fondateurs OSS en France & Europe · Réponse sous 24h',
-
-    'footer.tagline': 'Monétisation OSS pour entreprises françaises et européennes',
-    'footer.rights':  'Tous droits réservés'
-  }
-};
-
 /* ===== STATE ===== */
-let lang  = localStorage.getItem('lp-lang')  || 'fr';
 let theme = localStorage.getItem('lp-theme') || 'light';
 
 /* ===== INIT ===== */
 applyTheme();
-applyLang();
 
 /* ===== THEME ===== */
-document.getElementById('theme-toggle').addEventListener('click', () => {
+document.getElementById('theme-toggle').addEventListener('click', function() {
   theme = theme === 'dark' ? 'light' : 'dark';
   localStorage.setItem('lp-theme', theme);
   applyTheme();
@@ -1586,43 +1343,22 @@ function applyTheme() {
   document.getElementById('theme-icon').textContent = theme === 'dark' ? '☀️' : '🌙';
 }
 
-/* ===== LANG ===== */
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    lang = btn.dataset.lang;
-    localStorage.setItem('lp-lang', lang);
-    applyLang();
-  });
-});
-
-function applyLang() {
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === lang)
-  );
-  const t = T[lang];
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const v = t[el.dataset.i18n];
-    if (v !== undefined) el.textContent = v;
-  });
-}
-
 /* ===== SCROLL REVEAL ===== */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
 
 /* ===== NAV SHADOW ON SCROLL ===== */
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function() {
   document.getElementById('nav').style.boxShadow =
     window.scrollY > 16 ? '0 4px 24px rgba(0,0,0,0.18)' : '';
 }, { passive: true });
 
 /* ===== HAMBURGER MENU ===== */
-const hamburger  = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
+var hamburger  = document.getElementById('hamburger');
+var mobileMenu = document.getElementById('mobile-menu');
 
 function closeMenu() {
   hamburger.classList.remove('open');
@@ -1631,17 +1367,21 @@ function closeMenu() {
   mobileMenu.setAttribute('aria-hidden',  'true');
 }
 
-hamburger.addEventListener('click', () => {
-  const opening = !hamburger.classList.contains('open');
-  opening ? (hamburger.classList.add('open'), mobileMenu.classList.add('open'),
-             hamburger.setAttribute('aria-expanded', 'true'),
-             mobileMenu.setAttribute('aria-hidden', 'false'))
-           : closeMenu();
+hamburger.addEventListener('click', function() {
+  var opening = !hamburger.classList.contains('open');
+  if (opening) {
+    hamburger.classList.add('open');
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+  } else {
+    closeMenu();
+  }
 });
 
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+mobileMenu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
 
-document.addEventListener('click', e => {
+document.addEventListener('click', function(e) {
   if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
 });
 </script>
