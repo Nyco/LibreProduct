@@ -964,11 +964,130 @@
       transform: translateY(0);
     }
 
+    /* === NOW/NEXT/LATER === */
+    .nnl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .nnl-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px 28px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .nnl-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: var(--r) var(--r) 0 0;
+    }
+
+    .nnl-card:nth-child(1)::before { background: var(--green); }
+    .nnl-card:nth-child(2)::before { background: var(--blue); }
+    .nnl-card:nth-child(3)::before { background: var(--violet); }
+
+    .nnl-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .nnl-card:nth-child(1) .nnl-label { color: var(--green); }
+    .nnl-card:nth-child(2) .nnl-label { color: var(--blue); }
+    .nnl-card:nth-child(3) .nnl-label { color: var(--violet); }
+
+    .nnl-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--c1);
+      line-height: 1.3;
+    }
+
+    .nnl-desc {
+      font-size: 14px;
+      color: var(--c2);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .nnl-outcomes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nnl-outcome {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      color: var(--c1);
+      line-height: 1.5;
+    }
+
+    .nnl-outcome::before {
+      content: '✓';
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .nnl-card:nth-child(1) .nnl-outcome::before { color: var(--green); }
+    .nnl-card:nth-child(2) .nnl-outcome::before { color: var(--blue); }
+    .nnl-card:nth-child(3) .nnl-outcome::before { color: var(--violet); }
+
+    .nnl-strip {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nnl-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--c2);
+    }
+
+    .nnl-strip-item::before {
+      content: '·';
+      color: var(--green);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .nnl-strip-item:first-child::before { display: none; }
+
     /* === RESPONSIVE === */
     @media (max-width: 900px) {
       .offer-inner {
         grid-template-columns: 1fr;
         gap: 40px;
+      }
+
+      .nnl-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1127,8 +1246,8 @@
     <ul class="nav-links">
       <li><a href="#tensions">Problème</a></li>
       <li><a href="#models">Pistes</a></li>
-      <li><a href="#offer">Offre</a></li>
-      <li><a href="#opinions">Vision</a></li>
+      <li><a href="#leakage">Offre</a></li>
+      <li><a href="#offer">Engagement</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -1148,8 +1267,8 @@
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <a href="#tensions">Problème</a>
   <a href="#models">Pistes</a>
-  <a href="#offer">Offre</a>
-  <a href="#opinions">Vision</a>
+  <a href="#leakage">Offre</a>
+  <a href="#offer">Engagement</a>
   <a href="#contact">Contact</a>
 </div>
 
@@ -1401,76 +1520,54 @@
   <div class="container">
     <div class="section-hdr reveal">
       <div class="section-label">L&rsquo;Engagement</div>
-      <h2 class="section-title">30 jours pour un modèle de monétisation que vous pouvez exécuter.</h2>
+      <h2 class="section-title">Un chemin clair, étape par étape.</h2>
+      <p class="section-sub">Pas de retro-planning sur 18 mois. Trois temps forts, des livrables concrets, et un modèle que vous pouvez exécuter dès la fin.</p>
     </div>
 
-    <div class="offer-inner">
-      <div class="offer-left reveal">
-        <div class="offer-tag">&#9201; <span>Sprint de 6 semaines</span></div>
-        <p class="offer-headline">Vous shippez du code. Je shippe un modèle de monétisation.</p>
-        <div class="opinion-callout">La plupart des entreprises OSS sont des sociétés de services en déni. Les services semblent sûrs &mdash; c&rsquo;est juste une mort lente par compression de marges.</div>
-      </div>
-
-      <div class="offer-right reveal">
-        <div class="deliverables-label">Ce que vous obtenez</div>
-        <ul class="deliverable-list">
-          <li class="deliverable-item">Audit de monétisation OSS &mdash; où les revenus fuient aujourd&rsquo;hui</li>
-          <li class="deliverable-item">Refonte du positionnement &mdash; ICP, proposition de valeur, angle concurrentiel</li>
-          <li class="deliverable-item">Design du modèle tarifaire &mdash; paliers open-core, enterprise, SaaS</li>
-          <li class="deliverable-item">Carte de l&rsquo;entonnoir OSS&rarr;payant &mdash; portes freemium, déclencheurs d&rsquo;upgrade</li>
-          <li class="deliverable-item">Roadmap produit 90 jours &mdash; pondérée par revenus</li>
-          <li class="deliverable-item">1 session de travail/semaine pendant 6 semaines</li>
+    <div class="nnl-grid">
+      <div class="nnl-card reveal">
+        <div class="nnl-label">Maintenant</div>
+        <div class="nnl-title">Évaluation stratégique</div>
+        <div class="nnl-desc">Un regard honnête sur votre situation actuelle &mdash; modèle, positionnement, revenus, leviers inexploités.</div>
+        <ul class="nnl-outcomes">
+          <li class="nnl-outcome">Diagnostic complet de monétisation</li>
+          <li class="nnl-outcome">Cartographie des fuites de revenus</li>
+          <li class="nnl-outcome">ICP et proposition de valeur clarifiés</li>
         </ul>
-        <div class="risk-strip">
-          <span class="risk-item">Périmètre clair</span>
-          <span class="risk-item">Calendrier fixe</span>
-          <span class="risk-item">Sans piège d&rsquo;abonnement</span>
-        </div>
       </div>
+
+      <div class="nnl-card reveal">
+        <div class="nnl-label">Ensuite</div>
+        <div class="nnl-title">Feuille de route orientée résultats</div>
+        <div class="nnl-desc">Un plan d&rsquo;action priorisé par impact revenus &mdash; pas par facilité technique ni par bruit communautaire.</div>
+        <ul class="nnl-outcomes">
+          <li class="nnl-outcome">Modèle tarifaire et paliers définis</li>
+          <li class="nnl-outcome">Entonnoir freemium&rarr;payant structuré</li>
+          <li class="nnl-outcome">Roadmap pondérée par revenus</li>
+        </ul>
+      </div>
+
+      <div class="nnl-card reveal">
+        <div class="nnl-label">Plus tard</div>
+        <div class="nnl-title">Exécution orientée résultats</div>
+        <div class="nnl-desc">Un accompagnement ancré dans la réalité du terrain &mdash; ajusté à chaque itération, mesuré sur les bons indicateurs.</div>
+        <ul class="nnl-outcomes">
+          <li class="nnl-outcome">Sessions de travail hebdomadaires</li>
+          <li class="nnl-outcome">Suivi des métriques qui comptent</li>
+          <li class="nnl-outcome">Ajustements en temps réel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nnl-strip reveal">
+      <span class="nnl-strip-item">Périmètre clair</span>
+      <span class="nnl-strip-item">Calendrier fixe</span>
+      <span class="nnl-strip-item">Sans abonnement forcé</span>
+      <span class="nnl-strip-item">Livrables à chaque étape</span>
     </div>
   </div>
 </section>
 
-<!-- ===== OPINIONS ===== -->
-<section id="opinions" class="alt-bg">
-  <div class="container">
-    <div class="section-hdr reveal">
-      <div class="section-label">Opinions Franches</div>
-      <h2 class="section-title">Ce que la plupart des PMs ne vous disent pas.</h2>
-    </div>
-
-    <div class="opinions-grid">
-      <div class="opinion-card reveal">
-        <blockquote>La plupart des entreprises OSS sont des sociétés de services en déni.</blockquote>
-        <p>Si plus de 40&nbsp;% de vos revenus viennent du dev custom ou du conseil, vous n&rsquo;avez pas encore un business produit. Vous avez un modèle de facturation qui semble plus sûr qu&rsquo;il ne l&rsquo;est.</p>
-      </div>
-      <div class="opinion-card reveal">
-        <blockquote>Votre page de prix est l&rsquo;endroit où votre positionnement va mourir.</blockquote>
-        <p>Si vous ne pouvez pas expliquer en une phrase pourquoi votre palier enterprise coûte 10&times; plus que le palier communautaire, votre équipe commerciale ne le peut pas non plus.</p>
-      </div>
-      <div class="opinion-card reveal">
-        <blockquote>L&rsquo;open-core ne fonctionne que si la partie fermée résout un problème que la partie ouverte crée.</blockquote>
-        <p>Pas &laquo;&nbsp;plus de fonctionnalités&nbsp;&raquo;. Le palier fermé doit être la réponse naturelle à la friction du palier ouvert à grande échelle.</p>
-      </div>
-      <div class="opinion-card reveal">
-        <blockquote>Les étoiles GitHub mesurent la popularité. L&rsquo;ARR mesure le product-market fit. Les confondre est fatal.</blockquote>
-        <p>Les étoiles sont vanité. Les DAU de votre ICP cible, c&rsquo;est de la traction. Les revenus de cet ICP, c&rsquo;est le fit. Tout le reste est du bruit.</p>
-      </div>
-      <div class="opinion-card reveal">
-        <blockquote>La souveraineté européenne est une vraie ligne budgétaire &mdash; mais seulement si vous parlez marchés publics, pas ingénierie.</blockquote>
-        <p>Les mandats NIS2, DORA et souveraineté de l&rsquo;UE créent une vraie demande. Les entreprises OSS qui apprennent à vendre à ce mouvement domineront la décennie.</p>
-      </div>
-    </div>
-
-    <div class="target-strip reveal">
-      <strong>Pour&nbsp;:</strong>
-      <span class="target-pill">Startups OSS</span>
-      <span class="target-pill">5&ndash;50 personnes</span>
-      <span class="target-pill">France &amp; Europe</span>
-      <span class="target-pill">Pré ou post Série A</span>
-    </div>
-  </div>
-</section>
 
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="contact-section">
@@ -1500,8 +1597,8 @@
       <ul class="footer-links">
         <li><a href="#tensions">Problème</a></li>
         <li><a href="#models">Pistes</a></li>
-        <li><a href="#offer">Offre</a></li>
-        <li><a href="#opinions">Vision</a></li>
+        <li><a href="#leakage">Offre</a></li>
+        <li><a href="#offer">Engagement</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a rel="me" href="https://fosstodon.org/@nyconyco">Mastodon</a></li>
       </ul>
