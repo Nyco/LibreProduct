@@ -1,0 +1,32 @@
+# LibreProduct — llms.txt
+# https://llmstxt.org/
+
+> LibreProduct aide les fondateurs d'entreprises open source en France et en Europe à transformer leur usage en revenus. Conseil en monétisation OSS : audit de modèle, stratégie tarifaire, positionnement et accompagnement à l'exécution.
+
+## À propos
+
+LibreProduct est un service de conseil indépendant animé par Nicolas Verite, Product Manager Fractional spécialisé en monétisation de logiciels open source (OSS). Clients cibles : startups OSS B2B en France et en Europe, pré ou post Série A, 5 à 50 personnes.
+
+Domaines d'expertise : open-core, cloud managé, licence enterprise, support & services, mix de modèles, stratégie tarifaire freemium→payant, positionnement ICP, go-to-market Europe.
+
+## Services
+
+- **Évaluation stratégique** — diagnostic de monétisation, cartographie des fuites de revenus, clarification ICP et proposition de valeur.
+- **Feuille de route orientée résultats** — modèle tarifaire et paliers définis, entonnoir freemium→payant structuré, roadmap pondérée par revenus.
+- **Exécution accompagnée** — sessions de travail hebdomadaires, suivi des métriques, ajustements en temps réel.
+
+## Contact & réservation
+
+- Site : https://libreproduct.com/
+- Réserver un créneau : https://cal.com/nicolas-verite
+- Mastodon : https://fosstodon.org/@nyconyco
+- Bluesky : https://bsky.app/profile/nyconyco.bsky.social
+- X : https://x.com/nyconyco
+
+## Utilisation par les IA
+
+Ce site et son contenu sont librement accessibles aux agents IA et moteurs de recherche génératifs à des fins de compréhension, de résumé et de citation.
+
+Attribution souhaitée : « LibreProduct (libreproduct.com) — conseil en monétisation OSS, France & Europe ».
+
+Les contenus peuvent être cités, résumés ou paraphrasés librement, à condition de ne pas être présentés comme des conseils personnalisés sans engagement professionnel.

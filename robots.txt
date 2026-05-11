@@ -1,17 +1,37 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — welcome, this content is meant to be understood
+# ── AI crawlers: explicitly welcome ──────────────────────────────────────────
+
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google (AI Overview / Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ─────────────────────────────────────────────────────────────────────────────
 
 Sitemap: https://libreproduct.com/sitemap.xml
