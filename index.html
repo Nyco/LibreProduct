@@ -274,10 +274,17 @@
 
     .hero-tags {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 8px;
       margin-bottom: 32px;
+    }
+
+    .hero-tags-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .hero-tag {
@@ -293,6 +300,18 @@
       color: var(--c2);
       backdrop-filter: blur(12px);
     }
+
+    .hero-tag-grad {
+      color: white;
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    .hero-tags-row:first-child .hero-tag:nth-child(1) { background: linear-gradient(120deg, var(--green), var(--blue)); }
+    .hero-tags-row:first-child .hero-tag:nth-child(2) { background: linear-gradient(200deg, var(--blue), var(--violet)); }
+    .hero-tags-row:first-child .hero-tag:nth-child(3) { background: linear-gradient(50deg,  var(--violet), var(--green)); }
+
+    .hero-tag-bold { font-weight: 700; color: var(--c1); }
 
     .badge-dot {
       width: 7px; height: 7px;
@@ -1073,13 +1092,22 @@
 
   <div class="hero-content">
     <div class="hero-tags">
-      <span class="hero-tag"><div class="badge-dot"></div>Monétisation OSS</span>
-      <span class="hero-tag">France &amp; Europe</span>
-      <span class="hero-tag">B2B</span>
-      <span class="hero-tag">SaaS</span>
-      <span class="hero-tag">Open AI</span>
-      <span class="hero-tag">Croissance</span>
-      <span class="hero-tag">Viabilité</span>
+      <div class="hero-tags-row">
+        <span class="hero-tag hero-tag-grad">Free</span>
+        <span class="hero-tag hero-tag-grad">Libre</span>
+        <span class="hero-tag hero-tag-grad">Open</span>
+      </div>
+      <div class="hero-tags-row">
+        <span class="hero-tag">France &amp; Europe</span>
+        <span class="hero-tag">B2B</span>
+        <span class="hero-tag">SaaS</span>
+        <span class="hero-tag hero-tag-bold">IA</span>
+      </div>
+      <div class="hero-tags-row">
+        <span class="hero-tag">💰 Monétisation</span>
+        <span class="hero-tag">📈 Croissance</span>
+        <span class="hero-tag">🌱 Viabilité</span>
+      </div>
     </div>
 
     <h1>
