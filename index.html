@@ -272,18 +272,25 @@
       padding: 80px 24px;
     }
 
-    .hero-badge {
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .hero-tag {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 7px 18px;
+      gap: 8px;
+      padding: 6px 16px;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 100px;
       font-size: 13px;
       font-weight: 500;
       color: var(--c2);
-      margin-bottom: 32px;
       backdrop-filter: blur(12px);
     }
 
@@ -1065,9 +1072,14 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-badge">
-      <div class="badge-dot"></div>
-      <span>Monétisation OSS &middot; France &amp; Europe</span>
+    <div class="hero-tags">
+      <span class="hero-tag"><div class="badge-dot"></div>Monétisation OSS</span>
+      <span class="hero-tag">France &amp; Europe</span>
+      <span class="hero-tag">B2B</span>
+      <span class="hero-tag">SaaS</span>
+      <span class="hero-tag">Open AI</span>
+      <span class="hero-tag">Croissance</span>
+      <span class="hero-tag">Viabilité</span>
     </div>
 
     <h1>
