@@ -551,9 +551,10 @@
     }
 
     .tension-card {
+      --card-accent: var(--green);
       background: var(--card);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--green);
+      border-left: 3px solid var(--card-accent);
       border-radius: var(--r);
       padding: 28px;
       transition: all var(--ease);
@@ -562,7 +563,7 @@
     .tension-card:hover {
       background: var(--card-h);
       border-color: var(--border-h);
-      border-left-color: var(--green);
+      border-left-color: var(--card-accent);
     }
 
     .tension-card h3 {
@@ -584,9 +585,17 @@
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--c3);
+      color: var(--card-accent);
       margin-top: 14px;
     }
+
+    /* per-card accent colours — green → teal → blue → periwinkle → violet → fuchsia */
+    .tensions-grid .tension-card:nth-child(1) { --card-accent: #00d4a0; }
+    .tensions-grid .tension-card:nth-child(2) { --card-accent: #10b8d0; }
+    .tensions-grid .tension-card:nth-child(3) { --card-accent: #3b9eff; }
+    .tensions-grid .tension-card:nth-child(4) { --card-accent: #7570ee; }
+    .tensions-grid .tension-card:nth-child(5) { --card-accent: #9b5de5; }
+    .tensions-grid .tension-card:nth-child(6) { --card-accent: #c44dc8; }
 
     /* === BEFORE / AFTER === */
     .before-after {
@@ -1172,10 +1181,10 @@
         <p>AWS et Azure prennent votre code Apache, l&rsquo;encapsulent en hébergement géré, et prennent vos clients enterprise. Vous avez besoin de défensabilité avant la croissance.</p>
         <span class="tension-truth">Défendez-vous avant de scaler.</span>
       </div>
-      <div class="tension-card reveal" style="border-left-color: var(--blue);">
+      <div class="tension-card reveal">
         <h3>⚡ L&rsquo;IA&nbsp;: levier, pas menace</h3>
         <p>Les poids ouverts et les données ouvertes alimentent un cycle vertueux&nbsp;: chaque usage améliore le modèle, chaque amélioration attire de nouveaux contributeurs et clients. Utilisée comme accélérateur, l&rsquo;IA open source démultiplie votre avantage compétitif au lieu de l&rsquo;éroder.</p>
-        <span class="tension-truth" style="color: var(--blue);">Votre avantage, pas leur arme.</span>
+        <span class="tension-truth">Votre avantage, pas leur arme.</span>
       </div>
     </div>
   </div>
