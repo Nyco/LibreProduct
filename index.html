@@ -598,12 +598,17 @@
     .tensions-grid .tension-card:nth-child(6) { --card-accent: #c44dc8; }
 
     /* === BEFORE / AFTER === */
-    .before-after {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .before-after-wrap {
       border-radius: var(--r);
       overflow: hidden;
       border: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .before-after {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
     }
 
     .ba-header {
@@ -613,6 +618,8 @@
       text-transform: uppercase;
       padding: 22px 28px;
       border-bottom: 1px solid var(--border);
+      width: 50%;
+      text-align: left;
     }
 
     .ba-header--before {
@@ -627,10 +634,8 @@
     }
 
     .ba-cell {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
       padding: 14px 28px;
+      vertical-align: top;
       border-bottom: 1px solid var(--border);
     }
 
@@ -643,18 +648,20 @@
       background: rgba(0, 212, 160, 0.06);
     }
 
-    /* remove bottom border on last row */
-    .ba-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .before-after tbody tr:last-child .ba-cell { border-bottom: none; }
 
     .ba-cat {
+      display: block;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: var(--c3);
+      margin-bottom: 4px;
     }
 
     .ba-text {
+      display: block;
       font-size: 14px;
       color: var(--c2);
       line-height: 1.55;
@@ -933,16 +940,7 @@
     }
 
     @media (max-width: 640px) {
-      .before-after {
-        grid-template-columns: 1fr;
-      }
-      .ba-header--before,
-      .ba-cell--before {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-      .ba-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
-      .ba-cell:last-child { border-bottom: none; }
+      .before-after { min-width: 360px; }
     }
 
     /* === HAMBURGER === */
@@ -1216,72 +1214,87 @@
       <p class="section-sub">Des zones souvent sous-estimées, où des opportunités de revenus peuvent passer inaperçues &mdash; indépendamment de la maturité du projet.</p>
     </div>
 
-    <div class="before-after reveal">
-      <div class="ba-header ba-header--before">Situation fréquente</div>
-      <div class="ba-header ba-header--after">Avec LibreProduct</div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">💶 Tarification</span>
-        <span class="ba-text">La tranche gratuite absorbe tout l&rsquo;usage &mdash; aucun parcours d&rsquo;upgrade structuré</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">💶 Tarification</span>
-        <span class="ba-text">Portes de valeur claires, conversion freemium&rarr;payant structurée</span>
-      </div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">🎯 Positionnement</span>
-        <span class="ba-text">Messaging écrit pour les contributeurs, pas les acheteurs</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">🎯 Positionnement</span>
-        <span class="ba-text">Proposition de valeur ICP-spécifique, prête pour les décideurs</span>
-      </div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">🗺️ Roadmap</span>
-        <span class="ba-text">Roadmap pilotée par les issues GitHub les plus bruyantes</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">🗺️ Roadmap</span>
-        <span class="ba-text">Roadmap pilotée par l&rsquo;impact revenus ICP</span>
-      </div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">♻️ Gaspillage</span>
-        <span class="ba-text">Fonctionnalités peu utilisées maintenues à coût élevé, télémétrie inexploitée, dette technique masquant les usages réels</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">♻️ Gaspillage</span>
-        <span class="ba-text">Périmètre allégé sur les usages réels, télémétrie valorisée, coûts de maintenance réduits</span>
-      </div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">📈 Croissance</span>
-        <span class="ba-text">Ciblage ICP imprécis, distribution limitée aux canaux existants, ventes perdues non analysées</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">📈 Croissance</span>
-        <span class="ba-text">Segments à fort potentiel activés, réseau partenaires structuré, enseignements des ventes perdues exploités</span>
-      </div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">🔍 Visibilité</span>
-        <span class="ba-text">Dépôt sans signaux de confiance, présence SEO/GEO peu optimisée, présence événementielle non ciblée</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">🔍 Visibilité</span>
-        <span class="ba-text">Dépôt structuré pour la conversion, SEO/GEO optimisé, présence événementielle centrée sur l&rsquo;ICP</span>
-      </div>
-
-      <div class="ba-cell ba-cell--before">
-        <span class="ba-cat">🌐 Écosystème</span>
-        <span class="ba-text">Présence concentrée dans la communauté OSS — intra et inter-projets — peu de rayonnement vers des audiences non-opensource</span>
-      </div>
-      <div class="ba-cell ba-cell--after">
-        <span class="ba-cat">🌐 Écosystème</span>
-        <span class="ba-text">Rayonnement élargi vers des audiences extra-OSS : entreprises, intégrateurs, secteur public, influenceurs métier</span>
-      </div>
+    <div class="before-after-wrap reveal">
+      <table class="before-after">
+        <thead>
+          <tr>
+            <th class="ba-header ba-header--before">Situation fréquente</th>
+            <th class="ba-header ba-header--after">Avec LibreProduct</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">💶 Tarification</span>
+              <span class="ba-text">La tranche gratuite absorbe tout l&rsquo;usage &mdash; aucun parcours d&rsquo;upgrade structuré</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">💶 Tarification</span>
+              <span class="ba-text">Portes de valeur claires, conversion freemium&rarr;payant structurée</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">🎯 Positionnement</span>
+              <span class="ba-text">Messaging écrit pour les contributeurs, pas les acheteurs</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">🎯 Positionnement</span>
+              <span class="ba-text">Proposition de valeur ICP-spécifique, prête pour les décideurs</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">🗺️ Roadmap</span>
+              <span class="ba-text">Roadmap pilotée par les issues GitHub les plus bruyantes</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">🗺️ Roadmap</span>
+              <span class="ba-text">Roadmap pilotée par l&rsquo;impact revenus ICP</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">♻️ Gaspillage</span>
+              <span class="ba-text">Fonctionnalités peu utilisées maintenues à coût élevé, télémétrie inexploitée, dette technique masquant les usages réels</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">♻️ Gaspillage</span>
+              <span class="ba-text">Périmètre allégé sur les usages réels, télémétrie valorisée, coûts de maintenance réduits</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">📈 Croissance</span>
+              <span class="ba-text">Ciblage ICP imprécis, distribution limitée aux canaux existants, ventes perdues non analysées</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">📈 Croissance</span>
+              <span class="ba-text">Segments à fort potentiel activés, réseau partenaires structuré, enseignements des ventes perdues exploités</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">🔍 Visibilité</span>
+              <span class="ba-text">Dépôt sans signaux de confiance, présence SEO/GEO peu optimisée, présence événementielle non ciblée</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">🔍 Visibilité</span>
+              <span class="ba-text">Dépôt structuré pour la conversion, SEO/GEO optimisé, présence événementielle centrée sur l&rsquo;ICP</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="ba-cell ba-cell--before">
+              <span class="ba-cat">🌐 Écosystème</span>
+              <span class="ba-text">Présence concentrée dans la communauté OSS — intra et inter-projets — peu de rayonnement vers des audiences non-opensource</span>
+            </td>
+            <td class="ba-cell ba-cell--after">
+              <span class="ba-cat">🌐 Écosystème</span>
+              <span class="ba-text">Rayonnement élargi vers des audiences extra-OSS : entreprises, intégrateurs, secteur public, influenceurs métier</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
