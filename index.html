@@ -1057,6 +1057,35 @@
       flex-wrap: wrap;
     }
 
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: var(--c3);
+      opacity: 0.55;
+      transition: opacity 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+
+    .footer-social-link:hover {
+      opacity: 1;
+      color: var(--c1);
+    }
+
+    .footer-social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
     .footer-brand .footer-tag {
       font-size: 13px;
       color: var(--c3);
@@ -1752,8 +1781,22 @@
         <li><a href="#leakage">Offre</a></li>
         <li><a href="#offer">Engagement</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a rel="me" href="https://fosstodon.org/@nyconyco">Mastodon</a></li>
       </ul>
+
+      <div class="footer-social">
+        <!-- Mastodon -->
+        <a class="footer-social-link" rel="me" href="https://fosstodon.org/@nyconyco" target="_blank" rel="noopener noreferrer" title="Mastodon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.786.006-.004.012-.01.016-.016l.047-.051c0-.006 0-.01.003-.015v-1.998c0-.003-.002-.006-.004-.006l-.003-.001H7.51c-2.051 0-3.687-1.628-3.687-3.667v-3.7c0-2.038 1.636-3.666 3.687-3.666h2.218v6.317c.428-1.21 1.59-2.066 2.951-2.066h5.063c2.051 0 3.687 1.627 3.687 3.666v3.7c0 2.038-1.636 3.667-3.687 3.667h-2.218c-.002 0-.004.003-.004.006v1.998c0 .005.001.01.003.015l.046.051c.004.006.01.012.016.016.505.397 1.19.602 1.775.786.26.081.52.152.786.213 2.407.543 4.92.412 7.256-.38 2.183-.76 4.41-2.62 4.96-4.857.295-1.21.502-2.44.62-3.68.172-1.866.186-3.737.26-5.611.052-1.306.022-2.731-.256-4.016z"/></svg>
+        </a>
+        <!-- Bluesky -->
+        <a class="footer-social-link" href="https://bsky.app/profile/nyconyco.bsky.social" target="_blank" rel="noopener noreferrer" title="Bluesky">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.204-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+        </a>
+        <!-- X / Twitter -->
+        <a class="footer-social-link" href="https://x.com/nyconyco" target="_blank" rel="noopener noreferrer" title="X">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
 
       <p class="footer-copy">&copy; 2025 LibreProduct &mdash; Tous droits réservés</p>
     </div>
