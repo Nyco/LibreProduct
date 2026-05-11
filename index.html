@@ -525,14 +525,47 @@
       line-height: 1.65;
     }
 
-    .svc-impact {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--green);
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
+    .services-grid + .services-grid { margin-top: 18px; }
+
+    .models-disruptor {
+      margin-top: 32px;
+      padding: 32px 36px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .models-disruptor::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg,
+        rgba(0,212,160,0.05) 0%,
+        rgba(59,158,255,0.05) 50%,
+        rgba(155,93,229,0.08) 100%);
+      pointer-events: none;
+    }
+
+    .models-disruptor h3 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      margin-bottom: 14px;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .models-disruptor p {
+      font-size: 16px;
+      color: var(--c2);
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     /* === TENSIONS === */
@@ -1303,7 +1336,7 @@
 <section id="models" class="alt-bg">
   <div class="container">
     <div class="section-hdr reveal">
-      <div class="section-label">Modèles qui Fonctionnent</div>
+      <div class="section-label">Pistes à Explorer</div>
       <h2 class="section-title">Toute entreprise OSS ne devrait pas être un SaaS.</h2>
       <p class="section-sub">Le bon modèle dépend de votre code, votre communauté et vos clients &mdash; pas de ce qui est à la mode.</p>
     </div>
@@ -1313,26 +1346,45 @@
         <div class="svc-icon">&#128273;</div>
         <h3>Open-core</h3>
         <p>Ce qui reste gratuit, ce qui devient payant, comment tracer la ligne sans forker votre communauté ni bloquer votre enterprise.</p>
-        <span class="svc-impact">&rarr; 80k&ndash;500k&nbsp;&euro; d&rsquo;ARR sur le premier palier enterprise</span>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">&#9729;&#65039;</div>
         <h3>Cloud managé</h3>
         <p>Quand l&rsquo;hébergement ajoute une vraie valeur vs. quand c&rsquo;est du théâtre ops. Ce qui rend votre offre managée défendable face aux hyperscalers.</p>
-        <span class="svc-impact">&rarr; LTV 3 à 5&times; supérieure aux utilisateurs self-hosted</span>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">&#128083;</div>
         <h3>Support &amp; services</h3>
         <p>Comment capter les revenus de services professionnels sans construire une société de services. Périmètre, marges et sortie du piège.</p>
-        <span class="svc-impact">&rarr; 50k&ndash;300k&nbsp;&euro; par deal enterprise, 60&nbsp;%+ de marge si cadré</span>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">&#127968;</div>
         <h3>Licence enterprise</h3>
         <p>Secteur public européen, conformité souveraineté, cycles d&rsquo;achat. Le marché est réel &mdash; mais il nécessite un go-to-market différent.</p>
-        <span class="svc-impact">&rarr; Appels d&rsquo;offres souveraineté UE&nbsp;: 200k&ndash;2M&nbsp;&euro; par contrat</span>
       </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">🔀</div>
+        <h3>Mix &amp; Match</h3>
+        <p>Un seul modèle couvre rarement tout le terrain. Combinez open-core et cloud managé, support et licence enterprise &mdash; la superposition délibérée de modèles bâtit une résilience difficile à répliquer par vos concurrents.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">✂️</div>
+        <h3>Scinder &amp; Fusionner</h3>
+        <p>Divisez votre produit en briques indépendantes pour cibler des segments distincts, ou regroupez des offres complémentaires en packages cohérents. La granularité de votre catalogue est elle-même une variable stratégique.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🗂️</div>
+        <h3>Portfolio &amp; Plateformes</h3>
+        <p>Du composant unitaire au package métier, de l&rsquo;outil solo à la plateforme qui crée des effets de réseau entre vos clients. Construire un portfolio évolutif, c&rsquo;est reconnaître que la valeur ne réside pas toujours dans le code seul.</p>
+      </div>
+    </div>
+
+    <div class="models-disruptor reveal">
+      <h3>🎯 Soyez votre propre disrupteur.</h3>
+      <p>Placez le client payant au centre de chaque décision produit &mdash; pas la technologie, pas la communauté, pas la concurrence. Expérimentez délibérément&nbsp;: nouveaux modèles, nouveaux segments, nouvelles offres. La disruption la plus maîtrisée est celle que vous initiez vous-même, à votre rythme, avant que le marché ne vous l&rsquo;impose.</p>
     </div>
   </div>
 </section>
