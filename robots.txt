@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI crawlers — welcome, this content is meant to be understood
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://libreproduct.com/sitemap.xml

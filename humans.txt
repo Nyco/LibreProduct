@@ -1,0 +1,12 @@
+/* TEAM */
+Name: Nicolas Verite
+Role: Product Manager Fractional — Monétisation OSS
+Mastodon: https://fosstodon.org/@nyconyco
+Bluesky: https://bsky.app/profile/nyconyco.bsky.social
+X: https://x.com/nyconyco
+Location: France
+
+/* SITE */
+Last update: 2025/05/11
+Language: French (fr_FR)
+Standards: HTML5, CSS3, Schema.org JSON-LD
