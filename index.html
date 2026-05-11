@@ -904,11 +904,60 @@
       margin: 0 auto 48px;
     }
 
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto 48px;
+      text-align: left;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .contact-card-icon {
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .contact-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--c1);
+    }
+
+    .contact-card-desc {
+      font-size: 13px;
+      color: var(--c2);
+      line-height: 1.55;
+    }
+
+    .contact-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
     .contact-proof {
       display: block;
-      margin-top: 18px;
       font-size: 13px;
       color: var(--c3);
+    }
+
+    @media (max-width: 640px) {
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* === FOOTER === */
@@ -1573,12 +1622,33 @@
 <section id="contact" class="contact-section">
   <div class="container reveal">
     <div class="section-label">Contact</div>
-    <h2 class="section-title">Transformons votre usage en revenus.</h2>
-    <p class="section-sub">30 minutes d&rsquo;appel. Pas de présentation requise. Dites-moi où vous bloquez.</p>
-    <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:0;">
-      Monétiser mon OSS
-    </a>
-    <span class="contact-proof">Fondateurs OSS en France &amp; Europe &middot; Réponse sous 24h</span>
+    <h2 class="section-title">Prenons 30 minutes pour regarder votre situation ensemble.</h2>
+    <p class="section-sub">Pas de pitch. Pas de présentation. Une conversation franche &mdash; vous expliquez où vous en êtes, je vous dis ce que je vois.</p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon">🧩</div>
+        <div class="contact-card-title">Vous cherchez un modèle</div>
+        <div class="contact-card-desc">Votre produit OSS tourne, votre communauté grandit, mais les revenus ne suivent pas encore.</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🔍</div>
+        <div class="contact-card-title">Vous avez un doute</div>
+        <div class="contact-card-desc">Quelque chose coince &mdash; pricing, positionnement, roadmap &mdash; et vous voulez un regard extérieur honnête.</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">💬</div>
+        <div class="contact-card-title">Vous voulez juste échanger</div>
+        <div class="contact-card-desc">Pas besoin d&rsquo;un projet défini. Si le sujet vous parle, la conversation a déjà de la valeur.</div>
+      </div>
+    </div>
+
+    <div class="contact-cta-wrap">
+      <a href="https://cal.com/nicolas-verite" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top:0;">
+        Réserver un créneau &rarr;
+      </a>
+      <span class="contact-proof">Fondateurs OSS en France &amp; Europe &middot; Réponse sous 24h &middot; Sans engagement</span>
+    </div>
   </div>
 </section>
 
