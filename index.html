@@ -538,8 +538,16 @@
     /* === TENSIONS === */
     .tensions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .tensions-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 580px) {
+      .tensions-grid { grid-template-columns: 1fr; }
     }
 
     .tension-card {
@@ -1163,6 +1171,11 @@
         <h3>L&rsquo;arbitrage des hyperscalers</h3>
         <p>AWS et Azure prennent votre code Apache, l&rsquo;encapsulent en hébergement géré, et prennent vos clients enterprise. Vous avez besoin de défensabilité avant la croissance.</p>
         <span class="tension-truth">Ça vous parle ?</span>
+      </div>
+      <div class="tension-card reveal" style="border-left-color: var(--blue);">
+        <h3>L&rsquo;IA&nbsp;: levier, pas menace</h3>
+        <p>Les poids ouverts et les données ouvertes alimentent un cycle vertueux&nbsp;: chaque usage améliore le modèle, chaque amélioration attire de nouveaux contributeurs et clients. Utilisée comme accélérateur, l&rsquo;IA open source démultiplie votre avantage compétitif au lieu de l&rsquo;éroder.</p>
+        <span class="tension-truth" style="color: var(--blue);">Votre avantage, pas leur arme.</span>
       </div>
     </div>
   </div>
