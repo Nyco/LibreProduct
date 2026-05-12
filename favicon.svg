@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9ee8d8"/>
+      <stop offset="55%" stop-color="#b4d0f0"/>
+      <stop offset="100%" stop-color="#c4b8ee"/>
+    </linearGradient>
+    <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ddece" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#a8c8f4" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#baaef0" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#ccd8f8" stop-opacity="0.38"/>
+    </linearGradient>
+    <clipPath id="sq">
+      <rect width="32" height="32" rx="7.5" ry="7.5"/>
+    </clipPath>
+  </defs>
+  <rect width="32" height="32" rx="7.5" ry="7.5" fill="url(#bg)"/>
+  <circle cx="11.5" cy="12.5" r="12.5" fill="url(#b1)" clip-path="url(#sq)"/>
+  <circle cx="21.5" cy="20" r="12" fill="url(#b2)" clip-path="url(#sq)"/>
+  <text
+    x="16" y="21"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="12"
+    font-weight="300"
+    letter-spacing="-0.3"
+    fill="white"
+    text-anchor="middle"
+    opacity="0.95">LP</text>
+</svg>
