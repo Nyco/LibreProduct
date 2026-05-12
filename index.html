@@ -169,6 +169,12 @@
   }
   </script>
 
+  <!-- Favicon & manifest -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/logo.svg">
+  <link rel="manifest" href="/site.webmanifest">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -275,14 +281,17 @@
     .logo-mark {
       width: 34px; height: 34px;
       border-radius: 9px;
-      background: var(--grad);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
-      font-weight: 800;
-      color: white;
-      letter-spacing: -1px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .logo-mark img {
+      width: 34px;
+      height: 34px;
+      display: block;
     }
 
     .logo-name {
@@ -1560,7 +1569,7 @@
 <nav class="nav" id="nav">
   <div class="container">
     <a href="#" class="logo">
-      <div class="logo-mark">LP</div>
+      <div class="logo-mark"><img src="/logo.svg" alt="Libre Product logo" width="34" height="34"></div>
       <span class="logo-name">Libre<em>Product</em></span>
     </a>
 
@@ -1930,7 +1939,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <div class="logo-mark">LP</div>
+          <div class="logo-mark"><img src="/logo.svg" alt="Libre Product logo" width="34" height="34"></div>
           <span class="logo-name">Libre<em>Product</em></span>
         </a>
         <p class="footer-tag">Monétisation OSS pour entreprises françaises et européennes</p>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9ee8d8"/>
+      <stop offset="55%" stop-color="#b4d0f0"/>
+      <stop offset="100%" stop-color="#c4b8ee"/>
+    </linearGradient>
+    <linearGradient id="blob1-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ddece" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#a8c8f4" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="blob2-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#baaef0" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#ccd8f8" stop-opacity="0.38"/>
+    </linearGradient>
+    <clipPath id="squircle">
+      <rect width="200" height="200" rx="48" ry="48"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base rounded square -->
+  <rect width="200" height="200" rx="48" ry="48" fill="url(#bg-grad)"/>
+
+  <!-- Overlapping translucent blobs for depth/glass effect -->
+  <circle cx="72" cy="78" r="78" fill="url(#blob1-grad)" clip-path="url(#squircle)"/>
+  <circle cx="132" cy="126" r="76" fill="url(#blob2-grad)" clip-path="url(#squircle)"/>
+
+  <!-- LP text -->
+  <text
+    x="100" y="128"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif"
+    font-size="74"
+    font-weight="300"
+    letter-spacing="-2"
+    fill="white"
+    text-anchor="middle"
+    opacity="0.95">LP</text>
+</svg>
