@@ -197,7 +197,11 @@
       --bg2:         #0d1018;
       --card:        rgba(255,255,255,0.04);
       --card-h:      rgba(255,255,255,0.08);
-      --glass:       rgba(7,8,13,0.52);
+      --glass:       rgba(13,16,24,0.42);
+      --glass-btn:   rgba(255,255,255,0.06);
+      --glass-btn-h: rgba(255,255,255,0.12);
+      --glass-edge:  rgba(255,255,255,0.14);
+      --glass-hl:    inset 0 1px 0 rgba(255,255,255,0.10);
       --c1:          #eef2ff;
       --c2:          rgba(238,242,255,0.62);
       --c3:          rgba(238,242,255,0.35);
@@ -211,7 +215,11 @@
       --bg2:         #e8edff;
       --card:        rgba(255,255,255,0.78);
       --card-h:      rgba(255,255,255,0.97);
-      --glass:       rgba(244,247,255,0.62);
+      --glass:       rgba(255,255,255,0.55);
+      --glass-btn:   rgba(255,255,255,0.50);
+      --glass-btn-h: rgba(255,255,255,0.80);
+      --glass-edge:  rgba(255,255,255,0.85);
+      --glass-hl:    inset 0 1px 0 rgba(255,255,255,0.90);
       --c1:          #0d1018;
       --c2:          rgba(13,16,24,0.65);
       --c3:          rgba(13,16,24,0.42);
@@ -249,11 +257,25 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       height: var(--nav-h);
-      background: var(--glass);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0) 70%),
+        var(--glass);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
       border-bottom: 1px solid var(--border);
+      box-shadow: var(--glass-hl);
       transition: background var(--ease), border-color var(--ease), box-shadow var(--ease);
+    }
+
+    /* subtle brand-tinted hairline under the glass bar */
+    .nav::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 1px;
+      background: var(--grad-h);
+      opacity: 0.35;
+      pointer-events: none;
     }
 
     .nav .container {
@@ -332,8 +354,11 @@
 
     .btn-icon {
       width: 36px; height: 36px;
-      border: 1px solid var(--border);
-      background: var(--card);
+      border: 1px solid var(--glass-edge);
+      background: var(--glass-btn);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      box-shadow: var(--glass-hl), 0 2px 8px rgba(0,0,0,0.12);
       border-radius: var(--r-sm);
       cursor: pointer;
       display: flex;
@@ -347,7 +372,8 @@
     .btn-icon:hover {
       border-color: var(--border-h);
       color: var(--c1);
-      background: var(--card-h);
+      background: var(--glass-btn-h);
+      transform: translateY(-1px);
     }
 
     /* === HERO === */
@@ -547,16 +573,34 @@
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      border: none;
+      border: 1px solid rgba(255,255,255,0.28);
       border-radius: 10px;
       cursor: pointer;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.35),
+        0 4px 16px rgba(59,158,255,0.22);
       transition: opacity var(--ease), transform var(--ease), box-shadow var(--ease);
     }
 
+    /* glossy top sheen */
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 50% 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0));
+      z-index: -1;
+      pointer-events: none;
+    }
+
     .btn-primary:hover {
-      opacity: 0.88;
+      opacity: 0.92;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(59,158,255,0.35);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.40),
+        0 10px 28px rgba(59,158,255,0.38);
     }
 
     .btn-ghost {
@@ -570,10 +614,20 @@
       font-weight: 500;
       text-decoration: none;
       border-radius: 10px;
-      transition: color var(--ease);
+      border: 1px solid var(--glass-edge);
+      background: var(--glass-btn);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      box-shadow: var(--glass-hl);
+      transition: color var(--ease), background var(--ease), border-color var(--ease), transform var(--ease);
     }
 
-    .btn-ghost:hover { color: var(--c1); }
+    .btn-ghost:hover {
+      color: var(--c1);
+      background: var(--glass-btn-h);
+      border-color: var(--border-h);
+      transform: translateY(-2px);
+    }
 
     /* === SECTIONS === */
     section { padding: 100px 0; }
@@ -1420,8 +1474,11 @@
     .hamburger {
       display: none;
       width: 36px; height: 36px;
-      border: 1px solid var(--border);
-      background: var(--card);
+      border: 1px solid var(--glass-edge);
+      background: var(--glass-btn);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      box-shadow: var(--glass-hl), 0 2px 8px rgba(0,0,0,0.12);
       border-radius: var(--r-sm);
       cursor: pointer;
       flex-direction: column;
@@ -1434,7 +1491,7 @@
 
     .hamburger:hover {
       border-color: var(--border-h);
-      background: var(--card-h);
+      background: var(--glass-btn-h);
     }
 
     .hb {
@@ -1456,8 +1513,8 @@
       left: 0; right: 0;
       z-index: 999;
       background: var(--glass);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
       border-bottom: 1px solid var(--border);
       overflow: hidden;
       max-height: 0;
@@ -1626,7 +1683,7 @@
       <span class="grad-text">Votre projet OSS est utilisé par des milliers !<br>Et ne vous rapporte presque rien ?</span>
     </h1>
 
-    <p>L&rsquo;IA commoditise vos avatanges<br>Les hyperscalers forkent votre code.<br>Les budgets souveraineté existent &mdash; mais ne vous atteignent pas.<br>Optimisez votre modèle !</p>
+    <p>L&rsquo;IA commoditise vos avantages<br>Les hyperscalers forkent votre code.<br>Les budgets souveraineté existent &mdash; mais ne vous atteignent pas.<br>Optimisez votre modèle !</p>
 
     <div class="urgency-strip">
       <span class="urgency-pill">🤖 L&rsquo;IA érode votre avantage</span>
@@ -2033,7 +2090,7 @@ document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
 /* ===== NAV SHADOW ON SCROLL ===== */
 window.addEventListener('scroll', function() {
   document.getElementById('nav').style.boxShadow =
-    window.scrollY > 16 ? '0 4px 24px rgba(0,0,0,0.18)' : '';
+    window.scrollY > 16 ? 'var(--glass-hl), 0 4px 24px rgba(0,0,0,0.18)' : '';
 }, { passive: true });
 
 /* ===== HAMBURGER MENU ===== */
