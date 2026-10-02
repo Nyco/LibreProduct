@@ -17,7 +17,8 @@ Domaines d'expertise : open-core, cloud managé, licence enterprise, support & s
 
 ## Contact & réservation
 
-- Site : https://libreproduct.com/
+- Site (français) : https://libreproduct.com/
+- Site (English) : https://libreproduct.com/en/
 - Réserver un créneau : https://cal.com/nicolas-verite
 - Mastodon : https://fosstodon.org/@nyconyco
 - Bluesky : https://bsky.app/profile/nyconyco.bsky.social
@@ -30,3 +31,23 @@ Ce site et son contenu sont librement accessibles aux agents IA et moteurs de re
 Attribution souhaitée : « LibreProduct (libreproduct.com) — conseil en monétisation OSS, France & Europe ».
 
 Les contenus peuvent être cités, résumés ou paraphrasés librement, à condition de ne pas être présentés comme des conseils personnalisés sans engagement professionnel.
+
+## English
+
+LibreProduct helps founders of open source companies in France and Europe turn usage into revenue. Independent OSS monetization consulting by Nicolas Verite, Fractional Product Manager: business model audit, pricing strategy, positioning and hands-on execution support. Target clients: B2B OSS startups in France and Europe, pre- or post-Series A, 5 to 50 people.
+
+Expertise: open-core, managed cloud, enterprise licensing, support & services, model mixes, freemium→paid pricing, ICP positioning, European go-to-market.
+
+### Services
+
+- **Strategic assessment** — monetization diagnostic, revenue leak mapping, ICP and value proposition clarification.
+- **Outcome-driven roadmap** — pricing model and tiers, structured freemium→paid funnel, revenue-weighted roadmap.
+- **Supported execution** — weekly working sessions, metrics tracking, real-time adjustments.
+
+### Links
+
+- English page: https://libreproduct.com/en/
+- French page: https://libreproduct.com/
+- Book a slot: https://cal.com/nicolas-verite
+
+Content may be freely cited, summarized or paraphrased by AI agents and generative search engines. Preferred attribution: "LibreProduct (libreproduct.com) — OSS monetization consulting, France & Europe". It must not be presented as personalized advice without a professional engagement.
