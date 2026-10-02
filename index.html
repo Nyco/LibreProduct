@@ -397,10 +397,8 @@
       -webkit-backdrop-filter: blur(28px) saturate(220%) brightness(1.06);
       box-shadow:
         0 0 0 0.5px var(--sw-ring),               /* hairline that defines the edge */
-        inset 0 1px 1px var(--sw-edge),           /* top specular rim */
-        inset 0 -1px 2px var(--sw-depth),         /* bottom inner depth */
-        inset 0 2px 6px var(--sw-depth),          /* recessed track */
-        0 6px 18px -6px var(--sw-depth);          /* lift off the page */
+        inset 0 1px 0 var(--sw-edge),             /* top specular rim */
+        0 2px 8px -4px var(--sw-depth);           /* slight lift off the page */
       text-decoration: none;
       font-family: var(--font);
       cursor: pointer;
@@ -414,7 +412,7 @@
       inset: 1px 10px 50% 10px;
       border-radius: 100px 100px 40% 40% / 100px 100px 12px 12px;
       background: linear-gradient(180deg, var(--sw-sheen), transparent);
-      opacity: 0.55;
+      opacity: 0.3;
       pointer-events: none;
       z-index: 2;
     }
@@ -422,10 +420,8 @@
     .switch:hover {
       box-shadow:
         0 0 0 0.5px var(--sw-ring),
-        inset 0 1px 1px var(--sw-edge),
-        inset 0 -1px 2px var(--sw-depth),
-        inset 0 2px 6px var(--sw-depth),
-        0 8px 22px -6px var(--sw-depth);
+        inset 0 1px 0 var(--sw-edge),
+        0 3px 10px -4px var(--sw-depth);
     }
 
     .switch:focus-visible {
@@ -460,14 +456,13 @@
       border-radius: 100px;
       border: 1px solid var(--sw-thumb-hi);
       background:
-        radial-gradient(120% 80% at 50% 0%, var(--sw-thumb-hi), transparent 60%),
+        linear-gradient(180deg, var(--sw-thumb-hi), transparent 70%),
         var(--sw-thumb);
       backdrop-filter: blur(10px) saturate(180%);
       -webkit-backdrop-filter: blur(10px) saturate(180%);
       box-shadow:
         inset 0 1px 0 var(--sw-thumb-hi),
-        inset 0 -3px 6px var(--sw-depth),
-        0 2px 6px var(--sw-depth),
+        0 1px 3px var(--sw-depth),
         0 0 0 0.5px var(--sw-ring);
       transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1), background var(--ease);
     }
