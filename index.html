@@ -174,10 +174,10 @@
   </script>
 
   <!-- Favicon & manifest -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/logo.svg">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.svg">
+  <link rel="apple-touch-icon" href="logo.svg">
+  <link rel="manifest" href="site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1813,7 +1813,7 @@
 <nav class="nav" id="nav">
   <div class="container">
     <a href="#" class="logo">
-      <div class="logo-mark"><img src="/logo.svg" alt="Libre Product logo" width="34" height="34"></div>
+      <div class="logo-mark"><img src="logo.svg" alt="Libre Product logo" width="34" height="34"></div>
       <span class="logo-name">Libre<em>Product</em></span>
     </a>
 
@@ -1826,7 +1826,7 @@
     </ul>
 
     <div class="nav-actions">
-      <a class="switch" id="lang-switch" href="/en/" hreflang="en" lang="en" data-on="false" aria-label="English version">
+      <a class="switch" id="lang-switch" href="en/" hreflang="en" lang="en" data-on="false" aria-label="English version">
         <span class="switch-thumb" aria-hidden="true"></span>
         <span class="switch-opt" aria-hidden="true">FR</span>
         <span class="switch-opt" aria-hidden="true">EN</span>
@@ -2194,7 +2194,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <div class="logo-mark"><img src="/logo.svg" alt="Libre Product logo" width="34" height="34"></div>
+          <div class="logo-mark"><img src="logo.svg" alt="Libre Product logo" width="34" height="34"></div>
           <span class="logo-name">Libre<em>Product</em></span>
         </a>
         <p class="footer-tag" data-i18n="monetisation_oss_pour_entreprises">Monétisation OSS pour entreprises françaises et européennes</p>
@@ -2262,6 +2262,12 @@ var themeSwitch = document.getElementById('theme-switch');
 
 /* ===== INIT ===== */
 applyTheme();
+
+/* file:// has no directory index: point the language link at index.html */
+if (location.protocol === 'file:') {
+  var langLink = document.getElementById('lang-switch');
+  langLink.href = langLink.getAttribute('href') + 'index.html';
+}
 
 /* ===== THEME ===== */
 themeSwitch.addEventListener('click', function() {

@@ -138,8 +138,24 @@
       "\"url\": \"https://libreproduct.com/en/\",\n        \"datePublished\""
     ],
     [
-      "<a class=\"switch\" id=\"lang-switch\" href=\"/en/\" hreflang=\"en\" lang=\"en\" data-on=\"false\" aria-label=\"English version\">",
-      "<a class=\"switch\" id=\"lang-switch\" href=\"/\" hreflang=\"fr\" lang=\"fr\" data-on=\"true\" aria-label=\"Version française\">"
+      "<a class=\"switch\" id=\"lang-switch\" href=\"en/\" hreflang=\"en\" lang=\"en\" data-on=\"false\" aria-label=\"English version\">",
+      "<a class=\"switch\" id=\"lang-switch\" href=\"../\" hreflang=\"fr\" lang=\"fr\" data-on=\"true\" aria-label=\"Version française\">"
+    ],
+    [
+      "href=\"favicon.svg\"",
+      "href=\"../favicon.svg\""
+    ],
+    [
+      "href=\"logo.svg\"",
+      "href=\"../logo.svg\""
+    ],
+    [
+      "href=\"site.webmanifest\"",
+      "href=\"../site.webmanifest\""
+    ],
+    [
+      "src=\"logo.svg\"",
+      "src=\"../logo.svg\""
     ]
   ],
   "attributes": {
