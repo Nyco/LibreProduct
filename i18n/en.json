@@ -1,0 +1,292 @@
+{
+  "_readme": "English version of index.html. 'strings' and 'attributes' map data-i18n / data-i18n-aria keys to English HTML; 'replace' holds literal French→English swaps for <head> metadata and JSON-LD. Run: python3 scripts/build-en.py",
+  "replace": [
+    [
+      "<html lang=\"fr\"",
+      "<html lang=\"en\""
+    ],
+    [
+      "<title>Monétisation OSS — LibreProduct · France &amp; Europe</title>",
+      "<title>OSS Monetization — LibreProduct · France &amp; Europe</title>"
+    ],
+    [
+      "<meta name=\"description\" content=\"Transformez votre projet open source en moteur de revenus. Product Manager Fractional spécialisé en monétisation OSS pour startups en France et en Europe.\">",
+      "<meta name=\"description\" content=\"Turn your open source project into a revenue engine. Fractional Product Manager specializing in OSS monetization for startups in France and Europe.\">"
+    ],
+    [
+      "<meta name=\"keywords\" content=\"monétisation open source, OSS monetization, open-core, SaaS OSS, product manager fractional, France, Europe\">",
+      "<meta name=\"keywords\" content=\"open source monetization, OSS monetization, open-core, OSS SaaS, fractional product manager, France, Europe\">"
+    ],
+    [
+      "<link rel=\"canonical\" href=\"https://libreproduct.com/\">",
+      "<link rel=\"canonical\" href=\"https://libreproduct.com/en/\">"
+    ],
+    [
+      "<meta property=\"og:url\" content=\"https://libreproduct.com/\">",
+      "<meta property=\"og:url\" content=\"https://libreproduct.com/en/\">"
+    ],
+    [
+      "<meta property=\"og:title\" content=\"Monétisation OSS — LibreProduct\">",
+      "<meta property=\"og:title\" content=\"OSS Monetization — LibreProduct\">"
+    ],
+    [
+      "<meta property=\"og:description\" content=\"Transformez votre projet open source en moteur de revenus. Audit, modèles, exécution — pour fondateurs OSS en France et en Europe.\">",
+      "<meta property=\"og:description\" content=\"Turn your open source project into a revenue engine. Audit, models, execution — for OSS founders in France and Europe.\">"
+    ],
+    [
+      "<meta property=\"og:locale\" content=\"fr_FR\">\n  <meta property=\"og:locale:alternate\" content=\"en_US\">",
+      "<meta property=\"og:locale\" content=\"en_US\">\n  <meta property=\"og:locale:alternate\" content=\"fr_FR\">"
+    ],
+    [
+      "<meta name=\"twitter:title\" content=\"Monétisation OSS — LibreProduct\">",
+      "<meta name=\"twitter:title\" content=\"OSS Monetization — LibreProduct\">"
+    ],
+    [
+      "<meta name=\"twitter:description\" content=\"Transformez votre projet open source en moteur de revenus. Audit, modèles, exécution — pour fondateurs OSS en France et en Europe.\">",
+      "<meta name=\"twitter:description\" content=\"Turn your open source project into a revenue engine. Audit, models, execution — for OSS founders in France and Europe.\">"
+    ],
+    [
+      "\"description\": \"Conseil en monétisation de logiciels open source pour startups en France et en Europe. Audit de modèle, stratégie tarifaire, positionnement et accompagnement à l'exécution.\"",
+      "\"description\": \"Open source software monetization consulting for startups in France and Europe. Business model audit, pricing strategy, positioning and hands-on execution support.\""
+    ],
+    [
+      "\"serviceType\": \"Conseil en monétisation OSS\"",
+      "\"serviceType\": \"OSS monetization consulting\""
+    ],
+    [
+      "\"inLanguage\": \"fr\"",
+      "\"inLanguage\": \"en\""
+    ],
+    [
+      "\"knowsAbout\": [\"open-core\", \"monétisation open source\", \"SaaS\", \"cloud managé\", \"licence enterprise\", \"product management\"]",
+      "\"knowsAbout\": [\"open-core\", \"open source monetization\", \"SaaS\", \"managed cloud\", \"enterprise licensing\", \"product management\"]"
+    ],
+    [
+      "\"name\": \"Services LibreProduct\"",
+      "\"name\": \"LibreProduct services\""
+    ],
+    [
+      "\"name\": \"Évaluation stratégique\"",
+      "\"name\": \"Strategic assessment\""
+    ],
+    [
+      "\"description\": \"Diagnostic complet de monétisation : cartographie des fuites de revenus, clarification ICP et proposition de valeur.\"",
+      "\"description\": \"Full monetization diagnostic: revenue leak mapping, ICP and value proposition clarification.\""
+    ],
+    [
+      "\"name\": \"Feuille de route orientée résultats\"",
+      "\"name\": \"Outcome-driven roadmap\""
+    ],
+    [
+      "\"description\": \"Modèle tarifaire et paliers définis, entonnoir freemium vers payant structuré, roadmap pondérée par revenus.\"",
+      "\"description\": \"Pricing model and tiers defined, structured freemium-to-paid funnel, revenue-weighted roadmap.\""
+    ],
+    [
+      "\"name\": \"Exécution accompagnée\"",
+      "\"name\": \"Supported execution\""
+    ],
+    [
+      "\"description\": \"Sessions de travail hebdomadaires, suivi des métriques, ajustements en temps réel.\"",
+      "\"description\": \"Weekly working sessions, metrics tracking, real-time adjustments.\""
+    ],
+    [
+      "\"jobTitle\": \"Product Manager Fractional — Monétisation OSS\"",
+      "\"jobTitle\": \"Fractional Product Manager — OSS Monetization\""
+    ],
+    [
+      "\"name\": \"Pourquoi une startup OSS populaire peut-elle avoir des revenus nuls ?\"",
+      "\"name\": \"Why can a popular OSS startup have zero revenue?\""
+    ],
+    [
+      "\"text\": \"Adoption et revenus sont deux métriques distinctes. La plupart des entreprises OSS optimisent la popularité (étoiles GitHub, téléchargements) sans structurer de parcours vers le paiement. La popularité ne paie pas les salaires.\"",
+      "\"text\": \"Adoption and revenue are two distinct metrics. Most OSS companies optimize for popularity (GitHub stars, downloads) without structuring a path to payment. Popularity doesn't pay salaries.\""
+    ],
+    [
+      "\"name\": \"Comment choisir entre open-core, cloud managé, support et licence enterprise ?\"",
+      "\"name\": \"How do you choose between open-core, managed cloud, support and enterprise licensing?\""
+    ],
+    [
+      "\"text\": \"Le bon modèle dépend de votre code, votre communauté et vos clients — pas de ce qui est à la mode. Un audit de votre situation permet d'identifier les leviers les plus adaptés à votre contexte.\"",
+      "\"text\": \"The right model depends on your code, your community and your customers — not on what's trendy. An audit of your situation identifies the levers best suited to your context.\""
+    ],
+    [
+      "\"name\": \"Comment éviter que les hyperscalers (AWS, Azure) ne cannibalisent mon projet OSS ?\"",
+      "\"name\": \"How do I stop hyperscalers (AWS, Azure) from cannibalizing my OSS project?\""
+    ],
+    [
+      "\"text\": \"Vous avez besoin de défensabilité avant la croissance. Cela passe par une proposition de valeur différenciée, un modèle tarifaire clair et une stratégie go-to-market adaptée au marché enterprise européen.\"",
+      "\"text\": \"You need defensibility before growth. That means a differentiated value proposition, a clear pricing model and a go-to-market strategy suited to the European enterprise market.\""
+    ],
+    [
+      "\"name\": \"Quelles sont les étapes d'un accompagnement LibreProduct ?\"",
+      "\"name\": \"What are the steps of a LibreProduct engagement?\""
+    ],
+    [
+      "\"text\": \"L'accompagnement se déroule en trois temps : évaluation stratégique (diagnostic, cartographie des leviers), feuille de route orientée résultats (modèle tarifaire, entonnoir freemium→payant), puis exécution accompagnée avec suivi des métriques.\"",
+      "\"text\": \"The engagement runs in three phases: strategic assessment (diagnostic, lever mapping), an outcome-driven roadmap (pricing model, freemium→paid funnel), then supported execution with metrics tracking.\""
+    ],
+    [
+      "\"description\": \"Transformez votre projet open source en moteur de revenus. Product Manager Fractional spécialisé en monétisation OSS pour startups en France et en Europe.\"",
+      "\"description\": \"Turn your open source project into a revenue engine. Fractional Product Manager specializing in OSS monetization for startups in France and Europe.\""
+    ],
+    [
+      "\"headline\": \"Monétisation OSS — LibreProduct · France & Europe\"",
+      "\"headline\": \"OSS Monetization — LibreProduct · France & Europe\""
+    ],
+    [
+      "\"url\": \"https://libreproduct.com/\",\n        \"datePublished\"",
+      "\"url\": \"https://libreproduct.com/en/\",\n        \"datePublished\""
+    ],
+    [
+      "<a class=\"switch\" id=\"lang-switch\" href=\"en/\" hreflang=\"en\" lang=\"en\" data-on=\"false\" aria-label=\"English version\">",
+      "<a class=\"switch\" id=\"lang-switch\" href=\"../\" hreflang=\"fr\" lang=\"fr\" data-on=\"true\" aria-label=\"Version française\">"
+    ],
+    [
+      "href=\"favicon.svg\"",
+      "href=\"../favicon.svg\""
+    ],
+    [
+      "href=\"logo.svg\"",
+      "href=\"../logo.svg\""
+    ],
+    [
+      "href=\"site.webmanifest\"",
+      "href=\"../site.webmanifest\""
+    ],
+    [
+      "src=\"logo.svg\"",
+      "src=\"../logo.svg\""
+    ]
+  ],
+  "attributes": {
+    "aria_dark_theme": "Dark theme",
+    "mentions_legales": "Legal notice",
+    "aria_close": "Close"
+  },
+  "strings": {
+    "probleme": "Problem",
+    "pistes": "Models",
+    "offre": "Offer",
+    "ia": "AI",
+    "monetisation": "💰 Monetization",
+    "croissance": "📈 Growth",
+    "viabilite": "🌱 Sustainability",
+    "votre_projet_oss_est": "Your OSS project is used by thousands!<br>And earns you almost nothing?",
+    "l_ia_commoditise_vos": "AI is commoditizing your advantages.<br>Hyperscalers fork your code.<br>Sovereignty budgets exist &mdash; but they don&rsquo;t reach you.<br>Optimize your model!",
+    "l_ia_erode_votre": "🤖 AI erodes your advantage",
+    "les_hyperscalers_forkent_sans": "☁️ Hyperscalers fork without paying",
+    "les_budgets_souverainete_existent": "🇪🇺 Sovereignty budgets exist",
+    "monetiser_mon_oss": "Monetize my OSS",
+    "voir_comment_ca_marche": "See how it works ↓",
+    "le_vrai_probleme": "The Real Problem",
+    "les_etoiles_github_ne": "GitHub stars don&rsquo;t pay salaries.",
+    "cinq_tensions_que_toute": "Five tensions every OSS company runs into. Naming them is the first step.",
+    "etoiles_10000_arr": "⭐ 10,000 stars. &euro;0 ARR.",
+    "adoption_et_revenus_sont": "Adoption and revenue are two distinct metrics. Most OSS companies optimize one and are surprised the other doesn&rsquo;t follow.",
+    "la_popularite_ne_paie": "Popularity doesn&rsquo;t pay salaries.",
+    "communaute_vs_clients": "⚖️ Community vs. customers",
+    "chaque_demande_d_un": "Every power-user request is a distraction from what your ICP will pay for. Serve both without a model, and you lose both.",
+    "sans_modele_clair_vous": "Without a clear model, you lose both.",
+    "le_piege_des_services": "🪤 The services trap",
+    "les_services_professionnels_comblent": "Professional services fill the revenue gap &mdash; until they consume your product team. 40% margin, 0% scalability.",
+    "les_services_scalent_les": "Services scale costs, not revenue.",
+    "le_dilemme_open_core": "🔓 The open-core dilemma",
+    "tracez_la_ligne_trop": "Draw the line too early and the community forks you. Too late and enterprises have no reason to pay. That line is a product decision, not a legal one.",
+    "la_frontiere_est_une": "The boundary is a product decision.",
+    "l_arbitrage_des_hyperscalers": "☁️ The hyperscaler arbitrage",
+    "aws_et_azure_prennent": "AWS and Azure take your Apache code, wrap it in managed hosting, and take your enterprise customers. You need defensibility before growth.",
+    "defendez_vous_avant_de": "Defend before you scale.",
+    "l_ia_levier_pas": "⚡ AI: leverage, not threat",
+    "les_poids_ouverts_et": "Open weights and open data fuel a virtuous cycle: every use improves the model, every improvement attracts new contributors and customers. Used as an accelerator, open source AI multiplies your competitive advantage instead of eroding it.",
+    "votre_avantage_pas_leur": "Your advantage, not their weapon.",
+    "pistes_a_explorer": "Paths to Explore",
+    "toute_entreprise_oss_ne": "Not every OSS company should be a SaaS.",
+    "le_bon_modele_depend": "The right model depends on your code, your community and your customers &mdash; not on what&rsquo;s trendy.",
+    "ce_qui_reste_gratuit": "What stays free, what becomes paid, and how to draw the line without forking your community or blocking your enterprise customers.",
+    "cloud_manage": "Managed cloud",
+    "quand_l_hebergement_ajoute": "When hosting adds real value vs. when it&rsquo;s ops theater. What makes your managed offering defensible against hyperscalers.",
+    "comment_capter_les_revenus": "How to capture professional services revenue without building a services company. Scope, margins and getting out of the trap.",
+    "licence_enterprise": "Enterprise licensing",
+    "secteur_public_europeen_conformite": "European public sector, sovereignty compliance, procurement cycles. The market is real &mdash; but it requires a different go-to-market.",
+    "un_seul_modele_couvre": "A single model rarely covers the whole field. Combine open-core and managed cloud, support and enterprise licensing &mdash; deliberately layering models builds resilience your competitors will struggle to replicate.",
+    "scinder_fusionner": "Split &amp; Merge",
+    "divisez_votre_produit_en": "Break your product into independent building blocks to target distinct segments, or bundle complementary offerings into coherent packages. The granularity of your catalog is itself a strategic variable.",
+    "portfolio_plateformes": "Portfolio &amp; Platforms",
+    "du_composant_unitaire_au": "From single component to business package, from standalone tool to a platform that creates network effects among your customers. Building a scalable portfolio means recognizing that value doesn&rsquo;t always lie in the code alone.",
+    "soyez_votre_propre_disrupteur": "🎯 Be your own disruptor.",
+    "placez_le_client_payant": "Put the paying customer at the center of every product decision &mdash; not the technology, not the community, not the competition. Experiment deliberately: new models, new segments, new offerings. The most controlled disruption is the one you start yourself, at your own pace, before the market forces it on you.",
+    "audit_premiere_etape": "Audit &amp; First Step",
+    "identifier_les_leviers_c": "Identifying the levers is already the start of building.",
+    "une_lecture_honnete_de": "An honest reading of your situation &mdash; areas of opportunity, potential leaks, the first foundations of a sustainable model. Not a catalog of failures: a map of the first levers to pull.",
+    "situation_frequente": "Common situation",
+    "avec_libreproduct": "With LibreProduct",
+    "tarification": "💶 Pricing",
+    "positionnement": "🎯 Positioning",
+    "gaspillage": "♻️ Waste",
+    "visibilite": "🔍 Visibility",
+    "ecosysteme": "🌐 Ecosystem",
+    "la_tranche_gratuite_absorbe": "The free tier absorbs all usage &mdash; no structured upgrade path",
+    "portes_de_valeur_claires": "Clear value gates, structured freemium&rarr;paid conversion",
+    "messaging_ecrit_pour_les": "Messaging written for contributors, not buyers",
+    "proposition_de_valeur_icp": "ICP-specific value proposition, ready for decision-makers",
+    "roadmap_pilotee_par_les": "Roadmap driven by the loudest GitHub issues",
+    "roadmap_pilotee_par_l": "Roadmap driven by ICP revenue impact",
+    "fonctionnalites_peu_utilisees_maintenues": "Little-used features maintained at high cost, untapped telemetry, technical debt hiding real usage",
+    "perimetre_allege_sur_les": "Scope trimmed to real usage, telemetry put to work, lower maintenance costs",
+    "ciblage_icp_imprecis_distribution": "Vague ICP targeting, distribution limited to existing channels, lost deals left unanalyzed",
+    "segments_a_fort_potentiel": "High-potential segments activated, structured partner network, lessons from lost deals put to use",
+    "depot_sans_signaux_de": "Repository without trust signals, under-optimized SEO/GEO, untargeted event presence",
+    "depot_structure_pour_la": "Repository structured for conversion, optimized SEO/GEO, ICP-focused event presence",
+    "presence_concentree_dans_la": "Presence concentrated in the OSS community — within and across projects — little reach toward non-open-source audiences",
+    "rayonnement_elargi_vers_des": "Broader reach toward audiences beyond OSS: enterprises, integrators, public sector, industry influencers",
+    "l_engagement": "The Engagement",
+    "un_chemin_clair_etape": "A clear path, step by step.",
+    "pas_de_retro_planning": "No 18-month backward planning. Three key phases, concrete deliverables, and a model you can execute as soon as we&rsquo;re done.",
+    "maintenant": "Now",
+    "evaluation_strategique": "Strategic assessment",
+    "un_regard_honnete_sur": "An honest look at your current situation &mdash; model, positioning, revenue, untapped levers.",
+    "diagnostic_complet_de_monetisation": "Full monetization diagnostic",
+    "cartographie_des_fuites_de": "Revenue leak mapping",
+    "icp_et_proposition_de": "Clarified ICP and value proposition",
+    "ensuite": "Next",
+    "feuille_de_route_orientee": "Outcome-driven roadmap",
+    "un_plan_d_action": "An action plan prioritized by revenue impact &mdash; not by technical convenience or community noise.",
+    "modele_tarifaire_et_paliers": "Pricing model and tiers defined",
+    "entonnoir_freemium_payant_structure": "Structured freemium&rarr;paid funnel",
+    "roadmap_ponderee_par_revenus": "Revenue-weighted roadmap",
+    "plus_tard": "Later",
+    "execution_orientee_resultats": "Outcome-driven execution",
+    "un_accompagnement_ancre_dans": "Hands-on support grounded in real-world conditions &mdash; adjusted at each iteration, measured on the right indicators.",
+    "sessions_de_travail_hebdomadaires": "Weekly working sessions",
+    "suivi_des_metriques_qui": "Tracking the metrics that matter",
+    "ajustements_en_temps_reel": "Real-time adjustments",
+    "perimetre_clair": "Clear scope",
+    "calendrier_fixe": "Fixed timeline",
+    "sans_abonnement_force": "No forced subscription",
+    "livrables_a_chaque_etape": "Deliverables at every step",
+    "prenons_30_minutes_pour": "Let&rsquo;s take 30 minutes to look at your situation together.",
+    "pas_de_pitch_pas": "No pitch. No slide deck. A candid conversation &mdash; you tell me where you stand, I tell you what I see.",
+    "vous_cherchez_un_modele": "You&rsquo;re looking for a model",
+    "votre_produit_oss_tourne": "Your OSS product works, your community is growing, but revenue isn&rsquo;t keeping up yet.",
+    "vous_avez_un_doute": "You have doubts",
+    "quelque_chose_coince_pricing": "Something is stuck &mdash; pricing, positioning, roadmap &mdash; and you want an honest outside perspective.",
+    "vous_voulez_juste_echanger": "You just want to talk",
+    "pas_besoin_d_un": "No defined project needed. If the topic speaks to you, the conversation already has value.",
+    "reserver_un_creneau": "Book a slot &rarr;",
+    "fondateurs_oss_en_france": "OSS founders in France &amp; Europe &middot; Reply within 24h &middot; No commitment",
+    "monetisation_oss_pour_entreprises": "OSS monetization for French and European companies",
+    "tous_droits_reserves": "All rights reserved",
+    "mentions_legales": "Legal notice",
+    "editeur": "Publisher",
+    "nicolas_verite_activite_de": "Nicolas Verite<br>Independent consulting activity<br>France<br>Contact: via <a href=\"https://cal.com/nicolas-verite\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:var(--green)\">cal.com/nicolas-verite</a>",
+    "directeur_de_la_publication": "Publication director",
+    "hebergement": "Hosting",
+    "ce_site_est_heberge": "This site is hosted on third-party infrastructure.<br>Information about the host is available on request.",
+    "propriete_intellectuelle": "Intellectual property",
+    "l_ensemble_du_contenu": "All content on this site (text, visuals, structure) is the exclusive property of Nicolas Verite unless otherwise stated. Any reproduction, even partial, requires prior permission.",
+    "donnees_personnelles": "Personal data",
+    "ce_site_ne_collecte": "This site does not directly collect any personal data. Booking via cal.com is subject to that third-party service&rsquo;s privacy policy. No tracking cookies are set by this site.",
+    "liens_externes": "External links",
+    "les_liens_vers_des": "Links to third-party sites (Mastodon, Bluesky, X, cal.com) are provided for information only. LibreProduct cannot be held responsible for their content."
+  }
+}
